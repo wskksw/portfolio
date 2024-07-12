@@ -1,5 +1,6 @@
 import { act, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
 type Alignment = 'horizontal' | 'vertical'
 
@@ -12,12 +13,19 @@ interface VerticalCarouselProps {
   elements: React.ReactNode[]
   alignment?: Alignment
   active?: number
+  className?: string
+  offset?: {
+    x: number
+    y: number
+  }
 }
 
 export default function VerticalCarousel({
   elements,
   alignment = 'horizontal',
   active,
+  className,
+  offset,
 }: VerticalCarouselProps) {
   const [[elementCount, direction], setElementCount] = useState([
     elements.length,
@@ -43,34 +51,37 @@ export default function VerticalCarousel({
     setActiveIndex(elementIndex)
   }
 
+  const xOffset = offset?.x || 0
+  const yOffset = offset?.y || 0
+
   const sliderVariants = {
     incoming: (direction: number) => {
       if (alignment === 'horizontal') {
         return {
-          x: direction > 0 ? '100%' : '-100%',
-          y: 0,
+          x: direction > 0 ? `${100 + xOffset}%` : `${-100 + xOffset}%`,
+          y: `${0 + yOffset}%`,
           opacity: 0,
         }
       } else {
         return {
-          x: 0,
-          y: direction > 0 ? '100%' : '-100%',
+          x: `${0 + xOffset}%`,
+          y: direction > 0 ? `${100 + yOffset}%` : `${-100 + yOffset}%`,
           opacity: 0,
         }
       }
     },
-    active: { x: 0, opacity: 1, y: 0 },
+    active: { x: `${0 + xOffset}%`, opacity: 1, y: `${0 + yOffset}%` },
     exit: (direction: number) => {
       if (alignment === 'horizontal') {
         return {
-          x: direction > 0 ? '-100%' : '100%',
-          y: 0,
+          x: direction > 0 ? `${-100 + xOffset}%` : `${100 + xOffset}%`,
+          y: `${0 + yOffset}%`,
           opacity: 0,
         }
       } else {
         return {
-          x: 0,
-          y: direction > 0 ? '-100%' : '100%',
+          x: `${0 + xOffset}%`,
+          y: direction > 0 ? `${-100 + yOffset}%` : `${100 + yOffset}%`,
           opacity: 0,
         }
       }
@@ -87,7 +98,7 @@ export default function VerticalCarousel({
         animate="active"
         exit="exit"
         transition={sliderTransition}
-        className="absolute left-0 top-0 w-full"
+        className={cn('absolute left-0 top-0', className)}
       >
         {elements[activeIndex]}
       </motion.div>

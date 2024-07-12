@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { HelveticaNowDisplay } from '@/fonts/fonts'
+import { SidebarProvider } from '@/providers/use-sidebars'
 
 export const metadata: Metadata = {
   title: 'Jason Ramos',
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="hide-scrollbar">
-      <body className={HelveticaNowDisplay.className}>{children}</body>
+      <body className={HelveticaNowDisplay.className}>
+        <SidebarProvider>{children}</SidebarProvider>
+      </body>
     </html>
   )
 }

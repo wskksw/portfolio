@@ -103,27 +103,27 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     {
       title: 'Home',
       href: '/',
-      imageSrc: '/images/test.png',
+      imageSrc: '/images/color1.avif',
     },
     {
       title: 'Portfolio',
       href: '/projects',
-      imageSrc: '/images/test.png',
+      imageSrc: '/images/color2.avif',
     },
     {
       title: 'About',
       href: '/About',
-      imageSrc: '/images/test.png',
+      imageSrc: '/images/color3.avif',
     },
     {
       title: 'Contact',
       href: '/contact',
-      imageSrc: '/images/test.png',
+      imageSrc: '/images/color4.avif',
     },
     {
       title: 'Tech Stack',
       href: '/techStack',
-      imageSrc: '/images/test.png',
+      imageSrc: '/images/color1.avif',
     },
   ]
 

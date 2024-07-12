@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, motionValue } from 'framer-motion'
 import ArrowButton from './arrow-button'
 import { cn } from '@/lib/utils'
 
@@ -25,6 +25,7 @@ export default function ProjectCard({
   onHover,
   variant = 'default',
 }: ProjectCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
 
   const transition = {
@@ -32,14 +33,32 @@ export default function ProjectCard({
     ease: [0.56, 0.03, 0.12, 1.04],
   }
 
+  const handleMouseMove = (e: any) => {
+    if (!cardRef.current) return
+    const { left, top, width } = cardRef.current.getBoundingClientRect()
+
+    const circleRadius = (width * 0.9) / 2
+
+    let relativeX = e.clientX - left - circleRadius
+    let relativeY = e.clientY - top - circleRadius
+
+    x.set(relativeX)
+    y.set(relativeY)
+  }
+
+  const x = motionValue(0)
+  const y = motionValue(0)
+
   return (
     <div
-      className="relative h-full w-full"
+      ref={cardRef}
+      className="relative h-full w-full cursor-pointer overflow-hidden"
       onMouseEnter={() => {
         setHovered(true)
         onHover?.()
       }}
       onMouseLeave={() => setHovered(false)}
+      onMouseMove={handleMouseMove}
       onClick={onClick}
     >
       <div className="absolute left-0 top-0 z-[-10] h-full w-full overflow-hidden">
@@ -53,7 +72,7 @@ export default function ProjectCard({
           <Image
             fill
             src={src}
-            alt="Profile Image"
+            alt="Project Image"
             className="object-cover object-center"
           />
         </motion.div>
@@ -64,6 +83,15 @@ export default function ProjectCard({
           opacity: hovered ? 0.85 : 0,
         }}
         transition={transition}
+      />
+      <motion.div
+        className="absolute left-0 top-0 z-[-5] aspect-square w-[90%]"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 65%)',
+          x,
+          y,
+        }}
       />
       <div className="z-20 flex h-full flex-col">
         <motion.p
@@ -88,8 +116,8 @@ export default function ProjectCard({
           <div
             className={cn(
               'space-y-2 pt-0',
-              variant === 'default' && 'p-10',
-              variant === 'lg' && 'p-10 pr-0',
+              variant === 'default' && 'p-10 pt-4',
+              variant === 'lg' && 'p-10 pr-0 pt-4',
             )}
           >
             <h1 className="text-7xl font-extrabold text-background">

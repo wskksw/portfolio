@@ -25,7 +25,9 @@ export default function TextSection({
       <div className="mt-16 border-b border-border">
         {content.map((item, index) => (
           <div key={index} className="flex gap-5 border-t border-border py-8">
-            <h4 className="flex-1 text-[1.5em] font-bold">{item.title}</h4>
+            <div className="flex-1 text-[1.5em] font-bold">
+              <p className="w-2/3">{item.title}</p>
+            </div>
             <p className="flex-1 text-[1.5em] text-muted-foreground">
               {item.description}
             </p>

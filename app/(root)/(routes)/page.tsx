@@ -5,10 +5,57 @@ import GallerySection from '@/components/sections/gallery-section'
 import HeroSection from '@/components/sections/hero-section'
 import ProjectSection from '@/components/sections/project-section'
 import { selectedProjects } from '@/data/projects'
+import { calculateBestSidebar } from '@/lib/utils'
+import { Sidebar, useSidebars } from '@/providers/use-sidebars'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 
 export default function HomePage() {
   const router = useRouter()
+  const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
+  const refs = useRef<HTMLDivElement[]>([])
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (y) => {
+    if (!refs.current || refs.current.length !== 4) return
+
+    const bestIndex = calculateBestSidebar(y, refs, window)
+
+    if (bestIndex !== activeIndex) {
+      setActiveIndex(bestIndex)
+    }
+  })
+
+  useEffect(() => {
+    const data: Sidebar[] = []
+
+    // Hero
+    data.push({
+      title: 'Portfolio',
+      action: 'Keep scrolling!',
+    })
+
+    // Projects
+    data.push({
+      title: 'Projects',
+      action: 'Check them out!',
+    })
+
+    // Gallery (EMPTY)
+    data.push({
+      title: '',
+      action: '',
+    })
+
+    // Footer
+    data.push({
+      title: 'Want More?',
+      action: 'Want More?',
+    })
+
+    setSidebars(data)
+  }, [])
 
   const projects = selectedProjects.map((project, index) => ({
     ...project,
@@ -21,27 +68,34 @@ export default function HomePage() {
 
   return (
     <main className="py-32">
-      <HeroSection
-        header="Jason Ramos"
-        title="Web Enthusiast & Software Developer"
-        content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
-        src="/images/sample1.avif"
-      />
-      {projects.map((project) => (
-        <>
-          <div className="my-80" />
-          <ProjectSection {...project} />
-        </>
-      ))}
-      <GallerySection />
-      <div className="my-40" />
-      <Footer
-        subTitle="Have an idea?"
-        action={{
-          title: "Let's talk!",
-          onClick: () => {},
-        }}
-      />
+      <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
+        <HeroSection
+          header="Jason Ramos"
+          title="Web Enthusiast & Software Developer"
+          content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
+          src="/images/sample1.avif"
+        />
+      </div>
+      <div
+        className="flex flex-col gap-80 py-40"
+        ref={(ref: any) => (refs.current[1] = ref)}
+      >
+        {projects.map((project, index) => (
+          <ProjectSection {...project} key={index} />
+        ))}
+      </div>
+      <div className="pb-40" ref={(ref: any) => (refs.current[2] = ref)}>
+        <GallerySection />
+      </div>
+      <div className="pt-40" ref={(ref: any) => (refs.current[3] = ref)}>
+        <Footer
+          subTitle="Have an idea?"
+          action={{
+            title: "Let's talk!",
+            onClick: () => {},
+          }}
+        />
+      </div>
     </main>
   )
 }

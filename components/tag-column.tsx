@@ -1,5 +1,5 @@
 export type Column = {
-  title: string
+  title?: string
   values: string[]
 }
 
@@ -10,7 +10,9 @@ interface TagColumnProps {
 export default function TagColumn({ column }: TagColumnProps) {
   return (
     <>
-      <p className="text-[1.5rem] text-muted-foreground">{column.title}</p>
+      <div className="block text-[1.5rem] text-muted-foreground">
+        {column.title || <br />}
+      </div>
       <ul className="pl-4 text-[1.5rem] text-muted-foreground">
         {column.values.map((value, index) => (
           <li key={index} className="flex items-center gap-4">

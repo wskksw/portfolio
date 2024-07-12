@@ -2,11 +2,10 @@
 
 import Footer from '@/components/footer'
 import Headline from '@/components/headline'
-import ProjectCard from '@/components/project-card'
+import ContactSection from '@/components/sections/contact-section'
 import HeroSection from '@/components/sections/hero-section'
 import ImageGridSection from '@/components/sections/image-grid-section'
 import TextSection from '@/components/sections/text-section'
-import { selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
@@ -30,26 +29,16 @@ export default function ProjectsPage() {
   useEffect(() => {
     const data: Sidebar[] = []
 
-    // About Me
+    // Form
     data.push({
-      title: 'Who Am I?',
-      action: 'Keep scrolling!',
-    })
-
-    data.push({
-      title: 'How did I get here?',
-      action: 'How did I get here?',
-    })
-
-    data.push({
-      title: 'What drives me?',
-      action: 'What drives me?',
+      title: 'Email Me!',
+      action: 'Email Me!',
     })
 
     // Footer
     data.push({
-      title: 'Want to know more?',
-      action: 'Want to know more?',
+      title: "Here's some options!",
+      action: "Here's some options!",
     })
 
     setSidebars(data)
@@ -58,127 +47,24 @@ export default function ProjectsPage() {
   return (
     <main className="py-32">
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
-        <HeroSection
-          header="About Me"
-          title="Hey! I'm Jason Ramos"
+        <ContactSection
+          header="Contact Me"
+          title="Get In Touch!"
           content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
-          src="/images/sample1.avif"
+          leftColumnTags={{
+            title: "Let's talk about:",
+            values: ['Your Website', 'Your Project', 'Your Program'],
+          }}
+          rightColumnTags={{
+            values: ['Your Users', 'Your Brand', 'Your Opportunity'],
+          }}
         />
       </div>
-      <div
-        className="flex flex-col gap-24 pt-32"
-        ref={(ref: any) => (refs.current[1] = ref)}
-      >
-        <ImageGridSection
-          header="About Me"
-          title="Education"
-          srcs={[
-            '/images/sample1.avif',
-            '/images/sample2.avif',
-            '/images/sample3.avif',
-          ]}
-        />
-        <TextSection
-          header="About Me"
-          title="Education"
-          content={[
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-          ]}
-          className="mb-24"
-        />
-      </div>
-      <div
-        className="flex flex-col gap-24 pb-40"
-        ref={(ref: any) => (refs.current[2] = ref)}
-      >
-        <ImageGridSection
-          header="About Me"
-          title="Motivations"
-          srcs={[
-            '/images/sample1.avif',
-            '/images/sample2.avif',
-            '/images/sample3.avif',
-          ]}
-        />
-        <TextSection
-          header="About Me"
-          title="Motivations"
-          content={[
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-          ]}
-          className="mb-24"
-        />
-      </div>
-      <div className="pt-40" ref={(ref: any) => (refs.current[3] = ref)}>
+      <div className="pt-40" ref={(ref: any) => (refs.current[1] = ref)}>
         <Footer
-          subTitle="Want to discuss?"
+          subTitle="Email doesn't work?"
           action={{
-            title: 'Contact Me!',
-            onClick: () => {},
+            title: 'Try These!',
           }}
         />
       </div>

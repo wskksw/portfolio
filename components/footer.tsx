@@ -5,7 +5,7 @@ interface FooterProps {
   subTitle: string
   action: {
     title: string
-    onClick: () => void
+    onClick?: () => void
   }
 }
 
@@ -16,9 +16,15 @@ export default function Footer({ subTitle, action }: FooterProps) {
         <h4 className="text-center tracking-[0.3em] text-muted-foreground">
           {subTitle.toUpperCase()}
         </h4>
-        <h1 onClick={action.onClick}>
-          <UnderlinedText text={action.title} />
-        </h1>
+        {action.onClick ? (
+          <h1 onClick={action.onClick}>
+            <UnderlinedText text={action.title} />
+          </h1>
+        ) : (
+          <h1 className="mt-4 inline-block text-center text-9xl font-extrabold">
+            {action.title}
+          </h1>
+        )}
       </div>
       <div className="my-32 h-[1px] bg-border" />
       <div className="flex gap-5">

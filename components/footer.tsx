@@ -11,12 +11,12 @@ interface FooterProps {
 
 export default function Footer({ subTitle, action }: FooterProps) {
   return (
-    <section className="w-full pb-[20vh]">
+    <section className="w-full pb-[16vh]">
       <div className="flex w-full flex-col items-center justify-center">
         <h4 className="text-center tracking-[0.3em] text-muted-foreground">
           {subTitle.toUpperCase()}
         </h4>
-        <h1 onClick={() => action.onClick}>
+        <h1 onClick={action.onClick}>
           <UnderlinedText text={action.title} />
         </h1>
       </div>

@@ -7,7 +7,7 @@ import TagColumn from '../tag-column'
 interface ProjectSectionProps {
   header: string
   title: string
-  content: string
+  description: string
   srcs: string[]
   leftColumnTags: {
     title: string
@@ -26,7 +26,7 @@ interface ProjectSectionProps {
 export default function ProjectSection({
   header,
   title,
-  content,
+  description,
   srcs,
   leftColumnTags,
   rightColumnTags,
@@ -40,9 +40,9 @@ export default function ProjectSection({
             <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
               {header.toUpperCase()}
             </h4>
-            <h1 className="text-7xl font-extrabold">{title}</h1>
+            <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
             <p className="mt-6 text-justify text-[1.5rem] text-muted-foreground">
-              {content}
+              {description}
             </p>
           </div>
           <div className="mt-8 flex w-full gap-5">

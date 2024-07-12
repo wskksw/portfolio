@@ -10,6 +10,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import VerticalCarousel from '../vertical-carousel'
+import { miscProjects } from '@/data/projects'
 
 interface GallerySectionProps {}
 
@@ -32,53 +33,7 @@ export default function GallerySection({}: GallerySectionProps) {
     }
   }
 
-  const projects = [
-    {
-      src: '/images/sample4.avif',
-      year: '2020',
-      title: 'Omica',
-      description:
-        'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-      onClick: () => {},
-      field: 'Software Development',
-    },
-    {
-      src: '/images/sample4.avif',
-      year: '2020',
-      title: 'Omica',
-      description:
-        'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-      onClick: () => {},
-      field: 'Software Engineering',
-    },
-    {
-      src: '/images/sample4.avif',
-      year: '2020',
-      title: 'Omica',
-      description:
-        'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-      onClick: () => {},
-      field: 'Software Development',
-    },
-    {
-      src: '/images/sample4.avif',
-      year: '2020',
-      title: 'Omica',
-      description:
-        'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-      onClick: () => {},
-      field: 'Software Development',
-    },
-    {
-      src: '/images/sample4.avif',
-      year: '2020',
-      title: 'Omica',
-      description:
-        'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-      onClick: () => {},
-      field: 'Software Engineering',
-    },
-  ]
+  const projects = miscProjects
 
   const x = useMotionValue(0)
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
@@ -102,12 +57,12 @@ export default function GallerySection({}: GallerySectionProps) {
   }, [targetRef, carouselRef])
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex h-screen items-center justify-start pb-10">
         <div className="flex flex-col">
           <p className="tracking-[0.3em] text-muted-foreground">LOOKING FOR?</p>
           <div
-            className="relative h-40"
+            className="relative mt-2 h-40"
             style={{
               width: 'calc(100vw - 384px)',
             }}
@@ -127,11 +82,12 @@ export default function GallerySection({}: GallerySectionProps) {
           </div>
           <motion.div className="flex gap-5" style={{ x }} ref={carouselRef}>
             {projects.map((data, index) => (
-              <ProjectCard
-                key={index}
-                {...data}
-                onHover={() => handleChangeTitle(index)}
-              />
+              <div key={index} className="h-[700px] w-[450px]">
+                <ProjectCard
+                  {...data}
+                  onHover={() => handleChangeTitle(index)}
+                />
+              </div>
             ))}
           </motion.div>
         </div>

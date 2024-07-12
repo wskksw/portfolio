@@ -7,15 +7,17 @@ interface NavigationCardProps {
   title: string
   href: string
   imageSrc: string
+  onClick?: () => void
 }
 
 export default function NavigationCard({
   title,
   href,
   imageSrc,
+  onClick,
 }: NavigationCardProps) {
   return (
-    <Link href={href} draggable={false}>
+    <Link href={href} draggable={false} onClick={onClick}>
       <div className="unselectable">
         <p className="text-[1.5em] font-bold text-background">{title}</p>
         <div className="relative h-[240px] w-[360px] overflow-hidden">

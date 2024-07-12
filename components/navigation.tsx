@@ -107,7 +107,7 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     },
     {
       title: 'Portfolio',
-      href: '/portfolio',
+      href: '/projects',
       imageSrc: '/images/test.png',
     },
     {
@@ -154,7 +154,11 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
           }}
         >
           {routes.map((route) => (
-            <NavigationCard key={route.href} {...route} />
+            <NavigationCard
+              key={route.href}
+              {...route}
+              onClick={() => setOpen(false)}
+            />
           ))}
         </div>
       </div>

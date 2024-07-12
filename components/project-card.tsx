@@ -4,14 +4,16 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ArrowButton from './arrow-button'
+import { cn } from '@/lib/utils'
 
 interface ProjectCardProps {
   src: string
   year: string
   title: string
   description: string
-  onClick: () => void
-  onHover: () => void
+  onClick?: () => void
+  onHover?: () => void
+  variant?: 'default' | 'lg'
 }
 
 export default function ProjectCard({
@@ -21,6 +23,7 @@ export default function ProjectCard({
   description,
   onClick,
   onHover,
+  variant = 'default',
 }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false)
 
@@ -31,10 +34,10 @@ export default function ProjectCard({
 
   return (
     <div
-      className="relative h-[700px] w-[450px]"
+      className="relative h-full w-full"
       onMouseEnter={() => {
         setHovered(true)
-        onHover()
+        onHover?.()
       }}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
@@ -62,30 +65,41 @@ export default function ProjectCard({
         }}
         transition={transition}
       />
-      <div className="z-20 flex h-full flex-col p-5">
+      <div className="z-20 flex h-full flex-col">
         <motion.p
-          className="text-lg tracking-[0.3em]"
+          className="p-10 pb-0 text-lg tracking-[0.3em]"
           animate={{
             color: hovered ? 'hsl(var(--secondary))' : 'hsl(var(--background))',
           }}
           transition={transition}
         >
-          <p className="p-5">{year}</p>
+          {year}
         </motion.p>
         <motion.div
-          className="flex h-full flex-col justify-between"
+          className={cn(
+            'flex h-full flex-col justify-between',
+            variant === 'lg' && 'w-2/3',
+          )}
           animate={{
             opacity: hovered ? 1 : 0,
           }}
           transition={transition}
         >
-          <div className="space-y-2 p-5 pt-0">
+          <div
+            className={cn(
+              'space-y-2 pt-0',
+              variant === 'default' && 'p-10',
+              variant === 'lg' && 'p-10 pr-0',
+            )}
+          >
             <h1 className="text-7xl font-extrabold text-background">
               {title.toUpperCase()}
             </h1>
-            <p className="text-[1.5rem] text-secondary">{description}</p>
+            <p className="text-justify text-[1.5rem] text-secondary">
+              {description}
+            </p>
           </div>
-          <div>
+          <div className="p-5">
             <ArrowButton
               title="View Project"
               className="pt gap-10 !bg-transparent px-5 py-3 font-bold"

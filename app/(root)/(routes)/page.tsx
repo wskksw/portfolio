@@ -10,6 +10,7 @@ import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 export default function HomePage() {
   const router = useRouter()
@@ -18,8 +19,6 @@ export default function HomePage() {
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (y) => {
-    if (!refs.current || refs.current.length !== 4) return
-
     const bestIndex = calculateBestSidebar(y, refs, window)
 
     if (bestIndex !== activeIndex) {

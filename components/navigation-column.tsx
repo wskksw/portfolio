@@ -23,7 +23,7 @@ export default function NavigationColumn({ column }: NavigationColumnProps) {
           <li key={index} onClick={() => value.onClick()}>
             <UnderlinedText
               text={value.title}
-              className="mt-0 text-4xl font-extrabold text-primary before:-bottom-2 before:h-[6px]"
+              className="mt-0 text-4xl font-extrabold text-primary before:-bottom-[6px] before:h-[6px]"
             />
           </li>
         ))}

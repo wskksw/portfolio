@@ -125,23 +125,18 @@ export default function MainLayout({
       <div className="pointer-events-none fixed left-0 top-0 z-20 h-fit w-full bg-transparent">
         <div className="flex h-full w-full justify-between gap-5 px-[34px] pt-8">
           <h4 className="text-4xl font-extrabold leading-8">JR</h4>
-          <div className="pointer-events-auto flex h-fit gap-[39px]">
-            <motion.div
-              className="cursor-pointer"
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 180 }}
-              transition={{
-                duration: 0.3,
-                type: 'spring',
-                stiffness: 200,
-                damping: 20,
-                repeat: Infinity,
-                repeatDelay: 2,
-              }}
+          <div className="pointer-events-auto flex h-fit gap-8">
+            <div
+              className={cn(
+                'bounce',
+                navOpen
+                  ? 'pointer-events-none'
+                  : 'pointer-events-auto cursor-pointer',
+              )}
               onClick={() => setGridOpen((prev) => !prev)}
             >
               <Grid3x3 size={32} />
-            </motion.div>
+            </div>
             <div className="relative aspect-square h-8 cursor-pointer">
               <Image
                 fill

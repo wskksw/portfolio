@@ -4,7 +4,7 @@ interface TextSectionProps {
   header: string
   title: string
   content: {
-    title: string
+    title: string | React.ReactNode
     description: string
   }[]
   className?: string

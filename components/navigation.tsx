@@ -112,7 +112,7 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     },
     {
       title: 'About',
-      href: '/About',
+      href: '/about',
       imageSrc: '/images/color3.avif',
     },
     {
@@ -135,16 +135,22 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
       onMouseUp={handleMouseUp}
     >
       <div
-        className="absolute left-1/2 top-0 flex h-24 w-24 translate-x-[-50%] translate-y-[-120px] items-center justify-center rounded-full bg-primary"
+        className="absolute left-1/2 top-0 h-24 w-24 translate-x-[-50%] translate-y-[-120px]"
         onClick={() => setOpen((prev) => !prev)}
       >
-        <LongArrow
+        <div
           className={cn(
-            'transition',
-            open ? 'rotate-[90deg]' : 'rotate-[270deg]',
+            'bounce-delay flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-primary',
           )}
-          color="#FFF"
-        />
+        >
+          <LongArrow
+            className={cn(
+              'transition',
+              open ? 'rotate-[90deg]' : 'rotate-[270deg]',
+            )}
+            color="#FFF"
+          />
+        </div>
       </div>
       <div className="relative h-full w-full">
         <div

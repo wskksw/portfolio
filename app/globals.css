@@ -8,13 +8,6 @@ html,
   height: 100%;
 }
 
-.unselectable {
-  -webkit-user-select: none; /* Safari and Chrome browsers */
-  -moz-user-select: none; /* Firefox browser */
-  -ms-user-select: none; /* Internet Explorer/Edge browser */
-  user-select: none; /* Standard syntax */
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -29,7 +22,7 @@ html,
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 96.1%;
+    --secondary: 0 0% 88.1%;
     --secondary-foreground: 0 0% 9%;
 
     --muted: 0 0% 96.1%;
@@ -86,4 +79,24 @@ html,
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.text-shadow {
+  text-shadow: 0px 40px 30px rgba(0, 0, 0, 0.03);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

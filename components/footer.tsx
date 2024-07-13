@@ -1,3 +1,4 @@
+import FadeInWrapper from './fade-in-wrapper'
 import NavigationColumn from './navigation-column'
 import UnderlinedText from './underlined-text'
 
@@ -13,18 +14,22 @@ export default function Footer({ subTitle, action }: FooterProps) {
   return (
     <section className="w-full pb-[12vh]">
       <div className="flex w-full flex-col items-center justify-center">
-        <h4 className="text-center tracking-[0.3em] text-muted-foreground">
-          {subTitle.toUpperCase()}
-        </h4>
-        {action.onClick ? (
-          <h1 onClick={action.onClick}>
-            <UnderlinedText text={action.title} />
-          </h1>
-        ) : (
-          <h1 className="mt-4 inline-block text-center text-9xl font-extrabold">
-            {action.title}
-          </h1>
-        )}
+        <FadeInWrapper>
+          <h4 className="text-center tracking-[0.3em] text-muted-foreground">
+            {subTitle.toUpperCase()}
+          </h4>
+        </FadeInWrapper>
+        <FadeInWrapper>
+          {action.onClick ? (
+            <h1 onClick={action.onClick}>
+              <UnderlinedText text={action.title} />
+            </h1>
+          ) : (
+            <h1 className="mt-4 inline-block text-center text-9xl font-extrabold">
+              {action.title}
+            </h1>
+          )}
+        </FadeInWrapper>
       </div>
       <div className="my-32 h-[1px] bg-border" />
       <div className="flex gap-5">

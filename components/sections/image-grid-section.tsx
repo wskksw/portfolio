@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import FadeInWrapper from '../fade-in-wrapper'
 
 export interface ImageGridSectionProps {
   header: string
@@ -17,15 +18,20 @@ export default function ImageGridSection({
 }: ImageGridSectionProps) {
   return (
     <section className={className}>
-      <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-        {header.toUpperCase()}
-      </h4>
-      <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
+      <FadeInWrapper>
+        <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+          {header.toUpperCase()}
+        </h4>
+      </FadeInWrapper>
+      <FadeInWrapper>
+        <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
+      </FadeInWrapper>
       <div className="mt-16 flex flex-wrap-reverse gap-5">
         {srcs.map((src, index) => (
-          <div
+          <FadeInWrapper
             key={index}
             className="relative aspect-[4/3] min-w-[600px] flex-1"
+            delay={index * 0.05}
           >
             <Image
               fill
@@ -33,7 +39,7 @@ export default function ImageGridSection({
               alt="Profile Image"
               className="object-cover object-center"
             />
-          </div>
+          </FadeInWrapper>
         ))}
       </div>
     </section>

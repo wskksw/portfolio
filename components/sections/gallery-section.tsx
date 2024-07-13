@@ -11,6 +11,7 @@ import {
 } from 'framer-motion'
 import VerticalCarousel from '../vertical-carousel'
 import { miscProjects } from '@/data/projects'
+import FadeInWrapper from '../fade-in-wrapper'
 
 interface GallerySectionProps {}
 
@@ -36,8 +37,10 @@ export default function GallerySection({}: GallerySectionProps) {
   const projects = miscProjects
 
   const x = useMotionValue(0)
+  const xOffset = useMotionValue('0%')
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     x.set(latest * (sectionWidth - carouselWidth))
+    xOffset.set(`-${latest * (40 / 1.4)}%`)
   })
 
   useEffect(() => {
@@ -60,34 +63,45 @@ export default function GallerySection({}: GallerySectionProps) {
     <section ref={targetRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex h-screen items-center justify-start pb-10">
         <div className="flex flex-col">
-          <p className="tracking-[0.3em] text-muted-foreground">LOOKING FOR?</p>
-          <div
-            className="relative mt-2 h-40"
-            style={{
-              width: 'calc(100vw - 384px)',
-            }}
-          >
-            <VerticalCarousel
-              alignment="vertical"
-              elements={projects.map((project) => (
-                <h1
-                  className="h-20 w-full overflow-hidden text-ellipsis text-7xl font-extrabold"
-                  key={project.field}
-                >
-                  {project.field}
-                </h1>
-              ))}
-              active={activeIndex}
-            />
-          </div>
+          <FadeInWrapper>
+            <p className="tracking-[0.3em] text-muted-foreground">
+              LOOKING FOR?
+            </p>
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <div
+              className="relative mt-2 h-40"
+              style={{
+                width: 'calc(100vw - 384px)',
+              }}
+            >
+              <VerticalCarousel
+                alignment="vertical"
+                elements={projects.map((project) => (
+                  <h1
+                    className="h-20 w-full overflow-hidden text-ellipsis text-7xl font-extrabold"
+                    key={project.field}
+                  >
+                    {project.field}
+                  </h1>
+                ))}
+                active={activeIndex}
+              />
+            </div>
+          </FadeInWrapper>
           <motion.div className="flex gap-5" style={{ x }} ref={carouselRef}>
             {projects.map((data, index) => (
-              <div key={index} className="h-[700px] w-[450px]">
+              <FadeInWrapper
+                key={index}
+                className="h-[700px] w-[450px]"
+                delay={index * 0.05}
+              >
                 <ProjectCard
                   {...data}
                   onHover={() => handleChangeTitle(index)}
+                  xOffset={xOffset}
                 />
-              </div>
+              </FadeInWrapper>
             ))}
           </motion.div>
         </div>

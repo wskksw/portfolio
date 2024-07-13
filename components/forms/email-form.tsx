@@ -21,6 +21,7 @@ import { ToastAction } from '../ui/toast'
 import UnderlinedText from '../underlined-text'
 import ArrowButton from '../arrow-button'
 import { Textarea } from '../ui/textarea'
+import FadeInWrapper from '../fade-in-wrapper'
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -82,82 +83,17 @@ export const EmailForm = () => {
         className="w-full max-w-[1024px] space-y-8"
       >
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input disabled={loading} placeholder="John Doe" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="subject"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Subject</FormLabel>
-                <FormControl>
-                  <Input
-                    disabled={loading}
-                    placeholder="Discovery Call"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    disabled={loading}
-                    placeholder="JohnDoe@gmail.com"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phoneNumber"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number (Optional)</FormLabel>
-                <FormControl>
-                  <Input
-                    disabled={loading}
-                    placeholder="123-456-7890"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div style={{ gridColumn: '1/-1' }}>
+          <FadeInWrapper>
             <FormField
               control={form.control}
-              name="message"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Textarea
+                    <Input
                       disabled={loading}
-                      placeholder="Hey Jason! I would like to schedule a zoom call with you to discuss..."
-                      className="h-[180px]"
+                      placeholder="John Doe"
                       {...field}
                     />
                   </FormControl>
@@ -165,21 +101,104 @@ export const EmailForm = () => {
                 </FormItem>
               )}
             />
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Subject</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Discovery Call"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="JohnDoe@gmail.com"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number (Optional)</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="123-456-7890"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </FadeInWrapper>
+          <div style={{ gridColumn: '1/-1' }}>
+            <FadeInWrapper>
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        disabled={loading}
+                        placeholder="Hey Jason! I would like to schedule a zoom call with you to discuss..."
+                        className="h-[180px]"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </FadeInWrapper>
           </div>
         </div>
         <div className="!mt-16 flex items-center justify-between gap-5">
           <span className="py-2 pr-3" onClick={() => form.reset()}>
-            <UnderlinedText
-              text="Reset Form"
-              className="text-base before:-bottom-[2px] before:h-[4px]"
-            />
+            <FadeInWrapper>
+              <UnderlinedText
+                text="Reset Form"
+                className="text-base before:-bottom-[2px] before:h-[4px]"
+              />
+            </FadeInWrapper>
           </span>
-          <ArrowButton
-            title={'Send Message'}
-            className="flex gap-5"
-            arrowColor="#FFF"
-            onClick={() => form.handleSubmit(onSubmit)()}
-          />
+          <FadeInWrapper delay={0.05}>
+            <ArrowButton
+              title={'Send Message'}
+              className="flex gap-5"
+              arrowColor="#FFF"
+              onClick={() => form.handleSubmit(onSubmit)()}
+            />
+          </FadeInWrapper>
         </div>
       </form>
     </Form>

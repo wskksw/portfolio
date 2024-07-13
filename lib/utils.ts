@@ -31,3 +31,5 @@ export const calculateBestSidebar = (y: number, refs: any, window: any) => {
 
   return largestIndex
 }
+
+export const smoothEase = [0.56, 0.03, 0.12, 1.04]

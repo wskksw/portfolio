@@ -37,7 +37,7 @@ export default function ArrowButton({
       },
       {
         duration: animationDuration,
-        ease: 'easeInOut',
+        ease: 'easeOut',
       },
     )
     arrow2Animate(
@@ -48,7 +48,7 @@ export default function ArrowButton({
       {
         delay: delay,
         duration: animationDuration,
-        ease: 'easeInOut',
+        ease: 'easeOut',
       },
     )
 

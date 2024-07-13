@@ -17,6 +17,7 @@ interface ProjectCardProps {
   onClick?: () => void
   onHover?: () => void
   variant?: 'default' | 'lg'
+  xOffset?: any
 }
 
 export default function ProjectCard({
@@ -28,6 +29,7 @@ export default function ProjectCard({
   onClick,
   onHover,
   variant = 'default',
+  xOffset,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
@@ -65,13 +67,16 @@ export default function ProjectCard({
       onMouseMove={handleMouseMove}
       onClick={onClick}
     >
-      <div className="absolute left-0 top-0 z-[-10] h-full w-full overflow-hidden">
+      <div className="absolute left-0 top-0 z-[-10] h-full w-[140%] overflow-hidden">
         <motion.div
           className="relative h-full w-full overflow-hidden"
           animate={{
             scale: hovered ? 1 : 1.05,
           }}
           transition={transition}
+          style={{
+            x: xOffset,
+          }}
         >
           <Image
             fill

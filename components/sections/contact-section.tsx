@@ -6,6 +6,7 @@ import TagColumn, { Column } from '../tag-column'
 import { Button } from '../ui/button'
 import UnderlinedText from '../underlined-text'
 import { EmailForm } from '../forms/email-form'
+import FadeInWrapper from '../fade-in-wrapper'
 
 interface ContactSectionProps {
   header: string
@@ -26,11 +27,19 @@ export default function ContactSection({
     <section className="flex items-start gap-5">
       <div className="flex w-full flex-1 items-end">
         <div className="w-2/3">
-          <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-            {header.toUpperCase()}
-          </h4>
-          <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
-          <p className="mt-8 text-[1.5rem] text-muted-foreground">{content}</p>
+          <FadeInWrapper>
+            <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+              {header.toUpperCase()}
+            </h4>
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
+          </FadeInWrapper>
+          <FadeInWrapper>
+            <p className="mt-8 text-[1.5rem] text-muted-foreground">
+              {content}
+            </p>
+          </FadeInWrapper>
           <div className="mt-8 flex w-full gap-5">
             <div className="flex-1">
               <TagColumn column={leftColumnTags} />
@@ -39,7 +48,7 @@ export default function ContactSection({
               <TagColumn column={rightColumnTags} />
             </div>
           </div>
-          <div className="mt-12 w-full">
+          <FadeInWrapper className="mt-12 w-full">
             <a href="mailto:ramosjasonwork@gmail.com">
               <ArrowButton
                 title={'Direct Email'}
@@ -48,7 +57,7 @@ export default function ContactSection({
                 onClick={() => {}}
               />
             </a>
-          </div>
+          </FadeInWrapper>
         </div>
       </div>
       <div className="!mt-12 w-full flex-1">

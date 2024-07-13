@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Circle } from 'lucide-react'
+import FadeInWrapper from '@/components/fade-in-wrapper'
 
 export default function ProjectsPage() {
   const router = useRouter()
@@ -52,13 +53,17 @@ export default function ProjectsPage() {
   return (
     <main className="py-32">
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
-        <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-          PORTFOLIO
-        </h4>
-        <h1 className="mt-2 text-7xl font-extrabold">Selected Works</h1>
+        <FadeInWrapper>
+          <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+            PORTFOLIO
+          </h4>
+        </FadeInWrapper>
+        <FadeInWrapper>
+          <h1 className="mt-2 text-7xl font-extrabold">Selected Works</h1>
+        </FadeInWrapper>
         <div className="mt-16 grid grid-cols-1 gap-5 2xl:grid-cols-2">
           {selectedProjects.map((project, index) => (
-            <div key={index} className="w-full">
+            <FadeInWrapper key={index} className="w-full" delay={index * 0.05}>
               <div className="aspect-square w-full">
                 <ProjectCard
                   src={project.srcs[0]}
@@ -67,12 +72,13 @@ export default function ProjectsPage() {
                   description={project.description}
                   variant="lg"
                   onClick={() => router.push(`/projects/${index}`)}
+                  logos={project.logos}
                 />
               </div>
               <p className="mb-4 mt-2 text-[1.5rem] font-bold">
                 {project.field}
               </p>
-            </div>
+            </FadeInWrapper>
           ))}
         </div>
       </div>

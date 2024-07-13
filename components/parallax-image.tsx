@@ -43,12 +43,15 @@ export default function ParallaxImage({
       }}
       viewport={{
         once: true,
-        amount: 0.9,
+        amount: 0.95,
       }}
     >
       <motion.div
         ref={targetRef}
-        className={cn('relative aspect-[4/3] w-full flex-1', className)}
+        className={cn(
+          'relative aspect-[4/3] w-full flex-1 overflow-hidden bg-red-200',
+          className,
+        )}
         animate={{
           y: hookedYProgress * displacement - displacement / 2,
         }}
@@ -57,7 +60,7 @@ export default function ParallaxImage({
         }}
       >
         <motion.div
-          className="absolute left-0 top-0 z-10 w-full bg-primary"
+          className="absolute left-0 top-0 z-10 w-full overflow-hidden bg-primary"
           initial={{
             height: '100%',
           }}
@@ -66,19 +69,29 @@ export default function ParallaxImage({
           }}
           viewport={{
             once: true,
-            amount: 0.9,
+            amount: 0.95,
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.5,
             ease: [0.56, 0.03, 0.12, 1.04],
           }}
         />
-        <Image
-          fill
-          src={src}
-          alt="Project Image"
-          className="object-cover object-center"
-        />
+        <motion.div
+          className="relative h-[110%] w-full"
+          animate={{
+            y: `-${hookedYProgress * 10}%`,
+          }}
+          transition={{
+            duration: 0,
+          }}
+        >
+          <Image
+            fill
+            src={src}
+            alt="Project Image"
+            className="object-cover object-center"
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
   )

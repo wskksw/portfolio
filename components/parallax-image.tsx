@@ -38,6 +38,7 @@ export default function ParallaxImage({
         transition: {
           type: 'spring',
           bounce: 0.2,
+          damping: 15,
           duration: 0.8,
         },
       }}
@@ -49,7 +50,7 @@ export default function ParallaxImage({
       <motion.div
         ref={targetRef}
         className={cn(
-          'relative aspect-[4/3] w-full flex-1 overflow-hidden bg-red-200',
+          'relative aspect-[4/3] w-full flex-1 overflow-hidden',
           className,
         )}
         animate={{

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import FadeInWrapper from '../fade-in-wrapper'
+import InnerParallaxImage from '../inner-parallax-image'
 
 export interface ImageGridSectionProps {
   header: string
@@ -33,12 +34,7 @@ export default function ImageGridSection({
             className="relative aspect-[4/3] min-w-[600px] flex-1"
             delay={index * 0.05}
           >
-            <Image
-              fill
-              src={src}
-              alt="Profile Image"
-              className="object-cover object-center"
-            />
+            <InnerParallaxImage src={src} alt="Grid Image" />
           </FadeInWrapper>
         ))}
       </div>

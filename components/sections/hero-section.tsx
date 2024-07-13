@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ArrowButton from '../arrow-button'
 import { motion } from 'framer-motion'
 import FadeInWrapper from '../fade-in-wrapper'
+import InnerParallaxImage from '../inner-parallax-image'
 
 interface HeroSectionProps {
   header: string
@@ -54,12 +55,7 @@ export default function HeroSection({
         </div>
       </div>
       <FadeInWrapper className="relative aspect-[4/3] w-full flex-1">
-        <Image
-          fill
-          src={src}
-          alt="Profile Image"
-          className="object-cover object-center"
-        />
+        <InnerParallaxImage src={src} alt="Profile Image" />
       </FadeInWrapper>
     </section>
   )

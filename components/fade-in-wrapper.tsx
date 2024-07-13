@@ -11,10 +11,10 @@ export const getFadeInAnimationWithDelay = (delay: number) => {
       opacity: 1,
       transition: {
         type: 'spring',
-        bounce: 0.2,
-        duration: 0.8,
+        damping: 25,
         delay,
       },
+      offset: ['start start', 'end end'],
     },
     viewport: {
       once: true,

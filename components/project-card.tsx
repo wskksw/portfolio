@@ -5,12 +5,15 @@ import { useRef, useState } from 'react'
 import { motion, motionValue } from 'framer-motion'
 import ArrowButton from './arrow-button'
 import { cn } from '@/lib/utils'
+import { Logo } from '@/data/stack'
+import LogoIcon from './icons/logo'
 
 interface ProjectCardProps {
   src: string
   year: string
   title: string
   description: string
+  logos: Logo[]
   onClick?: () => void
   onHover?: () => void
   variant?: 'default' | 'lg'
@@ -21,6 +24,7 @@ export default function ProjectCard({
   year,
   title,
   description,
+  logos,
   onClick,
   onHover,
   variant = 'default',
@@ -128,6 +132,13 @@ export default function ProjectCard({
             </p>
           </div>
           <div className="p-5">
+            <div className="flex flex-wrap gap-5 pl-5">
+              {logos.map((logo, index) => (
+                <div key={index} className="aspect-square w-10">
+                  <LogoIcon logo={logo} />
+                </div>
+              ))}
+            </div>
             <ArrowButton
               title="View Project"
               className="pt gap-10 !bg-transparent px-5 py-3 font-bold"

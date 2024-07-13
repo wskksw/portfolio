@@ -23,6 +23,7 @@
     "react-hook-form": "^7.52.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
+    "tech-stack-icons": "^2.0.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -1,18 +1,16 @@
 'use client'
 
 import Footer from '@/components/footer'
-import Headline from '@/components/headline'
 import ContactSection from '@/components/sections/contact-section'
-import HeroSection from '@/components/sections/hero-section'
-import ImageGridSection from '@/components/sections/image-grid-section'
-import TextSection from '@/components/sections/text-section'
+import LogoShowcaseSection from '@/components/sections/logo-showcase-section'
+import { stackData } from '@/data/stack'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
-export default function ContactPage() {
+export default function StackPage() {
   const router = useRouter()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
@@ -46,19 +44,13 @@ export default function ContactPage() {
 
   return (
     <main className="py-32">
-      <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
-        <ContactSection
-          header="Contact Me"
-          title="Get In Touch!"
-          content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
-          leftColumnTags={{
-            title: "Let's talk about:",
-            values: ['Your Website', 'Your Project', 'Your Program'],
-          }}
-          rightColumnTags={{
-            values: ['Your Users', 'Your Brand', 'Your Opportunity'],
-          }}
-        />
+      <div
+        className="flex flex-col gap-48 pb-80"
+        ref={(ref: any) => (refs.current[0] = ref)}
+      >
+        {stackData.map((data, index) => (
+          <LogoShowcaseSection {...data} key={index} />
+        ))}
       </div>
       <div className="pt-40" ref={(ref: any) => (refs.current[1] = ref)}>
         <Footer

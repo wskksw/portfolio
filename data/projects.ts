@@ -1,3 +1,5 @@
+import { Logo } from './stack'
+
 type ImageGridSection = {
   title: string
   type: 'image-grid'
@@ -489,6 +491,12 @@ export const miscProjects = [
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
     onClick: () => {},
     field: 'Software Development',
+    logos: [
+      { techStackIcon: 'html5' },
+      { techStackIcon: 'css3' },
+      { techStackIcon: 'js' },
+      { techStackIcon: 'typescript' },
+    ],
   },
   {
     src: '/images/sample4.avif',
@@ -498,6 +506,12 @@ export const miscProjects = [
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
     onClick: () => {},
     field: 'Software Engineering',
+    logos: [
+      { techStackIcon: 'html5' },
+      { techStackIcon: 'css3' },
+      { techStackIcon: 'js' },
+      { techStackIcon: 'typescript' },
+    ],
   },
   {
     src: '/images/sample4.avif',
@@ -507,6 +521,12 @@ export const miscProjects = [
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
     onClick: () => {},
     field: 'Software Development',
+    logos: [
+      { techStackIcon: 'html5' },
+      { techStackIcon: 'css3' },
+      { techStackIcon: 'js' },
+      { techStackIcon: 'typescript' },
+    ],
   },
   {
     src: '/images/sample4.avif',
@@ -516,6 +536,12 @@ export const miscProjects = [
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
     onClick: () => {},
     field: 'Software Development',
+    logos: [
+      { techStackIcon: 'html5' },
+      { techStackIcon: 'css3' },
+      { techStackIcon: 'js' },
+      { techStackIcon: 'typescript' },
+    ],
   },
   {
     src: '/images/sample4.avif',
@@ -525,5 +551,11 @@ export const miscProjects = [
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
     onClick: () => {},
     field: 'Software Engineering',
+    logos: [
+      { techStackIcon: 'html5' },
+      { techStackIcon: 'css3' },
+      { techStackIcon: 'js' },
+      { techStackIcon: 'typescript' },
+    ],
   },
 ]

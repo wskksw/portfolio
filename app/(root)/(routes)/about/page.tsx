@@ -13,7 +13,7 @@ import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
-export default function ProjectsPage() {
+export default function AboutPage() {
   const router = useRouter()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])

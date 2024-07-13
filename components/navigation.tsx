@@ -122,7 +122,7 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     },
     {
       title: 'Tech Stack',
-      href: '/techStack',
+      href: '/stack',
       imageSrc: '/images/color1.avif',
     },
   ]

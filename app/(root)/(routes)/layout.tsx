@@ -59,38 +59,38 @@ export default function MainLayout({
               custom={2}
               animate={gridOpen ? 'visible' : 'hidden'}
               variants={upVariants}
-              className="border-outline absolute left-0 top-0 h-full translate-x-[-50%] border-x"
+              className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
             />
             <motion.div
               custom={2}
               animate={gridOpen ? 'visible' : 'hidden'}
               variants={downVariants}
-              className="border-outline absolute right-0 top-0 h-full translate-x-[-50%] border-x"
+              className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
             />
             <div className="relative flex-1">
               <motion.div
                 custom={0}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={downVariants}
-                className="border-outline absolute left-0 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={1}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={upVariants}
-                className="border-outline absolute left-1/3 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-1/3 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={1}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={upVariants}
-                className="border-outline absolute left-2/3 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-2/3 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={0}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={downVariants}
-                className="border-outline absolute right-0 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
             </div>
             <div className="relative flex-1">
@@ -98,25 +98,25 @@ export default function MainLayout({
                 custom={0}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={upVariants}
-                className="border-outline absolute left-0 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={1}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={downVariants}
-                className="border-outline absolute left-1/3 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-1/3 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={1}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={downVariants}
-                className="border-outline absolute left-2/3 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute left-2/3 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
               <motion.div
                 custom={0}
                 animate={gridOpen ? 'visible' : 'hidden'}
                 variants={upVariants}
-                className="border-outline absolute right-0 top-0 h-full translate-x-[-50%] border-x"
+                className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
               />
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function MainLayout({
             <div className="relative aspect-square h-8 cursor-pointer">
               <Image
                 fill
-                src={'/images/git-hub.png'}
+                src={'/logos/git-hub.png'}
                 alt="GitHub Icon"
                 className="object-cover object-center"
               />
@@ -148,7 +148,7 @@ export default function MainLayout({
             <div className="relative aspect-square h-8 cursor-pointer">
               <Image
                 fill
-                src={'/images/linked-In.png'}
+                src={'/logos/linked-in.png'}
                 alt="LinkedIn Icon"
                 className="object-cover object-center"
               />

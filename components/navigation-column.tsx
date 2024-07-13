@@ -4,7 +4,8 @@ export type Column = {
   title: string
   values: {
     title: string
-    onClick: () => void
+    onClick?: () => void
+    wrapper?: (children: React.ReactNode) => React.ReactNode
   }[]
 }
 
@@ -20,11 +21,20 @@ export default function NavigationColumn({ column }: NavigationColumnProps) {
       </p>
       <ul className="mt-2 flex flex-col gap-2 text-[1.5rem] text-muted-foreground">
         {column.values.map((value, index) => (
-          <li key={index} onClick={() => value.onClick()}>
-            <UnderlinedText
-              text={value.title}
-              className="mt-0 text-4xl font-extrabold text-primary before:-bottom-[6px] before:h-[6px]"
-            />
+          <li key={index} onClick={() => value.onClick?.()}>
+            {value.wrapper ? (
+              value.wrapper(
+                <UnderlinedText
+                  text={value.title}
+                  className="mt-0 text-4xl font-extrabold text-primary before:-bottom-[6px] before:h-[6px]"
+                />,
+              )
+            ) : (
+              <UnderlinedText
+                text={value.title}
+                className="mt-0 text-4xl font-extrabold text-primary before:-bottom-[6px] before:h-[6px]"
+              />
+            )}
           </li>
         ))}
       </ul>

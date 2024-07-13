@@ -69,7 +69,7 @@ export default function ProjectsPage() {
                   onClick={() => router.push(`/projects/${index}`)}
                 />
               </div>
-              <p className="mb-4 mt-2 text-[1.5em] font-bold">
+              <p className="mb-4 mt-2 text-[1.5rem] font-bold">
                 {project.field}
               </p>
             </div>

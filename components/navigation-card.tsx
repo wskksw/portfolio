@@ -19,7 +19,7 @@ export default function NavigationCard({
   return (
     <Link href={href} draggable={false} onClick={onClick}>
       <div className="unselectable">
-        <p className="text-[1.5em] font-bold text-background">{title}</p>
+        <p className="text-[1.5rem] font-bold text-background">{title}</p>
         <div className="relative h-[240px] w-[360px] overflow-hidden">
           <div
             className="track-card relative h-[240px] w-[720px]"

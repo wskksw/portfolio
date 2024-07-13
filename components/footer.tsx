@@ -34,7 +34,12 @@ export default function Footer({ subTitle, action }: FooterProps) {
               title: 'Contact Info',
               values: [
                 { title: '+1 604 341 4590', onClick: () => {} },
-                { title: 'ramosjasonwork@gmail.com', onClick: () => {} },
+                {
+                  title: 'ramosjasonwork@gmail.com',
+                  wrapper: (children) => (
+                    <a href="mailto:ramosjasonwork@gmail.com">{children}</a>
+                  ),
+                },
               ],
             }}
           />

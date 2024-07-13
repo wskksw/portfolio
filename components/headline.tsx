@@ -10,7 +10,7 @@ export default function Headline({ header, title, tags }: HeadlineProps) {
       <h4 className="text-lg font-normal tracking-[0.3em] text-muted-foreground">
         {header.toUpperCase()}
       </h4>
-      <h2 className="mb-1 mt-2 text-[1.5em] font-extrabold leading-8">
+      <h2 className="mb-1 mt-2 text-[1.5rem] font-extrabold leading-8">
         {title}
       </h2>
       <div className="flex flex-wrap items-center gap-4 font-normal text-muted-foreground">

@@ -85,7 +85,7 @@ export default function ArrowButton({
         className,
       )}
       onMouseEnter={() => startAnimation()}
-      onClick={onClick}
+      onClick={() => onClick?.()}
     >
       {title}
       <div className="relative overflow-hidden">

@@ -12,10 +12,12 @@ import {
 import VerticalCarousel from '../vertical-carousel'
 import { miscProjects } from '@/data/projects'
 import FadeInWrapper from '../fade-in-wrapper'
+import { useTransition } from '@/providers/use-transition'
 
 interface GallerySectionProps {}
 
 export default function GallerySection({}: GallerySectionProps) {
+  const { transitionPage } = useTransition()
   const carouselRef = useRef<HTMLDivElement | null>(null)
   const targetRef = useRef<HTMLDivElement | null>(null)
   const { scrollYProgress } = useScroll({

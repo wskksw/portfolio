@@ -29,14 +29,14 @@ export default function StackPage() {
 
     // Form
     data.push({
-      title: 'Email Me!',
-      action: 'Email Me!',
+      title: "Here's what I use",
+      action: "Here's what I use",
     })
 
     // Footer
     data.push({
-      title: "Here's some options!",
-      action: "Here's some options!",
+      title: 'I can show you!',
+      action: 'I can show you!',
     })
 
     setSidebars(data)
@@ -54,9 +54,9 @@ export default function StackPage() {
       </div>
       <div className="pt-40" ref={(ref: any) => (refs.current[1] = ref)}>
         <Footer
-          subTitle="Email doesn't work?"
+          subTitle="How do I use these?"
           action={{
-            title: 'Try These!',
+            title: 'View Projects!',
           }}
         />
       </div>

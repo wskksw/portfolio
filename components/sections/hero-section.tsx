@@ -5,6 +5,7 @@ import ArrowButton from '../arrow-button'
 import { motion } from 'framer-motion'
 import FadeInWrapper from '../fade-in-wrapper'
 import InnerParallaxImage from '../inner-parallax-image'
+import { useTransition } from '@/providers/use-transition'
 
 interface HeroSectionProps {
   header: string
@@ -19,6 +20,8 @@ export default function HeroSection({
   content,
   src,
 }: HeroSectionProps) {
+  const { transitionPage } = useTransition()
+
   return (
     <section className="flex gap-5">
       <div className="flex w-full flex-1 items-end">
@@ -42,6 +45,7 @@ export default function HeroSection({
                 title="Projects"
                 arrowColor="#FFF"
                 className="w-full"
+                onClick={() => transitionPage('/projects')}
               />
             </FadeInWrapper>
             <FadeInWrapper delay={0.05} className="flex-1">
@@ -49,6 +53,7 @@ export default function HeroSection({
                 title="Contact"
                 arrowColor="#FFF"
                 className="w-full"
+                onClick={() => transitionPage('/contact')}
               />
             </FadeInWrapper>
           </div>

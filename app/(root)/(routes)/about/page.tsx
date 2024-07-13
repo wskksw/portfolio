@@ -9,12 +9,13 @@ import TextSection from '@/components/sections/text-section'
 import { selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
+import { useTransition } from '@/providers/use-transition'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
 export default function AboutPage() {
-  const router = useRouter()
+  const { transitionPage } = useTransition()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
   const { scrollY } = useScroll()
@@ -175,10 +176,10 @@ export default function AboutPage() {
       </div>
       <div className="pt-40" ref={(ref: any) => (refs.current[3] = ref)}>
         <Footer
-          subTitle="Want to discuss?"
+          subTitle="Want to see my work?"
           action={{
-            title: 'Contact Me!',
-            onClick: () => {},
+            title: 'View Projects!',
+            onClick: () => transitionPage('/projects'),
           }}
         />
       </div>

@@ -66,7 +66,6 @@ export default function HomePage() {
 
   return (
     <main className="py-32">
-      
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <HeroSection
           header="Jason Ramos"
@@ -91,7 +90,7 @@ export default function HomePage() {
           subTitle="Have an idea?"
           action={{
             title: "Let's talk!",
-            onClick: () => {},
+            onClick: () => transitionPage('/contact'),
           }}
         />
       </div>

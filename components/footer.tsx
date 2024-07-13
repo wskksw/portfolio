@@ -1,6 +1,10 @@
+import { useTransition } from '@/providers/use-transition'
 import FadeInWrapper from './fade-in-wrapper'
 import NavigationColumn from './navigation-column'
 import UnderlinedText from './underlined-text'
+import { useRouter } from 'next/navigation'
+import { behanceLink, githubLink, linkedinLink } from '@/data/links'
+import Link from 'next/link'
 
 interface FooterProps {
   subTitle: string
@@ -11,6 +15,9 @@ interface FooterProps {
 }
 
 export default function Footer({ subTitle, action }: FooterProps) {
+  const { transitionPage } = useTransition()
+  const router = useRouter()
+
   return (
     <section className="w-full pb-[12vh]">
       <div className="flex w-full flex-col items-center justify-center">
@@ -38,7 +45,12 @@ export default function Footer({ subTitle, action }: FooterProps) {
             column={{
               title: 'Contact Info',
               values: [
-                { title: '+1 604 341 4590', onClick: () => {} },
+                {
+                  title: '+1 604 341 4590',
+                  wrapper: (children) => (
+                    <a href="tel:+16043414590">{children}</a>
+                  ),
+                },
                 {
                   title: 'ramosjasonwork@gmail.com',
                   wrapper: (children) => (
@@ -51,7 +63,14 @@ export default function Footer({ subTitle, action }: FooterProps) {
           <NavigationColumn
             column={{
               title: 'Downloads',
-              values: [{ title: 'Curriculum Vitae', onClick: () => {} }],
+              values: [
+                {
+                  title: 'Curriculum Vitae',
+                  wrapper: (children) => (
+                    <a href="/resumes/resume-2024.pdf">{children}</a>
+                  ),
+                },
+              ],
             }}
           />
         </div>
@@ -61,10 +80,34 @@ export default function Footer({ subTitle, action }: FooterProps) {
               column={{
                 title: 'Socials',
                 values: [
-                  { title: 'GitHub', onClick: () => {} },
-                  { title: 'LinkedIn', onClick: () => {} },
-                  { title: 'Behance', onClick: () => {} },
-                  { title: 'Ask A Question', onClick: () => {} },
+                  {
+                    title: 'GitHub',
+                    wrapper: (children) => (
+                      <Link href={githubLink} target="_blank">
+                        {children}
+                      </Link>
+                    ),
+                  },
+                  {
+                    title: 'LinkedIn',
+                    wrapper: (children) => (
+                      <Link href={linkedinLink} target="_blank">
+                        {children}
+                      </Link>
+                    ),
+                  },
+                  {
+                    title: 'Behance',
+                    wrapper: (children) => (
+                      <Link href={behanceLink} target="_blank">
+                        {children}
+                      </Link>
+                    ),
+                  },
+                  {
+                    title: 'Ask A Question',
+                    onClick: () => transitionPage('/contact'),
+                  },
                 ],
               }}
             />
@@ -74,10 +117,19 @@ export default function Footer({ subTitle, action }: FooterProps) {
               column={{
                 title: 'Navigation',
                 values: [
-                  { title: 'Home', onClick: () => {} },
-                  { title: 'Porfolio', onClick: () => {} },
-                  { title: 'About Me', onClick: () => {} },
-                  { title: 'Tech Stack', onClick: () => {} },
+                  { title: 'Home', onClick: () => transitionPage('/') },
+                  {
+                    title: 'Porfolio',
+                    onClick: () => transitionPage('/projects'),
+                  },
+                  {
+                    title: 'About Me',
+                    onClick: () => transitionPage('/about'),
+                  },
+                  {
+                    title: 'Tech Stack',
+                    onClick: () => transitionPage('/stack'),
+                  },
                 ],
               }}
             />

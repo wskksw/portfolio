@@ -514,7 +514,6 @@ export const miscProjects = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    onClick: () => {},
     field: 'Software Development',
     logos: [
       { techStackIcon: 'html5' },
@@ -529,7 +528,6 @@ export const miscProjects = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    onClick: () => {},
     field: 'Software Engineering',
     logos: [
       { techStackIcon: 'html5' },
@@ -544,7 +542,6 @@ export const miscProjects = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    onClick: () => {},
     field: 'Software Development',
     logos: [
       { techStackIcon: 'html5' },
@@ -559,7 +556,6 @@ export const miscProjects = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    onClick: () => {},
     field: 'Software Development',
     logos: [
       { techStackIcon: 'html5' },
@@ -574,7 +570,6 @@ export const miscProjects = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    onClick: () => {},
     field: 'Software Engineering',
     logos: [
       { techStackIcon: 'html5' },

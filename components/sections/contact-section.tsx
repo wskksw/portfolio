@@ -54,7 +54,6 @@ export default function ContactSection({
                 title={'Direct Email'}
                 className="flex gap-5"
                 arrowColor="#FFF"
-                onClick={() => {}}
               />
             </a>
           </FadeInWrapper>

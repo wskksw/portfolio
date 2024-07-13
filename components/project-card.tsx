@@ -58,7 +58,10 @@ export default function ProjectCard({
   return (
     <div
       ref={cardRef}
-      className="relative h-full w-full cursor-pointer overflow-hidden"
+      className={cn(
+        'relative h-full w-full overflow-hidden',
+        onClick && 'cursor-pointer',
+      )}
       onMouseEnter={() => {
         setHovered(true)
         onHover?.()
@@ -137,18 +140,23 @@ export default function ProjectCard({
             </p>
           </div>
           <div className="p-5">
-            <div className="flex flex-wrap gap-5 pl-5">
+            <div
+              className={cn('flex flex-wrap gap-5 pl-5', !onClick && 'pb-5')}
+            >
               {logos.map((logo, index) => (
                 <div key={index} className="aspect-square w-10">
                   <LogoIcon logo={logo} />
                 </div>
               ))}
             </div>
-            <ArrowButton
-              title="View Project"
-              className="pt gap-10 !bg-transparent px-5 py-3 font-bold"
-              arrowColor="#fff"
-            />
+            {onClick && (
+              <ArrowButton
+                title="View Project"
+                className="pt gap-10 !bg-transparent px-5 py-3 font-bold"
+                arrowColor="#fff"
+                onClick={onClick}
+              />
+            )}
           </div>
         </motion.div>
       </div>

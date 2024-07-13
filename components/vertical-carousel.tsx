@@ -1,12 +1,12 @@
 import { act, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '@/lib/utils'
+import { cn, smoothEase } from '@/lib/utils'
 
 type Alignment = 'horizontal' | 'vertical'
 
 const sliderTransition = {
   duration: 0.3,
-  ease: [0.56, 0.03, 0.12, 1.04],
+  ease: smoothEase,
 }
 
 interface VerticalCarouselProps {

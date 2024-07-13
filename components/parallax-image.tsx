@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { cn, smoothEase } from '@/lib/utils'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
@@ -74,7 +74,7 @@ export default function ParallaxImage({
           }}
           transition={{
             duration: 0.5,
-            ease: [0.56, 0.03, 0.12, 1.04],
+            ease: smoothEase,
           }}
         />
         <motion.div

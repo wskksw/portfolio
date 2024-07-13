@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { motion, motionValue } from 'framer-motion'
 import ArrowButton from './arrow-button'
-import { cn } from '@/lib/utils'
+import { cn, smoothEase } from '@/lib/utils'
 import { Logo } from '@/data/stack'
 import LogoIcon from './icons/logo'
 
@@ -36,7 +36,7 @@ export default function ProjectCard({
 
   const transition = {
     duration: 0.3,
-    ease: [0.56, 0.03, 0.12, 1.04],
+    ease: smoothEase,
   }
 
   const handleMouseMove = (e: any) => {

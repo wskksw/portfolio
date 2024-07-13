@@ -1,5 +1,6 @@
 'use client'
 
+import { useTransition } from '@/providers/use-transition'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -16,8 +17,16 @@ export default function NavigationCard({
   imageSrc,
   onClick,
 }: NavigationCardProps) {
+  const { transitionPage } = useTransition()
+
   return (
-    <Link href={href} draggable={false} onClick={onClick}>
+    <div
+      draggable={false}
+      onClick={() => {
+        transitionPage(href)
+        onClick?.()
+      }}
+    >
       <div className="unselectable">
         <p className="text-[1.5rem] font-bold text-background">{title}</p>
         <div className="relative h-[240px] w-[360px] overflow-hidden">
@@ -38,6 +47,6 @@ export default function NavigationCard({
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }

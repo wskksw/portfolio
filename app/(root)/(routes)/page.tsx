@@ -8,12 +8,11 @@ import { selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useTransition } from '@/providers/use-transition'
 
 export default function HomePage() {
-  const router = useRouter()
+  const { transitionPage } = useTransition()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
   const { scrollY } = useScroll()
@@ -61,12 +60,13 @@ export default function HomePage() {
     header: `Project ${(index + 1).toString().padStart(2, '0')} - ${project.year}`,
     actions: project.actions.map((action) => ({
       ...action,
-      onClick: () => router.push(action.link),
+      onClick: () => transitionPage(action.link),
     })),
   }))
 
   return (
     <main className="py-32">
+      
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <HeroSection
           header="Jason Ramos"

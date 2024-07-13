@@ -16,7 +16,7 @@ export default function SidebarsOverlay() {
   ))
 
   return (
-    <div className="pointer-events-none sticky left-0 top-0 z-50 h-0 w-full overflow-visible">
+    <div className="pointer-events-none sticky left-0 top-0 z-30 h-0 w-full overflow-visible">
       <div
         className="sticky h-screen w-full whitespace-nowrap font-extrabold leading-4"
         style={{

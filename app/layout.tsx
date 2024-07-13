@@ -3,6 +3,7 @@ import './globals.css'
 import { HelveticaNowDisplay } from '@/fonts/fonts'
 import { SidebarProvider } from '@/providers/use-sidebars'
 import { Toaster } from '@/components/ui/toaster'
+import { TransitionProvider } from '@/providers/use-transition'
 
 export const metadata: Metadata = {
   title: 'Jason Ramos',
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="hide-scrollbar">
       <body className={HelveticaNowDisplay.className}>
-        <SidebarProvider>{children}</SidebarProvider>
+        <SidebarProvider>
+          <TransitionProvider>{children}</TransitionProvider>
+        </SidebarProvider>
         <Toaster />
       </body>
     </html>

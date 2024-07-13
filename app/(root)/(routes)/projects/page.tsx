@@ -11,9 +11,10 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Circle } from 'lucide-react'
 import FadeInWrapper from '@/components/fade-in-wrapper'
+import { useTransition } from '@/providers/use-transition'
 
 export default function ProjectsPage() {
-  const router = useRouter()
+  const { transitionPage } = useTransition()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
   const { scrollY } = useScroll()
@@ -47,7 +48,7 @@ export default function ProjectsPage() {
   const handleSelectRandomProject = () => {
     const index = Math.floor(Math.random() * selectedProjects.length)
 
-    router.push(`/projects/${index}`)
+    transitionPage(`/projects/${index}`)
   }
 
   return (
@@ -71,7 +72,7 @@ export default function ProjectsPage() {
                   title={project.title}
                   description={project.description}
                   variant="lg"
-                  onClick={() => router.push(`/projects/${index}`)}
+                  onClick={() => transitionPage(`/projects/${index}`)}
                   logos={project.logos}
                 />
               </div>

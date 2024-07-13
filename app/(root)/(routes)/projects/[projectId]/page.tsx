@@ -6,13 +6,14 @@ import TextSection from '@/components/sections/text-section'
 import { selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
+import { useTransition } from '@/providers/use-transition'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
 export default function ProjectPage() {
   const params = useParams()
-  const router = useRouter()
+  const { transitionPage } = useTransition()
   const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
   const { scrollY } = useScroll()
@@ -81,7 +82,7 @@ export default function ProjectPage() {
           subTitle="Want to see more?"
           action={{
             title: 'Next Project!',
-            onClick: () => router.push(`/projects/${index + 1}`),
+            onClick: () => transitionPage(`/projects/${index + 1}`),
           }}
         />
       </div>

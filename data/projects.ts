@@ -1,9 +1,14 @@
 import { Logo } from './stack'
 
-type ImageGridSection = {
+export type Media = {
+  type: 'image' | 'video'
+  src: string
+}
+
+type MediaGridSection = {
   title: string
   type: 'image-grid'
-  srcs: string[]
+  media: Media[]
 }
 
 type TextSection = {
@@ -15,11 +20,17 @@ type TextSection = {
   }[]
 }
 
-type SelectedProject = {
+export type Project = {
   year: string
   title: string
   description: string
-  srcs: string[]
+  images: string[]
+  field: string
+  sections: (TextSection | MediaGridSection)[]
+  logos: Logo[]
+}
+
+export interface SelectedProject extends Project {
   leftColumnTags: {
     title: string
     values: string[]
@@ -32,9 +43,6 @@ type SelectedProject = {
     title: string
     link: string
   }[]
-  field: string
-  sections: (TextSection | ImageGridSection)[]
-  logos: Logo[]
 }
 
 export const selectedProjects: SelectedProject[] = [
@@ -43,7 +51,7 @@ export const selectedProjects: SelectedProject[] = [
     title: 'Omica',
     description:
       'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-    srcs: [
+    images: [
       '/images/sample1.avif',
       '/images/sample2.avif',
       '/images/sample3.avif',
@@ -75,158 +83,19 @@ export const selectedProjects: SelectedProject[] = [
       {
         title: 'Overview',
         type: 'image-grid',
-        srcs: ['/images/sample1.avif'],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
+        media: [
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample1.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample2.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample3.avif',
           },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
-        ],
-      },
-    ],
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    year: '2019',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-    srcs: [
-      '/images/sample1.avif',
-      '/images/sample2.avif',
-      '/images/sample3.avif',
-    ],
-    leftColumnTags: {
-      title: 'Front-End',
-      values: ['React', 'TypeScript', 'Tailwind CSS'],
-    },
-    rightColumnTags: {
-      title: 'Back-End',
-      values: ['Node.js', 'Express', 'MongoDB'],
-    },
-    actions: [
-      {
-        title: 'GitHub',
-        link: '',
-      },
-      {
-        title: 'Visit Demo',
-        link: '',
-      },
-      {
-        title: 'Project Details',
-        link: '',
-      },
-    ],
-    field: 'Software Development',
-    sections: [
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: ['/images/sample1.avif'],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
         ],
       },
       {
@@ -258,92 +127,19 @@ export const selectedProjects: SelectedProject[] = [
       {
         title: 'Overview',
         type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
-        ],
-      },
-    ],
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    year: '2019',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-    srcs: [
-      '/images/sample1.avif',
-      '/images/sample2.avif',
-      '/images/sample3.avif',
-    ],
-    leftColumnTags: {
-      title: 'Front-End',
-      values: ['React', 'TypeScript', 'Tailwind CSS'],
-    },
-    rightColumnTags: {
-      title: 'Back-End',
-      values: ['Node.js', 'Express', 'MongoDB'],
-    },
-    actions: [
-      {
-        title: 'GitHub',
-        link: '',
-      },
-      {
-        title: 'Visit Demo',
-        link: '',
-      },
-      {
-        title: 'Project Details',
-        link: '',
-      },
-    ],
-    field: 'Software Development',
-    sections: [
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: ['/images/sample1.avif'],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
+        media: [
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample1.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample2.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample3.avif',
           },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
         ],
       },
       {
@@ -375,127 +171,19 @@ export const selectedProjects: SelectedProject[] = [
       {
         title: 'Overview',
         type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
-        ],
-      },
-    ],
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    year: '2019',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-    srcs: [
-      '/images/sample1.avif',
-      '/images/sample2.avif',
-      '/images/sample3.avif',
-    ],
-    leftColumnTags: {
-      title: 'Front-End',
-      values: ['React', 'TypeScript', 'Tailwind CSS'],
-    },
-    rightColumnTags: {
-      title: 'Back-End',
-      values: ['Node.js', 'Express', 'MongoDB'],
-    },
-    actions: [
-      {
-        title: 'GitHub',
-        link: '',
-      },
-      {
-        title: 'Visit Demo',
-        link: '',
-      },
-      {
-        title: 'Project Details',
-        link: '',
-      },
-    ],
-    field: 'Software Development',
-    sections: [
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: ['/images/sample1.avif'],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
+        media: [
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample1.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample2.avif',
           },
           {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
+            type: 'image',
+            src: '/images/sample3.avif',
           },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'text',
-        content: [
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-          {
-            title: 'Project & Client Background',
-            description:
-              'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo.',
-          },
-        ],
-      },
-      {
-        title: 'Overview',
-        type: 'image-grid',
-        srcs: [
-          '/images/sample1.avif',
-          '/images/sample2.avif',
-          '/images/sample3.avif',
         ],
       },
     ],
@@ -507,13 +195,14 @@ export const selectedProjects: SelectedProject[] = [
     ],
   },
 ]
-export const miscProjects = [
+
+export const miscProjects: Project[] = [
   {
-    src: '/images/sample4.avif',
+    images: ['/mech/preview.png'],
     year: '2020',
-    title: 'Omica',
+    title: 'Mech',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
+      'Inspired by Iron Man, this high-poly mech suit, sculpted in Blender, is a testament to my passion for 3D modeling.',
     field: 'Software Development',
     logos: [
       { techStackIcon: 'html5' },
@@ -521,61 +210,33 @@ export const miscProjects = [
       { techStackIcon: 'js' },
       { techStackIcon: 'typescript' },
     ],
-  },
-  {
-    src: '/images/sample4.avif',
-    year: '2020',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    field: 'Software Engineering',
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    src: '/images/sample4.avif',
-    year: '2020',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    field: 'Software Development',
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    src: '/images/sample4.avif',
-    year: '2020',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    field: 'Software Development',
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
-    ],
-  },
-  {
-    src: '/images/sample4.avif',
-    year: '2020',
-    title: 'Omica',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non.',
-    field: 'Software Engineering',
-    logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Mech',
+        media: [{ type: 'video', src: '/mech/orbit.mp4' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'A lifelong fascination with mech suits, fueled by a healthy dose of Iron Man fandom, led me to push my 3D modeling skills beyond the realm of low-poly projects. This high-detail mech design represents my desire to create increasingly complex and visually stunning models.',
+          },
+          {
+            title: 'Learned Skills',
+            description:
+              'This project proved to be a turning point in my sculpting journey. It significantly deepened my understanding of anatomy and form, allowing me to achieve a level of detail and proportion far exceeding my previous work. The improved brush techniques I honed during this process are now a valuable asset in my sculpting toolbox.',
+          },
+          {
+            title: 'Future Plans',
+            description:
+              "While the raw sculpt is a strong foundation, I'm eager to dive deeper into texturing and hard surface modeling to truly refine it. The future holds plans to bring this mech to life with animation and a captivating scene – stay tuned!",
+          },
+        ],
+      },
     ],
   },
 ]

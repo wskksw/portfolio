@@ -5,32 +5,18 @@ import ArrowButton from '../arrow-button'
 import FadeInWrapper from '../fade-in-wrapper'
 import ParallaxImage from '../parallax-image'
 import TagColumn from '../tag-column'
-import { motion } from 'framer-motion'
+import { SelectedProject } from '@/data/projects'
 
-interface ProjectSectionProps {
-  header: string
-  title: string
-  description: string
-  srcs: string[]
-  leftColumnTags: {
-    title: string
-    values: string[]
-  }
-  rightColumnTags: {
-    title: string
-    values: string[]
-  }
-  actions: {
-    title: string
-    onClick: () => void
-  }[]
+interface ProjectSectionProps extends SelectedProject {
+  prefix: string
 }
 
 export default function ProjectSection({
-  header,
+  prefix,
+  year,
   title,
   description,
-  srcs,
+  images,
   leftColumnTags,
   rightColumnTags,
   actions,
@@ -42,7 +28,7 @@ export default function ProjectSection({
           <div>
             <FadeInWrapper>
               <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-                {header.toUpperCase()}
+                {`${prefix} - ${year}`.toUpperCase()}
               </h4>
             </FadeInWrapper>
             <FadeInWrapper>
@@ -55,12 +41,16 @@ export default function ProjectSection({
             </FadeInWrapper>
           </div>
           <div className="mt-8 flex w-full gap-5">
-            <div className="flex-1">
-              <TagColumn column={leftColumnTags} />
-            </div>
-            <div className="flex-1">
-              <TagColumn column={rightColumnTags} />
-            </div>
+            {leftColumnTags && (
+              <div className="flex-1">
+                <TagColumn column={leftColumnTags} />
+              </div>
+            )}
+            {rightColumnTags && (
+              <div className="flex-1">
+                <TagColumn column={rightColumnTags} />
+              </div>
+            )}
           </div>
           <div className="mt-8 border-border">
             {actions.map((action, index) => (
@@ -81,21 +71,21 @@ export default function ProjectSection({
       <div className="relative aspect-[8/11] w-full flex-1">
         <div className="absolute right-0 top-0 w-2/3 drop-shadow-lg">
           <ParallaxImage
-            src={srcs[0]}
+            src={images[0]}
             displacement={600}
             className="aspect-square"
           />
         </div>
         <div className="absolute left-0 top-1/2 z-[-10] w-2/3 translate-y-[-50%] drop-shadow-lg">
           <ParallaxImage
-            src={srcs[1]}
+            src={images[1]}
             displacement={300}
             className="aspect-[3/5]"
           />
         </div>
         <div className="absolute bottom-0 right-0 w-2/3 drop-shadow-lg">
           <ParallaxImage
-            src={srcs[2]}
+            src={images[2]}
             displacement={200}
             className="aspect-[4/3]"
           />

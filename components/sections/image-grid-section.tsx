@@ -3,20 +3,22 @@
 import Image from 'next/image'
 import FadeInWrapper from '../fade-in-wrapper'
 import InnerParallaxImage from '../inner-parallax-image'
+import { Media } from '@/data/projects'
+import Video from '../video'
 
-export interface ImageGridSectionProps {
+export interface MediaGridSectionProps {
   header: string
   title: string
-  srcs: string[]
+  media: Media[]
   className?: string
 }
 
-export default function ImageGridSection({
+export default function MediaGridSection({
   header,
   title,
-  srcs,
+  media,
   className,
-}: ImageGridSectionProps) {
+}: MediaGridSectionProps) {
   return (
     <section className={className}>
       <FadeInWrapper>
@@ -28,13 +30,16 @@ export default function ImageGridSection({
         <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
       </FadeInWrapper>
       <div className="mt-16 flex flex-wrap-reverse gap-5">
-        {srcs.map((src, index) => (
+        {media.map((data, index) => (
           <FadeInWrapper
             key={index}
             className="relative aspect-[4/3] min-w-[600px] flex-1"
             delay={index * 0.05}
           >
-            <InnerParallaxImage src={src} alt="Grid Image" />
+            {data.type === 'image' && (
+              <InnerParallaxImage src={data.src} alt="Grid Image" />
+            )}
+            {data.type === 'video' && <Video src={data.src} />}
           </FadeInWrapper>
         ))}
       </div>

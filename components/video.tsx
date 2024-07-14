@@ -1,0 +1,23 @@
+import { cn } from '@/lib/utils'
+import { useRef } from 'react'
+
+interface VideoProps {
+  src: string
+  className?: string
+}
+
+export default function Video({ src, className }: VideoProps) {
+  return (
+    <video
+      width="100%"
+      height="100%"
+      className={cn('object-cover object-center', className)}
+      autoPlay
+      loop
+      muted
+    >
+      <source src={'/mech/orbit.mp4'} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  )
+}

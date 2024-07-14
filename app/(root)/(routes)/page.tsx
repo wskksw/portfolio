@@ -57,7 +57,7 @@ export default function HomePage() {
 
   const projects = selectedProjects.map((project, index) => ({
     ...project,
-    header: `Project ${(index + 1).toString().padStart(2, '0')} - ${project.year}`,
+    prefix: `Project ${(index + 1).toString().padStart(2, '0')}`,
     actions: project.actions.map((action) => ({
       ...action,
       onClick: () => transitionPage(action.link),

@@ -6,10 +6,7 @@ import { selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import { Circle } from 'lucide-react'
 import FadeInWrapper from '@/components/fade-in-wrapper'
 import { useTransition } from '@/providers/use-transition'
 
@@ -67,7 +64,7 @@ export default function ProjectsPage() {
             <FadeInWrapper key={index} className="w-full" delay={index * 0.05}>
               <div className="aspect-square w-full">
                 <ProjectCard
-                  src={project.srcs[0]}
+                  src={project.images[0]}
                   year={project.year}
                   title={project.title}
                   description={project.description}

@@ -10,7 +10,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import VerticalCarousel from '../vertical-carousel'
-import { miscProjects } from '@/data/projects'
+import { miscProjects, selectedProjects } from '@/data/projects'
 import FadeInWrapper from '../fade-in-wrapper'
 import { useTransition } from '@/providers/use-transition'
 
@@ -36,8 +36,6 @@ export default function GallerySection({}: GallerySectionProps) {
     }
   }
 
-  const projects = miscProjects
-
   const x = useMotionValue(0)
   const xOffset = useMotionValue('0%')
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
@@ -60,6 +58,13 @@ export default function GallerySection({}: GallerySectionProps) {
       return () => window?.removeEventListener('resize', changeSectionWidth)
     }
   }, [targetRef, carouselRef])
+
+  const projects = miscProjects.map((project, index) => ({
+    ...project,
+    src: project.images[0],
+    onClick: () =>
+      transitionPage(`/projects/${selectedProjects.length + index}`),
+  }))
 
   return (
     <section ref={targetRef} className="relative h-[200vh]">

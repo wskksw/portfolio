@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import FadeInWrapper from '../fade-in-wrapper'
+import Markdown from '../markdown'
 
 interface TextSectionProps {
   header: string
@@ -42,8 +43,8 @@ export default function TextSection({
             <div className="flex-1 text-[1.5rem] font-bold">
               <p className="w-2/3">{item.title}</p>
             </div>
-            <p className="flex-1 text-[1.5rem] text-muted-foreground">
-              {item.description}
+            <p className="flex-1 text-pretty text-[1.5rem] text-muted-foreground">
+              <Markdown content={item.description} />
             </p>
           </FadeInWrapper>
         ))}

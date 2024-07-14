@@ -72,7 +72,7 @@ export default function ProjectCard({
     >
       <div className="absolute left-0 top-0 z-[-10] h-full w-[140%] overflow-hidden">
         <motion.div
-          className="relative h-full w-full overflow-hidden"
+          className="relative h-full w-full overflow-hidden bg-primary"
           animate={{
             scale: hovered ? 1 : 1.05,
           }}
@@ -135,7 +135,7 @@ export default function ProjectCard({
             <h1 className="text-7xl font-extrabold text-background">
               {title.toUpperCase()}
             </h1>
-            <p className="text-justify text-[1.5rem] text-secondary">
+            <p className="text-pretty text-[1.5rem] text-secondary">
               {description}
             </p>
           </div>

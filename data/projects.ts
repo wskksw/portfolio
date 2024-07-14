@@ -72,7 +72,7 @@ export const miscProjects: Project[] = [
               'Coordinating multiple animations on the same components initially presented some hurdles. Page transitions in Next.js 14 added another layer of complexity, as I needed a deeper understanding of component lifecycles to defer unmounting while exit animations played.',
           },
           {
-            title: 'Learning Points',
+            title: 'Learnings',
             description:
               'Through this project, I honed my skills in manipulating the component lifecycle, ensuring smooth transitions between animations across the entire DOM. I also delved into best practices for animation optimization, resulting in a performant and visually captivating user experience.',
           },
@@ -100,9 +100,9 @@ export const miscProjects: Project[] = [
   },
   {
     year: '2023',
-    title: 'Deep Rock',
+    title: 'Cheap Rock',
     description:
-      'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
+      'Inspired by Deep Rock Galactic, this project builds a massive, dynamic world with 10,000+ agents using real-time terrain generation, efficient pathfinding, and natural enemy AI.',
     images: ['/images/portfolio/draft-1.png'],
     field: 'Software Development',
     sections: [
@@ -191,27 +191,96 @@ export const miscProjects: Project[] = [
         ],
       },
     ],
+    logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
+  },
+  {
+    year: '2022',
+    title: 'Flow Fields',
+    description:
+      'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle manipulation and noise functions.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Software Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Flow Fields',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'I kept getting excited over these mesmerizing wallpapers online and even more so when I found out they were procedurally generated! ',
+          },
+          {
+            title: 'Goals',
+            description:
+              'I wanted to create usable HD wallpapers for me and my friends',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'I learned how to convert a simple noise function into a grid of closely related direction vectors, each of which would guide a series of randomly placed particles across the canvas. I learned how to create trails for these particles that together would create a pseudo-random masterpiece.',
+          },
+        ],
+      },
+    ],
+    logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
+  },
+  {
+    year: '2022',
+    title: 'WFC',
+    description:
+      'Fascinated by the seemingly unstructured patterns of Wave Function Collapse, this explores generating them using only rules based on individual tile connections, mimicking the logic behind solving a jigsaw puzzle.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Software Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'WFC',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'I found the resulting images of the [Wave Function Collapse](https://en.wikipedia.org/wiki/Wave_function_collapse) algorithm weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Developing a project utilizing the Wave Function Collapse algorithm solidified my understanding of sorting. Repeatedly sorting cells to identify the optimal candidate for "collapse" cemented this fundamental concept. Additionally, I gained valuable experience in composing well-structured classes, promoting code maintainability and modularity.',
+          },
+        ],
+      },
+    ],
     logos: [
-      logoMap.vercel,
-      logoMap.framer,
-      logoMap.shadcn,
-      logoMap.figma,
-      logoMap.tailwindcss,
-      logoMap.typescript,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
     ],
   },
   {
     images: ['/images/mech/preview.png'],
-    year: '2020',
+    year: '2023',
     title: 'Mech',
     description:
       'Inspired by Iron Man, this high-poly mech suit, sculpted in Blender, is a testament to my passion for 3D modeling.',
-    field: 'Software Development',
+    field: '3D Modeling & Design',
     logos: [
-      { techStackIcon: 'html5' },
-      { techStackIcon: 'css3' },
-      { techStackIcon: 'js' },
-      { techStackIcon: 'typescript' },
+      logoMap.blender,
+      logoMap.figma,
+      logoMap.blender,
+      logoMap.figma,
+      logoMap.blender,
     ],
     sections: [
       {

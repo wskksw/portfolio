@@ -140,20 +140,10 @@ export default function ProjectCard({
               variant === 'lg' && 'p-10 pr-0 pt-4',
             )}
           >
-            <h1
-              className={cn(
-                'text-4xl font-extrabold text-background',
-                variant === 'lg' && 'text-7xl',
-              )}
-            >
+            <h1 className={cn('text-5xl font-extrabold text-background')}>
               {title.toUpperCase()}
             </h1>
-            <p
-              className={cn(
-                'text-pretty text-lg text-secondary',
-                variant === 'lg' && 'text-[1.5rem]',
-              )}
-            >
+            <p className={cn('text-pretty text-lg text-secondary')}>
               {description}
             </p>
           </div>

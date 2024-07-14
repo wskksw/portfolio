@@ -1,10 +1,39 @@
 'use client'
 
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import NavigationCard from './navigation-card'
 import LongArrow from './icons/longArrow'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+
+const animateLoadingBar = (progress: number) => {
+  const trackBar = document.querySelector('.track-bar') as HTMLElement
+
+  if (!trackBar) return
+
+  const trackElement = document.querySelector('.track')
+  if (!trackElement) return
+
+  const trackWidth = trackElement.getBoundingClientRect().width
+  const windowWidth = window.innerWidth
+
+  const widthPercent = (windowWidth / trackWidth) * 100
+
+  trackBar.animate(
+    {
+      width: `${widthPercent}%`,
+      left: `${progress}%`,
+      transform: `translate(-50%, -50%)`,
+    },
+    { duration: 2000, fill: 'forwards' },
+  )
+}
 
 interface NavigationProps {
   open: boolean
@@ -35,7 +64,7 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     const { clientX } = e
 
     animateTrack(clientX, latestClickX)
-    animateLoadingBar()
+    animateLoadingBar(progress)
   }
 
   const animateTrack = (endX: number, startX: number) => {
@@ -72,32 +101,14 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
     setProgress(formattedProgress)
   }
 
-  const animateLoadingBar = () => {
-    const trackBar = document.querySelector('.track-bar') as HTMLElement
-
-    if (!trackBar) return
-
-    const trackElement = document.querySelector('.track')
-    if (!trackElement) return
-
-    const trackWidth = trackElement.getBoundingClientRect().width
-    const windowWidth = window.innerWidth
-
-    const widthPercent = (windowWidth / trackWidth) * 100
-
-    trackBar.animate(
-      {
-        width: `${widthPercent}%`,
-        left: `${progress}%`,
-        transform: `translate(-50%, -50%)`,
-      },
-      { duration: 2000, fill: 'forwards' },
-    )
-  }
+  const memoizedAnimateLoadingBar = useCallback(animateLoadingBar, [
+    animateLoadingBar,
+    progress,
+  ])
 
   useEffect(() => {
-    animateLoadingBar()
-  }, [])
+    memoizedAnimateLoadingBar(progress)
+  }, [memoizedAnimateLoadingBar, progress])
 
   const routes = [
     {

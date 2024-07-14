@@ -54,7 +54,7 @@ export default function AboutPage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   return (
     <main className="py-32">

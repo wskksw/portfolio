@@ -42,7 +42,7 @@ export default function ProjectPage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   const index = params.projectId
     ? Number(params.projectId) % selectedProjects.length

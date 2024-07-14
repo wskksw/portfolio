@@ -42,7 +42,7 @@ export default function ContactPage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   return (
     <main className="py-32">

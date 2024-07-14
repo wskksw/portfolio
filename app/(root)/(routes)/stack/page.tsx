@@ -40,7 +40,7 @@ export default function StackPage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   return (
     <main className="py-32">

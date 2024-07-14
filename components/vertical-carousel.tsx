@@ -34,22 +34,24 @@ export default function VerticalCarousel({
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
+    const goToElement = (elementIndex: number) => {
+      let changeDirection = 0
+      if (elementIndex > activeIndex) {
+        changeDirection = 1
+      } else if (elementIndex < activeIndex) {
+        changeDirection = -1
+      }
+
+      setElementCount([elementIndex, changeDirection])
+      setActiveIndex(elementIndex)
+    }
+
     if (active !== undefined) {
       goToElement(active)
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active])
-
-  const goToElement = (elementIndex: number) => {
-    let changeDirection = 0
-    if (elementIndex > activeIndex) {
-      changeDirection = 1
-    } else if (elementIndex < activeIndex) {
-      changeDirection = -1
-    }
-
-    setElementCount([elementIndex, changeDirection])
-    setActiveIndex(elementIndex)
-  }
 
   const xOffset = offset?.x || 0
   const yOffset = offset?.y || 0

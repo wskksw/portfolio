@@ -53,7 +53,7 @@ export default function HomePage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   const projects = selectedProjects.map((project, index) => ({
     ...project,

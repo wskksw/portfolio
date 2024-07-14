@@ -43,7 +43,7 @@ export default function ProjectsPage() {
     })
 
     setSidebars(data)
-  }, [])
+  }, [setSidebars])
 
   const handleSelectRandomProject = () => {
     const index = Math.floor(Math.random() * selectedProjects.length)

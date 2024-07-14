@@ -144,7 +144,7 @@ export const miscProjects: Project[] = [
           {
             title: 'Solution',
             description:
-              '[OpenSimplex Noise](https://en.wikipedia.org/wiki/OpenSimplex_noise#:~:text=OpenSimplex%20noise%20is%20an%20n,artifacts%20characteristic%20of%20Perlin%20noise.) generated a 2D grid of values between 0-1. The [Marching Squares](https://en.wikipedia.org/wiki/Marching_squares) algorithm then uses these values to create boundaries based on whether 2 cells contain a threshold value. For example, 0.4 and 0.6 contain 0.5, then these would be marked. These boundaries are then used to add wall segments and terrain.',
+              '[OpenSimplex Noise](https://en.wikipedia.org/wiki/OpenSimplex_noise#:~:text=OpenSimplex%20noise%20is%20an%20n,artifacts%20characteristic%20of%20Perlin%20noise.) generated a 2D grid of values between 0-1. The [Marching Squares algorithm](https://en.wikipedia.org/wiki/Marching_squares) then uses these values to create boundaries based on whether 2 cells contain a threshold value. For example, 0.4 and 0.6 contain 0.5, then these would be marked. These boundaries are then used to add wall segments and terrain.',
           },
         ],
       },
@@ -231,6 +231,44 @@ export const miscProjects: Project[] = [
     logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
   },
   {
+    year: '2023',
+    title: 'The Pivot',
+    description:
+      'Frustrated by error-prone simplex calculators, this project built a user-friendly tool that tackles complex linear programming problems, featuring dynamic tables that handle various data formats for a robust solution.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Software Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'The Pivot',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'While studying the [Simplex algorithm](https://optimization.cbe.cornell.edu/index.php?title=Simplex_algorithm#:~:text=Simplex%20algorithm%20(or%20Simplex%20method,and%20solved%20via%20Simplex%20algorithm.), I found the calculations error-prone and tedious. I wanted to improve upon the existing calculators found online as they were difficult to use or didn’t provide the complete picture.',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Apart from gaining a deeper understanding of the Simplex algorithm for my class, I learned to work with dynamic tables and variable data formats. The tables can accept integers, floats, and even fractions as I learned to use wrapper classes to process different number formats before computations.',
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+    ],
+  },
+  {
     year: '2022',
     title: 'WFC',
     description:
@@ -250,7 +288,7 @@ export const miscProjects: Project[] = [
           {
             title: 'Inspiration',
             description:
-              'I found the resulting images of the [Wave Function Collapse](https://en.wikipedia.org/wiki/Wave_function_collapse) algorithm weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
+              'I found the resulting images of the [Wave Function Collapse algorithm](https://en.wikipedia.org/wiki/Wave_function_collapse) weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
           },
           {
             title: 'Learnings',

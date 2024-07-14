@@ -69,7 +69,7 @@ export default function HomePage() {
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <HeroSection
           header="Jason Ramos"
-          title="Web Enthusiast & Software Developer"
+          title="Tech Enthusiast & Software Developer"
           content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
           src="/images/sample1.avif"
         />

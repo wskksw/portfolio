@@ -29,7 +29,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
         <FadeInWrapper>
           {action.onClick ? (
             <h1 onClick={action.onClick}>
-              <UnderlinedText text={action.title} />
+              <UnderlinedText text={action.title} className="text-center" />
             </h1>
           ) : (
             <h1 className="mt-4 inline-block text-center text-9xl font-extrabold">

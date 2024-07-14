@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils'
 import ArrowButton from '../arrow-button'
 import FadeInWrapper from '../fade-in-wrapper'
 import ParallaxImage from '../parallax-image'
-import TagColumn from '../tag-column'
 import { SelectedProject } from '@/data/projects'
+import LogoIcon from '../icons/logo'
 
 interface ProjectSectionProps extends SelectedProject {
   prefix: string
@@ -17,9 +17,8 @@ export default function ProjectSection({
   title,
   description,
   images,
-  leftColumnTags,
-  rightColumnTags,
   actions,
+  logos,
 }: ProjectSectionProps) {
   return (
     <section className="flex gap-5">
@@ -40,17 +39,16 @@ export default function ProjectSection({
               </p>
             </FadeInWrapper>
           </div>
-          <div className="mt-8 flex w-full gap-5">
-            {leftColumnTags && (
-              <div className="flex-1">
-                <TagColumn column={leftColumnTags} />
-              </div>
-            )}
-            {rightColumnTags && (
-              <div className="flex-1">
-                <TagColumn column={rightColumnTags} />
-              </div>
-            )}
+          <div className="mt-20 flex w-full flex-wrap gap-8">
+            {logos.map((logo, index) => (
+              <FadeInWrapper
+                key={index}
+                delay={index * 0.05}
+                className="aspect-square w-10"
+              >
+                <LogoIcon logo={logo} />
+              </FadeInWrapper>
+            ))}
           </div>
           <div className="mt-8 border-border">
             {actions.map((action, index) => (

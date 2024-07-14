@@ -2,7 +2,7 @@
 
 import Footer from '@/components/footer'
 import ProjectCard from '@/components/project-card'
-import { selectedProjects } from '@/data/projects'
+import { miscProjects, selectedProjects } from '@/data/projects'
 import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
@@ -80,7 +80,37 @@ export default function ProjectsPage() {
           ))}
         </div>
       </div>
-      <div className="pt-40" ref={(ref: any) => (refs.current[1] = ref)}>
+      <div className="pb-40" ref={(ref: any) => (refs.current[1] = ref)}>
+        <FadeInWrapper>
+          <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+            PORTFOLIO
+          </h4>
+        </FadeInWrapper>
+        <FadeInWrapper>
+          <h1 className="mt-2 text-7xl font-extrabold">Extras</h1>
+        </FadeInWrapper>
+        <div className="mt-16 grid grid-cols-1 gap-5 2xl:grid-cols-2">
+          {miscProjects.map((project, index) => (
+            <FadeInWrapper key={index} className="w-full" delay={index * 0.05}>
+              <div className="aspect-square w-full">
+                <ProjectCard
+                  src={project.images[0]}
+                  year={project.year}
+                  title={project.title}
+                  description={project.description}
+                  variant="lg"
+                  onClick={() => transitionPage(`/projects/${index}`)}
+                  logos={project.logos}
+                />
+              </div>
+              <p className="mb-4 mt-2 text-[1.5rem] font-bold">
+                {project.field}
+              </p>
+            </FadeInWrapper>
+          ))}
+        </div>
+      </div>
+      <div className="pt-40" ref={(ref: any) => (refs.current[2] = ref)}>
         <Footer
           subTitle="Can't decide?"
           action={{

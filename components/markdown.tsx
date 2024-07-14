@@ -55,7 +55,8 @@ const Markdown = ({ content }: MarkdownProps) => {
           a: {
             component: 'a',
             props: {
-              className: 'text-blue-500 underline',
+              className: 'text-primary font-semibold underline',
+              target: '_blank',
             },
           },
           ul: {
@@ -74,6 +75,12 @@ const Markdown = ({ content }: MarkdownProps) => {
             component: 'li',
             props: {
               className: 'text-base',
+            },
+          },
+          strong: {
+            component: 'strong',
+            props: {
+              className: 'font-semibold text-primary',
             },
           },
           blockquote: {

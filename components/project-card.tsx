@@ -17,7 +17,10 @@ interface ProjectCardProps {
   onClick?: () => void
   onHover?: () => void
   variant?: 'default' | 'lg'
-  xOffset?: any
+  xAnim?: {
+    offset: any
+    distance: number
+  }
 }
 
 export default function ProjectCard({
@@ -29,7 +32,7 @@ export default function ProjectCard({
   onClick,
   onHover,
   variant = 'default',
-  xOffset,
+  xAnim,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
@@ -70,7 +73,12 @@ export default function ProjectCard({
       onMouseMove={handleMouseMove}
       onClick={onClick}
     >
-      <div className="absolute left-0 top-0 z-[-10] h-full w-[140%] overflow-hidden">
+      <div
+        className="absolute left-0 top-0 z-[-10] h-full w-full overflow-hidden"
+        style={{
+          width: `${100 + (xAnim ? xAnim.distance : 0)}%`,
+        }}
+      >
         <motion.div
           className="relative h-full w-full overflow-hidden bg-primary"
           animate={{
@@ -78,7 +86,7 @@ export default function ProjectCard({
           }}
           transition={transition}
           style={{
-            x: xOffset,
+            x: xAnim?.offset,
           }}
         >
           <Image
@@ -132,16 +140,29 @@ export default function ProjectCard({
               variant === 'lg' && 'p-10 pr-0 pt-4',
             )}
           >
-            <h1 className="text-7xl font-extrabold text-background">
+            <h1
+              className={cn(
+                'text-4xl font-extrabold text-background',
+                variant === 'lg' && 'text-7xl',
+              )}
+            >
               {title.toUpperCase()}
             </h1>
-            <p className="text-pretty text-[1.5rem] text-secondary">
+            <p
+              className={cn(
+                'text-pretty text-lg text-secondary',
+                variant === 'lg' && 'text-[1.5rem]',
+              )}
+            >
               {description}
             </p>
           </div>
           <div className="p-5">
             <div
-              className={cn('flex flex-wrap gap-5 pl-5', !onClick && 'pb-5')}
+              className={cn(
+                'flex flex-wrap gap-5 pl-5',
+                onClick ? 'pb-2' : 'pb-5',
+              )}
             >
               {logos.map((logo, index) => (
                 <div key={index} className="aspect-square w-10">

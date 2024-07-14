@@ -36,11 +36,14 @@ export default function GallerySection({}: GallerySectionProps) {
     }
   }
 
+  const xDistance = 40
   const x = useMotionValue(0)
   const xOffset = useMotionValue('0%')
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     x.set(latest * (sectionWidth - carouselWidth))
-    xOffset.set(`-${latest * (40 / 1.4)}%`)
+
+    const test = latest * (xDistance / (1 + xDistance / 100))
+    xOffset.set(`-${latest * (xDistance / (1 + xDistance / 100))}%`)
   })
 
   useEffect(() => {
@@ -106,7 +109,10 @@ export default function GallerySection({}: GallerySectionProps) {
                 <ProjectCard
                   {...data}
                   onHover={() => handleChangeTitle(index)}
-                  xOffset={xOffset}
+                  xAnim={{
+                    offset: xOffset,
+                    distance: xDistance,
+                  }}
                 />
               </FadeInWrapper>
             ))}

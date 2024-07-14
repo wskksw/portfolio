@@ -72,7 +72,7 @@ export default function GallerySection({}: GallerySectionProps) {
           </FadeInWrapper>
           <FadeInWrapper>
             <div
-              className="relative mt-2 h-40"
+              className="relative mt-2 h-32"
               style={{
                 width: 'calc(100vw - 384px)',
               }}

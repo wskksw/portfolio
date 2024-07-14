@@ -1,5 +1,6 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import FadeInWrapper from '../fade-in-wrapper'
 
 interface TextSectionProps {
@@ -28,11 +29,14 @@ export default function TextSection({
       <FadeInWrapper>
         <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
       </FadeInWrapper>
-      <div className="mt-16 border-t border-border">
+      <div className="mt-16 border-border">
         {content.map((item, index) => (
           <FadeInWrapper
             key={index}
-            className="flex gap-5 border-b border-border py-8"
+            className={cn(
+              'flex gap-5 border-border py-8',
+              index === 0 ? 'border-y' : 'border-b',
+            )}
             delay={index * 0.05}
           >
             <div className="flex-1 text-[1.5rem] font-bold">

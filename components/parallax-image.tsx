@@ -41,10 +41,11 @@ export default function ParallaxImage({
           damping: 15,
           duration: 0.8,
         },
+        offset: ['end start', 'start end'],
       }}
       viewport={{
         once: true,
-        amount: 0.95,
+        amount: 0.5,
       }}
     >
       <motion.div
@@ -67,10 +68,11 @@ export default function ParallaxImage({
           }}
           whileInView={{
             height: '0%',
+            offset: ['end start', 'start end'],
           }}
           viewport={{
             once: true,
-            amount: 0.95,
+            amount: 0.5,
           }}
           transition={{
             duration: 0.5,

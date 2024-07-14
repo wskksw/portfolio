@@ -14,7 +14,7 @@ export const getFadeInAnimationWithDelay = (delay: number) => {
         damping: 25,
         delay,
       },
-      offset: ['start start', 'end end'],
+      offset: ['end start', 'start end'],
     },
     viewport: {
       once: true,

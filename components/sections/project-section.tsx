@@ -1,5 +1,6 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import ArrowButton from '../arrow-button'
 import FadeInWrapper from '../fade-in-wrapper'
 import ParallaxImage from '../parallax-image'
@@ -61,12 +62,15 @@ export default function ProjectSection({
               <TagColumn column={rightColumnTags} />
             </div>
           </div>
-          <div className="mt-8 border-t border-border">
+          <div className="mt-8 border-border">
             {actions.map((action, index) => (
               <FadeInWrapper key={index} delay={index * 0.05}>
                 <ArrowButton
                   title={action.title}
-                  className="w-full border-b border-border bg-transparent px-0 py-6 font-bold text-primary hover:bg-transparent"
+                  className={cn(
+                    'w-full border-border bg-transparent px-0 py-6 font-bold text-primary hover:bg-transparent',
+                    index === 0 ? 'border-y' : 'border-b',
+                  )}
                   // onClick={action.onClick}
                 />
               </FadeInWrapper>

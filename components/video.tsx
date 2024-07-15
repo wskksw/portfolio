@@ -16,7 +16,7 @@ export default function Video({ src, className }: VideoProps) {
       loop
       muted
     >
-      <source src={'/mech/orbit.mp4'} type="video/mp4" />
+      <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   )

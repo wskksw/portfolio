@@ -19,7 +19,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
   const router = useRouter()
 
   return (
-    <section className="w-full pb-[12vh]">
+    <section className="w-full pb-[8vh]">
       <div className="flex w-full flex-col items-center justify-center">
         <FadeInWrapper>
           <h4 className="text-center tracking-[0.3em] text-muted-foreground">

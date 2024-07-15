@@ -46,12 +46,6 @@ const Markdown = ({ content }: MarkdownProps) => {
               className: 'text-sm font-bold',
             },
           },
-          p: {
-            component: 'p',
-            props: {
-              className: 'text-base',
-            },
-          },
           a: {
             component: 'a',
             props: {
@@ -62,19 +56,13 @@ const Markdown = ({ content }: MarkdownProps) => {
           ul: {
             component: 'ul',
             props: {
-              className: 'list-disc list-inside',
+              className: 'list-disc pl-8',
             },
           },
           ol: {
             component: 'ol',
             props: {
               className: 'list-decimal list-inside',
-            },
-          },
-          li: {
-            component: 'li',
-            props: {
-              className: 'text-base',
             },
           },
           strong: {

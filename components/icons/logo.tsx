@@ -1,17 +1,22 @@
 import { Logo } from '@/data/stack'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import StackIcon from 'tech-stack-icons'
 
 interface LogoIconProps {
   logo: Logo
+  className?: string
 }
 
-export default function LogoIcon({ logo }: LogoIconProps) {
+export default function LogoIcon({ logo, className }: LogoIconProps) {
   if (typeof logo === 'object' && 'techStackIcon' in logo) {
     return (
       <StackIcon
         name={logo.techStackIcon}
-        className="h-full w-full grayscale transition-all duration-300 hover:grayscale-0"
+        className={cn(
+          'h-full w-full grayscale transition-all duration-300 hover:grayscale-0',
+          className,
+        )}
       />
     )
   } else {
@@ -21,7 +26,10 @@ export default function LogoIcon({ logo }: LogoIconProps) {
           fill
           src={logo.src}
           alt={logo.title}
-          className="bg-transparent object-contain object-center grayscale transition-all duration-300 hover:grayscale-0"
+          className={cn(
+            'bg-transparent object-contain object-center grayscale transition-all duration-300 hover:grayscale-0',
+            className,
+          )}
         />
       </div>
     )

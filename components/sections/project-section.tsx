@@ -6,6 +6,13 @@ import FadeInWrapper from '../fade-in-wrapper'
 import ParallaxImage from '../parallax-image'
 import { SelectedProject } from '@/data/projects'
 import LogoIcon from '../icons/logo'
+import { useTransition } from '@/providers/use-transition'
+import Link from 'next/link'
+
+function isRelativeLink(link: string) {
+  var regex = new RegExp('^(?:[a-z+]+:)?//', 'i')
+  return !regex.test(link)
+}
 
 interface ProjectSectionProps extends SelectedProject {
   prefix: string
@@ -20,6 +27,8 @@ export default function ProjectSection({
   actions,
   logos,
 }: ProjectSectionProps) {
+  const { transitionPage } = useTransition()
+
   return (
     <section className="flex gap-5">
       <div className="flex flex-1 items-center">
@@ -44,23 +53,35 @@ export default function ProjectSection({
               <FadeInWrapper
                 key={index}
                 delay={index * 0.05}
-                className="aspect-square w-10"
+                className="h-10 w-10"
               >
-                <LogoIcon logo={logo} />
+                <LogoIcon logo={logo} className="grayscale-0" />
               </FadeInWrapper>
             ))}
           </div>
           <div className="mt-8 border-border">
             {actions.map((action, index) => (
               <FadeInWrapper key={index} delay={index * 0.05}>
-                <ArrowButton
-                  title={action.title}
-                  className={cn(
-                    'w-full border-border bg-transparent px-0 py-6 font-bold text-primary hover:bg-transparent',
-                    index === 0 ? 'border-y' : 'border-b',
-                  )}
-                  // onClick={action.onClick}
-                />
+                {isRelativeLink(action.link) ? (
+                  <ArrowButton
+                    title={action.title}
+                    className={cn(
+                      'w-full border-border bg-transparent px-0 py-6 font-bold text-primary hover:bg-transparent',
+                      index === 0 ? 'border-y' : 'border-b',
+                    )}
+                    onClick={() => transitionPage(action.link)}
+                  />
+                ) : (
+                  <Link href={action.link} target="_blank">
+                    <ArrowButton
+                      title={action.title}
+                      className={cn(
+                        'w-full border-border bg-transparent px-0 py-6 font-bold text-primary hover:bg-transparent',
+                        index === 0 ? 'border-y' : 'border-b',
+                      )}
+                    />
+                  </Link>
+                )}
               </FadeInWrapper>
             ))}
           </div>

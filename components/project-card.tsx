@@ -150,13 +150,13 @@ export default function ProjectCard({
           <div className="p-5">
             <div
               className={cn(
-                'flex flex-wrap gap-5 pl-5',
+                'flex flex-wrap items-center gap-5 pl-5',
                 onClick ? 'pb-2' : 'pb-5',
               )}
             >
               {logos.map((logo, index) => (
-                <div key={index} className="aspect-square w-10">
-                  <LogoIcon logo={logo} />
+                <div key={index} className="h-10 w-10">
+                  <LogoIcon logo={logo} className="grayscale-0" />
                 </div>
               ))}
             </div>

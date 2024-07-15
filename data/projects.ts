@@ -37,7 +37,152 @@ export interface SelectedProject extends Project {
   }[]
 }
 
-export const selectedProjects: SelectedProject[] = []
+export const selectedProjects: SelectedProject[] = [
+  {
+    year: '2023',
+    title: 'ChatEd',
+    description:
+      'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Web Development & Design',
+    actions: [
+      {
+        title: 'Research Paper',
+        link: 'https://arxiv.org/pdf/2401.00052',
+      },
+      {
+        title: 'Project Details',
+        link: '/projects/1',
+      },
+    ],
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'ChatEd',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'The recent success of tools like ChatGPT has highlighted the potential of AI for efficient information retrieval and summarization. However, a key challenge remains: how to leverage these tools effectively within specific domains.',
+          },
+          {
+            title: 'Goals',
+            description:
+              'This project, developed for the [University of British Columbia](https://www.ubc.ca/), aimed to address the gap by exploring methods to tailor AI assistants to understand nuanced industry knowledge. In this case, the professor-student interaction regarding course content.',
+          },
+          {
+            title: 'Learnings & Research Paper',
+            description:
+              "The breadth of cutting-edge technologies employed in this project was so significant that it warranted co-authoring a [research paper](https://arxiv.org/pdf/2401.00052).  The research explored the interplay between natural language processing, vector databases, and LLM chains, pushing the boundaries of what's possible in this exciting field.<br/><br/>We published before Big Tech started releasing context-aware LLMs!",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'RAG Model & Vector Databases',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'RAG Model & Vector Databases',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'A crucial aspect of the project involved integrating domain-specific knowledge with ChatGPT.  However, this presented a significant challenge due to limitations in real-time model training and the sheer volume of data required to properly address student queries.',
+          },
+          {
+            title: 'Solution',
+            description:
+              "To bridge the gap in domain knowledge, the project implemented a two-pronged approach. First, it utilized Natural Language Processing (NLP) to generate text embeddings from domain-specific sources such as university websites, lectures, and documents. These embeddings represent textual content as numerical vectors, facilitating efficient comparison.<br/><br/>Second, the project employed a Postgres database with a vector database extension, [PGVector](https://github.com/pgvector/pgvector). This allowed for rapid comparison between student queries and text embedding vectors, identifying the most relevant documents.  Afterward, it feeds the relevant documents along with the student's question to ChatGPT, effectively injecting domain knowledge into each student query.",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Integration w/UBC',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Integration w/UBC',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'The project encountered challenges related to response time and scalability. As query complexity increased and the need for additional similarity searches arose, response times exceeded the average ChatGPT experience. Compounding the challenge, student queries were often redundant, and instructors lacked a user-friendly interface to manage the chatbot.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'A middleware layer intercepts student queries before reaching OpenAI. It rephrases queries into core concepts, turns them into text embeddings, and then compares them against existing questions using a vector similarity search. Pre-existing answers for rephrased queries are retrieved instantly and complex queries are directed to OpenAI, optimizing resource utilization. To ensure students have a complete understanding, all responses come with links to the source material used by the chatbot, fostering trust and transparency. An admin interface enables instructors to manage documents and curate chatbot responses, further enhancing responsiveness.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Testing AI',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Testing AI',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'Conventional testing approaches proved inadequate due to the inherent flexibility of the chatbot. The system could achieve correct student query responses, question rephrasing, and document processing in multiple ways, making traditional testing methods far less effective.',
+          },
+          {
+            title: 'Solution',
+            description:
+              "To comprehensively assess the chatbot's performance and capture its subtleties, we prepared a diverse set of tools. This included:<br/><br/>\n - **Answer Similarity**: A cross-encoder-based metric presented by [Risch et al](https://arxiv.org/abs/2108.06130), evaluates the similarity between strings based on semantic similarity rather than simple string similarity.\n - **TF-IDF**: A more advanced string comparison using cosine-similarity used to measure the similarity of the query to the ground truth.\n - **Answer Correctness**: Responses are graded by prompting AI agent [llama3:70b instruct](https://ollama.com/library/llama3:70b-instruct).\n\n<br/> These tools were used to generate the following scores:<br/><br/> - **Answer Similarity and TF-IDF Mean**: Higher is better, indicating a closer match to the expected answers.\n - **Standard Deviation (Std Dev) Mean**: Lower is better, indicating more consistency and stability in the model's responses.\n - **Root Mean Squared Error (RMSE) Mean**: A metric aimed to penalizes larger errors in responses. Lower is better, indicating normal distribution.\n - **Inference Speed Mean**: Measures the average time taken by the model to generate a response. Lower is better, indicating faster performance. \n\n\n <br/> This multifaceted approach provides a nuanced picture of the chatbot's strengths and weaknesses, enabling continuous improvement to better support our students.",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Future Plans',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Future Plans',
+        content: [
+          {
+            title: 'User Testing',
+            description:
+              'While the current solution offers a promising foundation, its ultimate success hinges on user experience.  Since the chatbot is a recent launch, gathering comprehensive user testing data will require time across semesters. We plan to leverage this upcoming data to continuously optimize and refine the system, ensuring it effectively meets the needs of students and instructors.',
+          },
+          {
+            title: 'Document Quality',
+            description:
+              'Acknowledging the "Garbage In, Garbage Out" principle, the project explores strategies to optimize document quality, a crucial factor in chatbot performance.  One approach involves developing an instructor interface that guides document creation, focusing on key student needs and potential questions.  Alternatively, processing techniques could be employed to pre-process documents, simulating student inquiries and extracting the most relevant information. ',
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.typescript,
+      logoMap.postgresql,
+      logoMap.typeorm,
+      logoMap.pgvector,
+      logoMap.nextjs,
+      logoMap.nestjs,
+      logoMap.docker,
+      logoMap.openai,
+      logoMap.langchain,
+      logoMap.pinecone,
+      logoMap.jest,
+      logoMap.mochajs,
+    ],
+  },
+]
 
 export const miscProjects: Project[] = [
   {
@@ -90,11 +235,10 @@ export const miscProjects: Project[] = [
       },
     ],
     logos: [
+      logoMap.nextjs,
       logoMap.vercel,
       logoMap.framer,
-      logoMap.shadcn,
       logoMap.figma,
-      logoMap.tailwindcss,
       logoMap.typescript,
     ],
   },
@@ -186,7 +330,7 @@ export const miscProjects: Project[] = [
           {
             title: 'Solution',
             description:
-              'This is where [QuadTrees](https://en.wikipedia.org/wiki/Quadtree#:~:text=A%20quadtree%20is%20a%20tree,into%20four%20quadrants%20or%20regions.), a spatial partitioning technique, came in. By dividing the environment into smaller zones (quadrants), we could efficiently query only the agents located within a certain range of each other. This significantly reduced the number of unnecessary checks and ensured efficient agent interaction as the number of agents grew.',
+              'This is where [QuadTrees](https://en.wikipedia.org/wiki/Quadtree#:~:text=A%20quadtree%20is%20a%20tree,into%20four%20quadrants%20or%20regions.), a spatial partitioning technique, came in. By dividing the environment into smaller zones (quadrants), we could efficiently query only the agents located within a certain range of each other. This significantly reduced the number of unnecessary checks and ensured efficient agent interaction as the number of agents grew. Greatly increased the number of projects, enemies, and players.',
           },
         ],
       },

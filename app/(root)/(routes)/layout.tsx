@@ -54,7 +54,7 @@ export default function MainLayout({
   }
 
   return (
-    <div className="hide-scrollbar relative h-full w-full">
+    <div className="relative h-full w-full">
       <div className="pointer-events-none fixed left-0 top-0 z-[150] h-full w-full bg-transparent">
         <div className="relative h-full w-full items-center justify-center">
           <motion.div

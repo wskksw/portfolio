@@ -69,8 +69,8 @@ export default function HomePage() {
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <HeroSection
           header="Jason Ramos"
-          title="Tech Enthusiast & Software Developer"
-          content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
+          title="AI Enthusiast & Software Developer"
+          content="I’m a UBC computer science graduate with a passion for software development, full-stack technologies, and artificial intelligence. Eager to leverage skills in programming and problem-solving to provide real value to real people."
           src="/images/sample1.avif"
         />
       </div>

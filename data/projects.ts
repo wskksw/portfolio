@@ -42,9 +42,9 @@ export const selectedProjects: SelectedProject[] = [
     year: '2023',
     title: 'ChatEd',
     description:
-      'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
+      'ChatEd: AI Assitant. Uses modified RAG models to combine natural language processing and vector databases to leverage domain-specific knowledge. Integrates with UBC systems for seamless student and professor interaction.',
     images: ['/images/portfolio/draft-1.png'],
-    field: 'Web Development & Design',
+    field: 'Full Stack & AI Development',
     actions: [
       {
         title: 'Research Paper',
@@ -180,6 +180,171 @@ export const selectedProjects: SelectedProject[] = [
       logoMap.pinecone,
       logoMap.jest,
       logoMap.mochajs,
+    ],
+  },
+  {
+    year: '2023',
+    title: 'Capstone',
+    description:
+      'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Full Stack & AI Development',
+    actions: [
+      {
+        title: 'Project Details',
+        link: '/projects/3',
+      },
+    ],
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Capstone',
+        media: [
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Introduction',
+            description:
+              'Traditional university lectures and assignments often fail to capture student attention, decreasing motivation and hindering learning. Students often continue their studies with an incomplete understanding of the previous material. Leveraging gamification and Large Language Models (LLMs), this platform addresses this by practicing mastery learning facilitated by limitless and personalized AI-generated coding problems in multiple languages and fields.',
+          },
+          {
+            title: 'Client',
+            description:
+              "Our client, Parsa Rajabi, is currently pursuing a master's focused on Computer Science Education at Simon Fraser University. Parsa plans on using this platform to aid in teaching his future classes.",
+          },
+          {
+            title: 'Final Report',
+            description:
+              'A comprehensive report detailing the project is available to download [here](/capstone.pdf).',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Project Role & Soft-Skills',
+        media: [
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Project Role & Soft-Skills',
+        content: [
+          {
+            title: 'My Role',
+            description:
+              'My role in the project was to lead the platform design, front-end development & testing, and integrating OpenAI question generation. A full list of my contributions can be found [here](https://github.com/UBCO-COSC-499-Summer-2023/project-6-gamified-coding-practice-platform-gamifygeeks/blob/master/docs/weekly%20logs/Ramos/Personal.md).',
+          },
+          {
+            title: 'Difficulties',
+            description:
+              'Working with a team of five with vastly different backgrounds and experiences was difficult. Potential misunderstandings from diverse perspectives, conflicting individual goals, and mismatched skill sets lead to roadblocks and hindered team morale',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Leading the design, I fostered a collaborative environment by integrating everyone’s ideas or addressing why I think we should approach it differently. This teamwork extended to the back-end team, where I honed my ability to communicate data requirements effectively and upfront. The project solidified the importance of strong team dynamics, a skillset as valuable as the code itself.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Code Compiler',
+        media: [
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Code Compiler',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'A critical feature of the platform is its ability to facilitate coding within the platform itself. The absence of comprehensive libraries made this an even bigger problem.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'The solution involved configuring an IDE library to provide an interface for the students. This then integrates into a backend API connected to OpenAI that would stream the answer directly to the front end in real time, enhancing the response time. This system functions as a dual-purpose tool, assessing student answers for accuracy and providing them with tailored feedback.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Help System',
+        media: [
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Help System',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              "The platform's functionality relied on numerous components requiring clarification. However, overwhelming users with help popups and hover interactions for every element would create a cluttered and confusing experience.",
+          },
+          {
+            title: 'Solution',
+            description:
+              "A dedicated 'Help' button on all pages grants students on-demand access to detailed descriptions and usage instructions. This hover-activated help mode allows users to explore the platform's functionality at their own pace without overwhelming popups.",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Selenium Testing & CI/CD',
+        media: [
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Selenium Testing & CI/CD',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'Front-end testing presents a distinct challenge compared to back-end testing. The goal is to simulate real-world user interactions while mimicking their limited access (no custom functions). This posed a significant hurdle as it required manual DOM manipulation.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'We implemented automated front-end testing using Selenium to simulate user interactions and validate platform functionality. Integration with GitHub Actions enabled parallel testing across multiple headless browsers, significantly accelerating the testing process.<br/><br/>Further streamlining the workflow, each test run automatically created a comprehensive report. Additionally, failing tests automatically captured screenshots, providing valuable visual context for developers to pinpoint errors efficiently.',
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.js,
+      logoMap.reactjs,
+      logoMap.tailwindcss,
+      logoMap.openai,
+      logoMap.mysql,
+      logoMap.docker,
+      logoMap.figma,
+      logoMap.jest,
+      logoMap.mochajs,
+      logoMap.seleneium,
+      logoMap.postman,
+      logoMap.git,
     ],
   },
 ]

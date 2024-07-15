@@ -39,7 +39,35 @@ export interface SelectedProject extends Project {
 
 export const selectedProjects: SelectedProject[] = [
   {
-    year: '2023',
+    year: '2024',
+    title: 'Omica',
+    description: 'TODO',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Full Stack Development',
+    actions: [
+      {
+        title: 'Project Details',
+        link: '/projects/0',
+      },
+    ],
+    sections: [],
+    logos: [
+      logoMap.typescript,
+      logoMap.postgresql,
+      logoMap.prisma,
+      logoMap.cloudinary,
+      logoMap.nextjs,
+      logoMap.vercel,
+      logoMap.jest,
+      logoMap.mochajs,
+      logoMap.tailwindcss,
+      logoMap.shadcn,
+      logoMap.prettier,
+      logoMap.figma,
+    ],
+  },
+  {
+    year: '2024',
     title: 'ChatEd',
     description:
       'ChatEd: AI Assitant. Uses modified RAG models to combine natural language processing and vector databases to leverage domain-specific knowledge. Integrates with UBC systems for seamless student and professor interaction.',
@@ -180,6 +208,117 @@ export const selectedProjects: SelectedProject[] = [
       logoMap.pinecone,
       logoMap.jest,
       logoMap.mochajs,
+    ],
+  },
+  {
+    year: '2024',
+    title: 'Hub',
+    description: 'TODO',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Full Stack Development',
+    actions: [
+      {
+        title: 'Project Details',
+        link: '/projects/2',
+      },
+    ],
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Hub',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Introduction',
+            description:
+              'Current methods often overlook the root cause of student disengagement and difficulty understanding material. Students frequently enter classes lacking the foundational knowledge needed to grasp new concepts. Instead of passing students at 50-60%, this platform uses mastery learning to make it accessible and enjoyable to master a full **90%** before going forward.',
+          },
+          {
+            title: 'Goals',
+            description:
+              'To empower instructors to design and share modular courses that emphasize 90% student mastery through the use of reusable and replayable learning units.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Progression System',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Progression System',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'Traditional, linear learning models force students down a single path, offering limited choice in what they learn. This rigidity can be demotivating, especially for students who struggle with or dislike specific topics.  The consequence? A loop of frustration that further hinders overall learning motivation.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'This platform incorporates a game-inspired progression system. Modules are assigned points, which unlock new content within each course. This empowers students with choice. They can master modules they enjoy or find easier to earn points and unlock content to compensate for areas they find more challenging. This system fosters a sense of agency and achievement, as every last point in each module contributes to unlocking new learning opportunities. The last 50% is just as valuable as the first.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Quiz Modules',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Quiz Modules',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'The quiz module needed to support a wide variety of question archetypes. Each archetype required a unique interface for student interaction and needed to handle diverse input types within the question itself. For instance, a fill-in-the-blank question could involve string entry, numbers, selection, or even drag-and-drop interactions. This complexity presented hurdles in the user interface design and the underlying data schema for storing quiz, question, and attempt data. Lastly, a quiz attempt needed to remain accurate to the quiz taken, regardless of whether the quiz has been updated or not.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'To address the unique interfaces required, I implemented a novel solution inspired by Notion. During question creation, each input or block is treated as plain text. Adding custom input types becomes intuitive through a simple slash command (‘/’), akin to using rich text formatting. Similarly, the deletion of a custom input was identical to deleting plain text. This approach required a sophisticated state management and reference system to create a hybrid text editor.<br/><br/>Furthermore, an automated version control system was implemented to ensure data integrity during quiz revisions. Any modifications to a quiz module trigger the creation of a duplicate copy. New attempts, from both students and instructors, are automatically directed to this updated version. This ensures that previously submitted student responses remain accurately linked to the specific quiz they were taken on.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Future Plans',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Future Plans',
+        content: [
+          {
+            title: 'AI-Driven Question Generation',
+            description:
+              'To bolster the replayability of individual modules, I plan on integrating an AI-driven question bank for the quiz modules. This system would leverage an AI model with access to course materials to generate a pool of potential questions. Creators could then efficiently curate the question bank by simply approving, rejecting, or modifying the suggestions. This solution significantly reduces the time and effort required to create course questions.',
+          },
+          {
+            title: 'Chatbot Integration',
+            description:
+              "Leveraging my experience in RAG models and domain-specific knowledge integration, I plan on introducing a student-facing chatbot. This chatbot will have comprehensive access to all course modules and will serve as a personalized learning guide. By drawing on the platform's knowledge base and my experience with RAG models, the chatbot can offer students intelligent recommendations on their learning path, suggesting the most relevant modules based on their progress, strengths, and identified gaps.",
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.typescript,
+      logoMap.postgresql,
+      logoMap.prisma,
+      logoMap.cloudinary,
+      logoMap.nextjs,
+      logoMap.vercel,
+      logoMap.tailwindcss,
+      logoMap.shadcn,
+      logoMap.prettier,
+      logoMap.figma,
     ],
   },
   {

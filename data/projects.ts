@@ -833,13 +833,17 @@ export const miscProjects: Project[] = [
     title: 'WFC',
     description:
       'Fascinated by the seemingly unstructured patterns of Wave Function Collapse, this explores generating them using only rules based on individual tile connections, mimicking the logic behind solving a jigsaw puzzle.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/wfc/pattern-1.png'],
     field: 'Software Development',
     sections: [
       {
         type: 'image-grid',
         title: 'WFC',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          { type: 'image', src: '/images/wfc/pattern-3.png' },
+          { type: 'image', src: '/images/wfc/pattern-2.png' },
+          { type: 'image', src: '/images/wfc/pattern-1.png' },
+        ],
       },
       {
         type: 'text',

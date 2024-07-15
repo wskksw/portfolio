@@ -9,6 +9,8 @@ import Image from 'next/image'
 import { Grid3x3 } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 import { useTransition } from '@/providers/use-transition'
+import { githubLink, linkedinLink } from '@/data/links'
+import Link from 'next/link'
 
 export default function MainLayout({
   children,
@@ -160,22 +162,30 @@ export default function MainLayout({
             >
               <Grid3x3 size={32} />
             </div>
-            <div className="relative aspect-square h-8 cursor-pointer">
+            <Link
+              className="relative aspect-square h-8 cursor-pointer"
+              href={githubLink}
+              target="_blank"
+            >
               <Image
                 fill
                 src={'/logos/git-hub.png'}
                 alt="GitHub Icon"
                 className="object-cover object-center"
               />
-            </div>
-            <div className="relative aspect-square h-8 cursor-pointer">
+            </Link>
+            <Link
+              className="relative aspect-square h-8 cursor-pointer"
+              href={linkedinLink}
+              target="_blank"
+            >
               <Image
                 fill
                 src={'/logos/linked-in.png'}
                 alt="LinkedIn Icon"
                 className="object-cover object-center"
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

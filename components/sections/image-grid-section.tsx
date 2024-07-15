@@ -33,7 +33,7 @@ export default function MediaGridSection({
         {media.map((data, index) => (
           <FadeInWrapper
             key={index}
-            className="relative min-w-[600px] flex-1 shadow-md"
+            className="relative min-w-[600px] flex-1 bg-primary shadow-md"
             delay={index * 0.05}
             style={{
               aspectRatio: data.aspectRatio || '4/3',

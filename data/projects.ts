@@ -614,9 +614,15 @@ export const miscProjects: Project[] = [
         type: 'image-grid',
         title: 'Portfolio',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          {
+            type: 'image',
+            src: '/images/portfolio/draft-1-lg.png',
+          },
+          {
+            type: 'image',
+            src: '/images/portfolio/draft-3.png',
+          },
+          { type: 'image', src: '/images/portfolio/draft-2.png' },
         ],
       },
       {
@@ -648,7 +654,7 @@ export const miscProjects: Project[] = [
       {
         type: 'image-grid',
         title: 'Moodboard',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [{ type: 'image', src: '/images/portfolio/moodboard.png' }],
       },
     ],
     logos: [
@@ -660,7 +666,7 @@ export const miscProjects: Project[] = [
     ],
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'Deep Rock',
     description:
       'Inspired by Deep Rock Galactic, this project builds a massive, dynamic world with 10,000+ agents using real-time terrain generation, efficient pathfinding, and natural enemy AI.',

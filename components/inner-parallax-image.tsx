@@ -7,12 +7,14 @@ interface InnerParallaxImageProps {
   src: string
   alt?: string
   className?: string
+  offset?: number
 }
 
 export default function InnerParallaxImage({
   src,
   alt,
   className,
+  offset,
 }: InnerParallaxImageProps) {
   const targetRef = useRef<HTMLDivElement>(null)
 
@@ -26,13 +28,17 @@ export default function InnerParallaxImage({
     setHookedYProgress(latest)
   })
 
+  const formattedOffset = offset === undefined ? 10 : offset
+
   return (
     <div className="h-full w-full overflow-hidden">
       <motion.div
         ref={targetRef}
-        className="relative h-[110%] w-full"
+        className="relative w-full"
         animate={{
-          y: `-${hookedYProgress * 10}%`,
+          y: `-${hookedYProgress * formattedOffset}%`,
+          height: `${100 + formattedOffset}%`,
+          scale: 1.01,
         }}
         transition={{
           duration: 0,

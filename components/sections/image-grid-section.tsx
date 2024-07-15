@@ -33,11 +33,14 @@ export default function MediaGridSection({
         {media.map((data, index) => (
           <FadeInWrapper
             key={index}
-            className="relative aspect-[4/3] min-w-[600px] flex-1"
+            className="relative min-w-[600px] flex-1 shadow-md"
             delay={index * 0.05}
+            style={{
+              aspectRatio: data.aspectRatio || '4/3',
+            }}
           >
             {data.type === 'image' && (
-              <InnerParallaxImage src={data.src} alt="Grid Image" />
+              <InnerParallaxImage src={data.src} alt="Grid Image" offset={0} />
             )}
             {data.type === 'video' && <Video src={data.src} />}
           </FadeInWrapper>

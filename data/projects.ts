@@ -3,6 +3,7 @@ import { Logo, logoMap } from './stack'
 export type Media = {
   type: 'image' | 'video'
   src: string
+  aspectRatio?: string
 }
 
 type MediaGridSection = {
@@ -663,13 +664,13 @@ export const miscProjects: Project[] = [
     title: 'Deep Rock',
     description:
       'Inspired by Deep Rock Galactic, this project builds a massive, dynamic world with 10,000+ agents using real-time terrain generation, efficient pathfinding, and natural enemy AI.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/deepRock/main.png'],
     field: 'Software Development',
     sections: [
       {
         type: 'image-grid',
         title: 'Deep Rock',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [{ type: 'image', src: '/images/deepRock/main.png' }],
       },
       {
         type: 'text',
@@ -690,7 +691,23 @@ export const miscProjects: Project[] = [
       {
         type: 'image-grid',
         title: 'Marching Squares & OpenSimplex Noise',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/deepRock/map-2.png',
+            aspectRatio: '1/1',
+          },
+          {
+            type: 'image',
+            src: '/images/deepRock/map-1.png',
+            aspectRatio: '1/1',
+          },
+          {
+            type: 'image',
+            src: '/images/deepRock/map-3.png',
+            aspectRatio: '1/1',
+          },
+        ],
       },
       {
         type: 'text',
@@ -711,7 +728,23 @@ export const miscProjects: Project[] = [
       {
         type: 'image-grid',
         title: 'Flowfield Path Following & Steering Behaviors',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/deepRock/field-2.png',
+            aspectRatio: '1/1',
+          },
+          {
+            type: 'image',
+            src: '/images/deepRock/field-3.png',
+            aspectRatio: '1/1',
+          },
+          {
+            type: 'image',
+            src: '/images/deepRock/field-1.png',
+            aspectRatio: '1/1',
+          },
+        ],
       },
       {
         type: 'text',
@@ -732,7 +765,13 @@ export const miscProjects: Project[] = [
       {
         type: 'image-grid',
         title: 'QuadTree Optimizations',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/deepRock/qTree.png',
+            aspectRatio: '1/1',
+          },
+        ],
       },
       {
         type: 'text',
@@ -758,13 +797,25 @@ export const miscProjects: Project[] = [
     title: 'The Pivot',
     description:
       'Frustrated by error-prone simplex calculators, this project built a user-friendly tool that tackles complex linear programming problems, featuring dynamic tables that handle various data formats for a robust solution.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/thePivot/sc-mock-lg-1.png'],
     field: 'Full Stack Development',
     sections: [
       {
         type: 'image-grid',
         title: 'The Pivot',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/thePivot/sc-3.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/thePivot/sc-2.png',
+            aspectRatio: '16/9',
+          },
+          { type: 'image', src: '/images/thePivot/sc-mock-1.png' },
+        ],
       },
       {
         type: 'text',
@@ -796,13 +847,17 @@ export const miscProjects: Project[] = [
     title: 'Flow Fields',
     description:
       'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle simulations and noise functions.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/flowfields/pattern-mockup-1.png'],
     field: 'Software Development',
     sections: [
       {
         type: 'image-grid',
         title: 'Flow Fields',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          { type: 'image', src: '/images/flowfields/pattern-3.png' },
+          { type: 'image', src: '/images/flowfields/pattern-2.png' },
+          { type: 'image', src: '/images/flowfields/pattern-mockup-1.png' },
+        ],
       },
       {
         type: 'text',
@@ -833,7 +888,7 @@ export const miscProjects: Project[] = [
     title: 'WFC',
     description:
       'Fascinated by the seemingly unstructured patterns of Wave Function Collapse, this explores generating them using only rules based on individual tile connections, mimicking the logic behind solving a jigsaw puzzle.',
-    images: ['/images/wfc/pattern-1.png'],
+    images: ['/images/wfc/pattern-mockup-1.png'],
     field: 'Software Development',
     sections: [
       {
@@ -842,7 +897,7 @@ export const miscProjects: Project[] = [
         media: [
           { type: 'image', src: '/images/wfc/pattern-3.png' },
           { type: 'image', src: '/images/wfc/pattern-2.png' },
-          { type: 'image', src: '/images/wfc/pattern-1.png' },
+          { type: 'image', src: '/images/wfc/pattern-mockup-1.png' },
         ],
       },
       {

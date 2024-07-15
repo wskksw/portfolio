@@ -87,7 +87,7 @@ export default function ProjectsPage() {
           </h4>
         </FadeInWrapper>
         <FadeInWrapper>
-          <h1 className="mt-2 text-7xl font-extrabold">Extras</h1>
+          <h1 className="mt-2 text-7xl font-extrabold">More</h1>
         </FadeInWrapper>
         <div className="mt-16 grid grid-cols-1 gap-5 2xl:grid-cols-2">
           {miscProjects.map((project, index) => (
@@ -99,7 +99,11 @@ export default function ProjectsPage() {
                   title={project.title}
                   description={project.description}
                   variant="lg"
-                  onClick={() => transitionPage(`/projects/${index}`)}
+                  onClick={() =>
+                    transitionPage(
+                      `/projects/${index + selectedProjects.length}`,
+                    )
+                  }
                   logos={project.logos}
                 />
               </div>

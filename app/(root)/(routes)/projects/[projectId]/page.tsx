@@ -51,6 +51,8 @@ export default function ProjectPage() {
     const numSelectedProjects = selectedProjects.length
     const numProjects = numSelectedProjects + miscProjects.length
 
+    console.log(numProjects)
+
     const rawIndex = Number(params.projectId) % numProjects
 
     var project

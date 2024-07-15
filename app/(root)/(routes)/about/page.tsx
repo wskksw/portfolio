@@ -73,69 +73,16 @@ export default function AboutPage() {
         <ImageGridSection
           header="About Me"
           title="Education"
-          srcs={[
-            '/images/sample1.avif',
-            '/images/sample2.avif',
-            '/images/sample3.avif',
+          media={[
+            {
+              type: 'image',
+              src: '/images/sample1.avif',
+            },
           ]}
         />
         <TextSection
           header="About Me"
           title="Education"
-          content={[
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-            {
-              title: (
-                <Headline
-                  header="2021-2024"
-                  title="University of British Columbia"
-                  tags={['4.33 GPA', 'BSc in Computer Science']}
-                />
-              ),
-              description:
-                'Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh.',
-            },
-          ]}
-          className="mb-24"
-        />
-      </div>
-      <div
-        className="flex flex-col gap-24 pb-40"
-        ref={(ref: any) => (refs.current[2] = ref)}
-      >
-        <ImageGridSection
-          header="About Me"
-          title="Motivations"
-          srcs={[
-            '/images/sample1.avif',
-            '/images/sample2.avif',
-            '/images/sample3.avif',
-          ]}
-        />
-        <TextSection
-          header="About Me"
-          title="Motivations"
           content={[
             {
               title: (

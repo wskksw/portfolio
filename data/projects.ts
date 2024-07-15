@@ -41,7 +41,8 @@ export const selectedProjects: SelectedProject[] = [
   {
     year: '2024',
     title: 'Omica',
-    description: 'TODO',
+    description:
+      'Omica is a comprehensive business management solution designed for large-scale distributors. It streamlines operations through an e-commerce platform, manages data efficiently, and offers robust filtering options.',
     images: ['/images/portfolio/draft-1.png'],
     field: 'Full Stack Development',
     actions: [
@@ -50,7 +51,113 @@ export const selectedProjects: SelectedProject[] = [
         link: '/projects/0',
       },
     ],
-    sections: [],
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Omica',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Introduction',
+            description:
+              'Omica is tailored to large-scale distributors with a comprehensive business management platform.  It simplifies operations through an integrated e-commerce solution, managing customer orders from payment to delivery.  The platform boasts flexible product management with variants, nested categories, dynamic attributes, and built-in discounting features. Additionally, Omica streamlines internal processes by handling employee payroll and generating insightful company analytics.<br/><br/>Note: The company and platform are both named Omica.',
+          },
+          {
+            title: 'Client',
+            description:
+              "Omica, a sister company to PetPlus PH (the Philippines' largest pet supply distributor), leverages the platform for comprehensive business management. This includes showcasing their extensive product catalog, streamlining shipping and order management for a seamless customer experience, and facilitating employee payroll and company analytics.",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Expansive Data Tables',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Expansive Data Tables',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'A core feature of this platform was to present and interact with data in a meaningful and seamless manner. With over 20 unique tables, each requiring filtering, sorting, viewing, expanding, and selecting capabilities, the data tables needed to be both maintainable and easily modifiable.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'The initial approach was to create a single abstract data table component for reuse, but this posed challenges. When an edge case broke this abstraction, the problem rippled throughout the platform. The solution was to develop smaller, modular components that could be attached to each data table as needed. Features like pagination, filtering, nesting, and more could be easily added to the base table component. All these functions operated server-side by sending requirements to robust backend APIs.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Testing',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Testing',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'With a platform of this scale, ensuring that new changes do not affect existing functionality is crucial. Given the complex relationships in the database, testing required more than just mocking functions.',
+          },
+          {
+            title: 'Solution',
+            description:
+              'Robust testing was implemented using Jest and a replica of the database. Unit testing encompassed core functionality, edge cases, and error handling. Additionally, a comprehensive coverage report was utilized to assess the extent to which the tests covered the functions.',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Dynamic Filtering',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Dynamic Filtering',
+        content: [
+          {
+            title: 'Problem',
+            description:
+              'All filtering data, such as categories, attributes, and pricing for products, were configured by the admins. This meant that the filters were not always limited to brand or color but needed to be dynamic based on the type of store. These filters had to support single and multi-option attributes, categories, sliders, and more. Additionally, each category needed to include filter data for its descendants.',
+          },
+          {
+            title: 'Solution',
+            description:
+              "A [Breadth-First Search (BFS)](https://en.wikipedia.org/wiki/Breadth-first_search) identified all descendant categories for a selected category. This ensured a comprehensive view of relevant products. Next, the system gathered applicable filter data from the products within these categories. To balance user experience and SEO, the URL stored only the selected category ID for SEO while all other filter selections were stored in the user's local storage. This minimized URL length while preserving user selections during navigation.",
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'Future Plans',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Future Plans',
+        content: [
+          {
+            title: 'Recommendation Systems',
+            description:
+              'To enhance user satisfaction and engagement, I plan on implementing a hybrid recommendation system utilizing both collaborative and content-based filtering techniques. This would leverage user behavior patterns and the vast product attribute data to deliver highly personalized recommendations, ultimately leading to increased click-through rates.',
+          },
+          {
+            title: 'Specialized Chatbot',
+            description:
+              'My previous experience with RAG models can further expand on the recommendation system by creating a recommendation bot. It will leverage the existing system and the vast product data available to offer personalized suggestions, exceeding the efficiency of typical product searches.',
+          },
+        ],
+      },
+    ],
     logos: [
       logoMap.typescript,
       logoMap.postgresql,
@@ -213,7 +320,8 @@ export const selectedProjects: SelectedProject[] = [
   {
     year: '2024',
     title: 'Hub',
-    description: 'TODO',
+    description:
+      'An educational course creation platform emphasizing mastery learning and student agency. Empowers instructors to design modular courses that make mastering 90% engaging.',
     images: ['/images/portfolio/draft-1.png'],
     field: 'Full Stack Development',
     actions: [
@@ -325,10 +433,14 @@ export const selectedProjects: SelectedProject[] = [
     year: '2023',
     title: 'Capstone',
     description:
-      'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
+      'A gamified coding practice platform designed to enhance student learning through AI-generated coding problems and personalized feedback. It utilizes Large Language Models and focuses on fostering motivation through fun and interactive learning.',
     images: ['/images/portfolio/draft-1.png'],
     field: 'Full Stack & AI Development',
     actions: [
+      {
+        title: 'GitHub',
+        link: 'https://github.com/UBCO-COSC-499-Summer-2023/project-6-gamified-coding-practice-platform-gamifygeeks',
+      },
       {
         title: 'Project Details',
         link: '/projects/3',
@@ -557,7 +669,7 @@ export const miscProjects: Project[] = [
       {
         type: 'image-grid',
         title: 'Deep Rock',
-        media: [{ type: 'video', src: '/images/mech/orbit.mp4' }],
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
       },
       {
         type: 'text',
@@ -642,10 +754,48 @@ export const miscProjects: Project[] = [
     logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
   },
   {
+    year: '2023',
+    title: 'The Pivot',
+    description:
+      'Frustrated by error-prone simplex calculators, this project built a user-friendly tool that tackles complex linear programming problems, featuring dynamic tables that handle various data formats for a robust solution.',
+    images: ['/images/portfolio/draft-1.png'],
+    field: 'Full Stack Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'The Pivot',
+        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Inspiration',
+            description:
+              'While studying the [Simplex algorithm](https://optimization.cbe.cornell.edu/index.php?title=Simplex_algorithm#:~:text=Simplex%20algorithm%20(or%20Simplex%20method,and%20solved%20via%20Simplex%20algorithm.), I found the calculations error-prone and tedious. I wanted to improve upon the existing calculators found online as they were difficult to use or didn’t provide the complete picture.',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Apart from gaining a deeper understanding of the Simplex algorithm for my class, I learned to work with dynamic tables and variable data formats. The tables can accept integers, floats, and even fractions as I learned to use wrapper classes to process different number formats before computations.',
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+    ],
+  },
+  {
     year: '2022',
     title: 'Flow Fields',
     description:
-      'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle manipulation and noise functions.',
+      'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle simulations and noise functions.',
     images: ['/images/portfolio/draft-1.png'],
     field: 'Software Development',
     sections: [
@@ -677,44 +827,6 @@ export const miscProjects: Project[] = [
       },
     ],
     logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
-  },
-  {
-    year: '2023',
-    title: 'The Pivot',
-    description:
-      'Frustrated by error-prone simplex calculators, this project built a user-friendly tool that tackles complex linear programming problems, featuring dynamic tables that handle various data formats for a robust solution.',
-    images: ['/images/portfolio/draft-1.png'],
-    field: 'Software Development',
-    sections: [
-      {
-        type: 'image-grid',
-        title: 'The Pivot',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
-      },
-      {
-        type: 'text',
-        title: 'Overview',
-        content: [
-          {
-            title: 'Inspiration',
-            description:
-              'While studying the [Simplex algorithm](https://optimization.cbe.cornell.edu/index.php?title=Simplex_algorithm#:~:text=Simplex%20algorithm%20(or%20Simplex%20method,and%20solved%20via%20Simplex%20algorithm.), I found the calculations error-prone and tedious. I wanted to improve upon the existing calculators found online as they were difficult to use or didn’t provide the complete picture.',
-          },
-          {
-            title: 'Learnings',
-            description:
-              'Apart from gaining a deeper understanding of the Simplex algorithm for my class, I learned to work with dynamic tables and variable data formats. The tables can accept integers, floats, and even fractions as I learned to use wrapper classes to process different number formats before computations.',
-          },
-        ],
-      },
-    ],
-    logos: [
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-    ],
   },
   {
     year: '2022',

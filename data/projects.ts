@@ -55,15 +55,15 @@ export const selectedProjects: SelectedProject[] = [
     images: [
       {
         type: 'image',
-        src: '/images/portfolio/draft-1.png',
+        src: '/images/omica/cart-mockup-lg-1.png',
       },
       {
         type: 'image',
-        src: '/images/portfolio/draft-1.png',
+        src: '/images/omica/inventory-light-mockup-lg-1.png',
       },
       {
         type: 'image',
-        src: '/images/portfolio/draft-1.png',
+        src: '/images/omica/view-products-mockup-lg-1.png',
       },
     ],
     field: 'Full Stack Development',
@@ -77,7 +77,23 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Omica',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/omica/products-dark.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/cart-1.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/view-product-3.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -98,7 +114,23 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Expansive Data Tables',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/omica/inventory-light.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/products-light.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/outgoing-dark.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -119,7 +151,9 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Testing',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          { type: 'image', src: '/images/omica/test.png', aspectRatio: '16/9' },
+        ],
       },
       {
         type: 'text',
@@ -140,7 +174,18 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Dynamic Filtering',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/omica/view-products-1.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/view-products-2.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -160,8 +205,40 @@ export const selectedProjects: SelectedProject[] = [
       },
       {
         type: 'image-grid',
-        title: 'Future Plans',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        title: 'Robust Modals & Forms',
+        media: [
+          {
+            type: 'image',
+            src: '/images/omica/modal-dark-1.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/fulfill-light.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/modal-dark-3.png',
+            aspectRatio: '16/9',
+          },
+        ],
+      },
+      {
+        type: 'image-grid',
+        title: 'More',
+        media: [
+          {
+            type: 'image',
+            src: '/images/omica/store-analytics-light.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/omica/view-product-1.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -581,12 +658,18 @@ export const selectedProjects: SelectedProject[] = [
         media: [
           {
             type: 'image',
-            src: '/images/capstone/tests.png',
+            src: '/images/capstone/result.png',
             aspectRatio: '512/410',
+            className: 'object-contain bg-primary',
           },
           {
             type: 'image',
             src: '/images/capstone/checks.png',
+            aspectRatio: '512/410',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/tests.png',
             aspectRatio: '512/410',
           },
         ],

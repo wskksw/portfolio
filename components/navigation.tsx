@@ -146,13 +146,16 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
       onMouseUp={handleMouseUp}
     >
       <div
-        className="absolute left-1/2 top-0 h-24 w-24 translate-x-[-50%] translate-y-[-120px]"
+        className="absolute left-1/2 top-0 h-[100px] w-[100px] translate-x-[-50%] translate-y-[-120px]"
         onClick={() => setOpen((prev) => !prev)}
       >
         <div
           className={cn(
             'bounce-delay flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-primary',
           )}
+          style={{
+            scale: 0.8,
+          }}
         >
           <LongArrow
             className={cn(

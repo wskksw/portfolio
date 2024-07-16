@@ -50,10 +50,10 @@ export default function ContactPage() {
         <ContactSection
           header="Contact Me"
           title="Get In Touch!"
-          content="Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis. Bibendum sem quis commodo porttitor nullam. Lectus nulla nibh."
+          content="I'm eager to discuss your projects and how I can help bring them to life. Reach out however you're comfortable - email, discovery call, or another method - and I'll see you soon!"
           leftColumnTags={{
             title: "Let's talk about:",
-            values: ['Your Website', 'Your Project', 'Your Program'],
+            values: ['Your Website', 'Your Platform', 'Your Program'],
           }}
           rightColumnTags={{
             values: ['Your Users', 'Your Brand', 'Your Opportunity'],

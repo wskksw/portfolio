@@ -76,7 +76,7 @@ export default function AboutPage() {
           media={[
             {
               type: 'image',
-              src: '/images/sample1.avif',
+              src: '/images/sample3.avif',
             },
           ]}
         />

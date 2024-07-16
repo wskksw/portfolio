@@ -42,7 +42,6 @@ export default function GallerySection({}: GallerySectionProps) {
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     x.set(latest * (sectionWidth - carouselWidth))
 
-    const test = latest * (xDistance / (1 + xDistance / 100))
     xOffset.set(`-${latest * (xDistance / (1 + xDistance / 100))}%`)
   })
 

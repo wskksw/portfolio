@@ -79,7 +79,7 @@ export default function MainLayout({
       </div>
       <div className="pointer-events-none fixed left-0 top-0 z-40 h-full w-full">
         <div className="h-full w-full px-8">
-          <div className="relative mx-auto flex h-full max-w-[1920px] gap-5 px-[144px]">
+          <div className="relative mx-auto flex h-full max-w-[1920px] gap-5 px-8 md:px-12 lg:px-24 2xl:px-32">
             <motion.div
               custom={2}
               animate={gridOpen ? 'visible' : 'hidden'}
@@ -153,7 +153,7 @@ export default function MainLayout({
           <div className="pointer-events-auto flex h-fit gap-8">
             <div
               className={cn(
-                'bounce',
+                'bounce hidden lg:block',
                 navOpen
                   ? 'pointer-events-none'
                   : 'pointer-events-auto cursor-pointer',
@@ -216,7 +216,9 @@ export default function MainLayout({
           </div>
           <div className="flex-grow-1 mx-auto h-fit max-w-[1920px]">
             <SidebarsOverlay />
-            <div className="h-full w-full px-36">{children}</div>
+            <div className="h-full w-full px-8 md:px-12 lg:px-24 2xl:px-32">
+              {children}
+            </div>
           </div>
         </motion.div>
       </motion.div>

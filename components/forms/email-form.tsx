@@ -82,7 +82,7 @@ export const EmailForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full max-w-[1024px] space-y-8"
       >
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8">
           <FadeInWrapper>
             <FormField
               control={form.control}

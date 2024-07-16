@@ -30,9 +30,9 @@ export default function ProjectSection({
   const { transitionPage } = useTransition()
 
   return (
-    <section className="flex gap-5">
+    <section className="flex flex-col gap-5 lg:flex-row">
       <div className="flex flex-1 items-center">
-        <div className="h-fit w-2/3">
+        <div className="h-fit w-full lg:w-2/3">
           <div>
             <FadeInWrapper>
               <h4 className="text-lg tracking-[0.3em] text-muted-foreground">

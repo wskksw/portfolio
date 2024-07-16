@@ -16,7 +16,6 @@ interface FooterProps {
 
 export default function Footer({ subTitle, action }: FooterProps) {
   const { transitionPage } = useTransition()
-  const router = useRouter()
 
   return (
     <section className="w-full pb-[8vh]">
@@ -39,7 +38,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
         </FadeInWrapper>
       </div>
       <div className="my-32 h-[1px] bg-border" />
-      <div className="flex gap-5">
+      <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-1 flex-col justify-between gap-5">
           <NavigationColumn
             column={{
@@ -74,8 +73,8 @@ export default function Footer({ subTitle, action }: FooterProps) {
             }}
           />
         </div>
-        <div className="flex flex-1 justify-between gap-5">
-          <div className="w-1/3">
+        <div className="flex flex-1 flex-col justify-between gap-5 sm:flex-row">
+          <div className="w-full sm:w-1/3">
             <NavigationColumn
               column={{
                 title: 'Socials',
@@ -112,7 +111,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
               }}
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full sm:w-1/3">
             <NavigationColumn
               column={{
                 title: 'Navigation',

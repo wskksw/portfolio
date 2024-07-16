@@ -16,7 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="hide-scrollbar">
+    <html
+      lang="en"
+      className="hide-scrollbar text-[16px] lg:text-[12px] 2xl:text-[16px]"
+    >
       <body className={HelveticaNowDisplay.className}>
         <SidebarProvider>
           <TransitionProvider>{children}</TransitionProvider>

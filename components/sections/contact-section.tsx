@@ -24,9 +24,9 @@ export default function ContactSection({
   rightColumnTags,
 }: ContactSectionProps) {
   return (
-    <section className="flex items-start gap-5">
+    <section className="flex flex-col items-start gap-5 lg:flex-row">
       <div className="flex w-full flex-1 items-end">
-        <div className="w-2/3">
+        <div className="w-full xl:w-2/3">
           <FadeInWrapper>
             <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
               {header.toUpperCase()}

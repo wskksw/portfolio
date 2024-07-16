@@ -35,13 +35,13 @@ export default function TextSection({
           <FadeInWrapper
             key={index}
             className={cn(
-              'flex gap-5 border-border py-8',
+              'flex flex-col gap-5 border-border py-8 lg:flex-row',
               index === 0 ? 'border-y' : 'border-b',
             )}
             delay={index * 0.05}
           >
             <div className="flex-1 text-[1.5rem] font-bold">
-              <p className="w-2/3">{item.title}</p>
+              <p className="w-full lg:w-2/3">{item.title}</p>
             </div>
             <p className="flex-1 text-pretty text-[1.5rem] text-muted-foreground">
               <Markdown content={item.description} />

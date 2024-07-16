@@ -23,7 +23,7 @@ export default function HeroSection({
   const { transitionPage } = useTransition()
 
   return (
-    <section className="flex gap-5">
+    <section className="flex flex-col gap-5 lg:flex-row">
       <div className="flex w-full flex-1 items-end">
         <div>
           <FadeInWrapper>
@@ -59,7 +59,7 @@ export default function HeroSection({
           </div>
         </div>
       </div>
-      <FadeInWrapper className="relative aspect-[4/3] w-full flex-1">
+      <FadeInWrapper className="relative mt-12 aspect-[4/3] w-full flex-1 lg:mt-0">
         <InnerParallaxImage src={src} alt="Profile Image" />
       </FadeInWrapper>
     </section>

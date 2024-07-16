@@ -40,7 +40,12 @@ export default function MediaGridSection({
             }}
           >
             {data.type === 'image' && (
-              <InnerParallaxImage src={data.src} alt="Grid Image" offset={0} />
+              <InnerParallaxImage
+                src={data.src}
+                alt="Grid Image"
+                offset={0}
+                className={data.className}
+              />
             )}
             {data.type === 'video' && <Video src={data.src} />}
           </FadeInWrapper>

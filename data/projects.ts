@@ -4,6 +4,7 @@ export type Media = {
   type: 'image' | 'video'
   src: string
   aspectRatio?: string
+  className?: string
 }
 
 type MediaGridSection = {
@@ -179,7 +180,7 @@ export const selectedProjects: SelectedProject[] = [
     title: 'ChatEd',
     description:
       'ChatEd: AI Assitant. Uses modified RAG models to combine natural language processing and vector databases to leverage domain-specific knowledge. Integrates with UBC systems for seamless student and professor interaction.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/chatEd/chat.png'],
     field: 'Full Stack & AI Development',
     actions: [
       {
@@ -195,14 +196,20 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'ChatEd',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/chatEd/chat.png',
+            className: 'object-contain bg-background',
+          },
+        ],
       },
       {
         type: 'text',
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'The recent success of tools like ChatGPT has highlighted the potential of AI for efficient information retrieval and summarization. However, a key challenge remains: how to leverage these tools effectively within specific domains.',
           },
@@ -221,7 +228,18 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'RAG Model & Vector Databases',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/chatEd/code-1.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/chatEd/code-2.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -242,7 +260,18 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Integration w/UBC',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [
+          {
+            type: 'image',
+            src: '/images/chatEd/middleware.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/chatEd/documents.png',
+            aspectRatio: '16/9',
+          },
+        ],
       },
       {
         type: 'text',
@@ -256,15 +285,15 @@ export const selectedProjects: SelectedProject[] = [
           {
             title: 'Solution',
             description:
-              'A middleware layer intercepts student queries before reaching OpenAI. It rephrases queries into core concepts, turns them into text embeddings, and then compares them against existing questions using a vector similarity search. Pre-existing answers for rephrased queries are retrieved instantly and complex queries are directed to OpenAI, optimizing resource utilization. To ensure students have a complete understanding, all responses come with links to the source material used by the chatbot, fostering trust and transparency. An admin interface enables instructors to manage documents and curate chatbot responses, further enhancing responsiveness.',
+              'A **middleware layer** intercepts student queries before reaching OpenAI. It rephrases queries into core concepts, turns them into text embeddings, and then compares them against existing questions using a vector similarity search. Pre-existing answers for rephrased queries are retrieved instantly and complex queries are directed to OpenAI, optimizing resource utilization. To ensure students have a complete understanding, all responses come with **links to the source material** used by the chatbot, fostering trust and transparency. An admin interface enables instructors to manage documents and curate chatbot responses, further enhancing responsiveness.',
           },
         ],
       },
-      {
-        type: 'image-grid',
-        title: 'Testing AI',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
-      },
+      // {
+      //   type: 'image-grid',
+      //   title: 'Testing AI',
+      //   media: [], // TODO
+      // },
       {
         type: 'text',
         title: 'Testing AI',
@@ -281,11 +310,11 @@ export const selectedProjects: SelectedProject[] = [
           },
         ],
       },
-      {
-        type: 'image-grid',
-        title: 'Future Plans',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
-      },
+      // {
+      //   type: 'image-grid',
+      //   title: 'Future Plans',
+      //   media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+      // },
       {
         type: 'text',
         title: 'Future Plans',
@@ -668,7 +697,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'Fresh out of university, I was eager to showcase my diverse portfolio of projects.  I wanted to establish trust by creating an avenue for potential clients, collaborators, and employers to discover my work easily',
           },
@@ -721,7 +750,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'Inspired by [DeepRock Galactic Survivor](https://store.steampowered.com/app/2321470/Deep_Rock_Galactic_Survivor/), I found the terrain and sheer number of things on the screen fascinating. I wanted to challenge myself by making something similar using some unique algorithms I’ve been eager to use.',
           },
@@ -866,7 +895,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'While studying the [Simplex algorithm](https://optimization.cbe.cornell.edu/index.php?title=Simplex_algorithm#:~:text=Simplex%20algorithm%20(or%20Simplex%20method,and%20solved%20via%20Simplex%20algorithm.), I found the calculations error-prone and tedious. I wanted to improve upon the existing calculators found online as they were difficult to use or didn’t provide the complete picture.',
           },
@@ -908,7 +937,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'I kept getting excited over these mesmerizing wallpapers online and even more so when I found out they were procedurally generated! ',
           },
@@ -949,7 +978,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'I found the resulting images of the [Wave Function Collapse algorithm](https://en.wikipedia.org/wiki/Wave_function_collapse) weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
           },
@@ -994,7 +1023,7 @@ export const miscProjects: Project[] = [
         title: 'Overview',
         content: [
           {
-            title: 'Inspiration',
+            title: 'Introduction',
             description:
               'A lifelong fascination with mech suits, fueled by a healthy dose of Iron Man fandom, led me to push my 3D modeling skills beyond the realm of low-poly projects. This high-detail mech design represents my desire to create increasingly complex and visually stunning models.',
           },

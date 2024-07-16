@@ -64,7 +64,7 @@ export default function ProjectsPage() {
             <FadeInWrapper key={index} className="w-full" delay={index * 0.05}>
               <div className="aspect-square w-full">
                 <ProjectCard
-                  src={project.images[0]}
+                  src={project.images[0].src}
                   year={project.year}
                   title={project.title}
                   description={project.description}
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
             <FadeInWrapper key={index} className="w-full" delay={index * 0.05}>
               <div className="aspect-square w-full">
                 <ProjectCard
-                  src={project.images[0]}
+                  src={project.images[0].src}
                   year={project.year}
                   title={project.title}
                   description={project.description}

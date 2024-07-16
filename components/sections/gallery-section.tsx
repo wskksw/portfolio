@@ -64,7 +64,7 @@ export default function GallerySection({}: GallerySectionProps) {
 
   const projects = miscProjects.map((project, index) => ({
     ...project,
-    src: project.images[0],
+    src: project.images[0].src,
     onClick: () =>
       transitionPage(`/projects/${selectedProjects.length + index}`),
   }))

@@ -90,23 +90,23 @@ export default function ProjectSection({
       <div className="relative aspect-[8/11] w-full flex-1">
         <div className="absolute right-0 top-0 w-2/3 drop-shadow-lg">
           <ParallaxImage
-            src={images[0]}
+            src={images[0].src}
             displacement={600}
-            className="aspect-square"
+            className={cn('aspect-square', images[0].className)}
           />
         </div>
         <div className="absolute left-0 top-1/2 z-[-10] w-2/3 translate-y-[-50%] drop-shadow-lg">
           <ParallaxImage
-            src={images[1]}
+            src={images[1].src}
             displacement={300}
-            className="aspect-[3/5]"
+            className={cn('aspect-[9/16]', images[1].className)}
           />
         </div>
         <div className="absolute bottom-0 right-0 w-2/3 drop-shadow-lg">
           <ParallaxImage
-            src={images[2]}
+            src={images[2].src}
             displacement={200}
-            className="aspect-[4/3]"
+            className={cn('aspect-[4/3]', images[2].className)}
           />
         </div>
       </div>

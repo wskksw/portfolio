@@ -1,10 +1,17 @@
 import { Logo, logoMap } from './stack'
 
-export type Media = {
-  type: 'image' | 'video'
+export type BaseMedia = {
   src: string
   aspectRatio?: string
   className?: string
+}
+
+export interface Media extends BaseMedia {
+  type: 'image' | 'video'
+}
+
+export interface Image extends BaseMedia {
+  type: 'image'
 }
 
 type MediaGridSection = {
@@ -26,7 +33,7 @@ export type Project = {
   year: string
   title: string
   description: string
-  images: string[]
+  images: Image[]
   field: string
   sections: (TextSection | MediaGridSection)[]
   logos: Logo[]
@@ -45,7 +52,20 @@ export const selectedProjects: SelectedProject[] = [
     title: 'Omica',
     description:
       'Omica is a comprehensive business management solution designed for large-scale distributors. It streamlines operations through an e-commerce platform, manages data efficiently, and offers robust filtering options.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+    ],
     field: 'Full Stack Development',
     actions: [
       {
@@ -180,7 +200,21 @@ export const selectedProjects: SelectedProject[] = [
     title: 'ChatEd',
     description:
       'ChatEd: AI Assitant. Uses modified RAG models to combine natural language processing and vector databases to leverage domain-specific knowledge. Integrates with UBC systems for seamless student and professor interaction.',
-    images: ['/images/chatEd/chat.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/chatEd/diagram.png',
+        className: 'object-contain bg-background',
+      },
+      {
+        type: 'image',
+        src: '/images/chatEd/chat.png',
+      },
+      {
+        type: 'image',
+        src: '/images/chatEd/documents.png',
+      },
+    ],
     field: 'Full Stack & AI Development',
     actions: [
       {
@@ -352,7 +386,20 @@ export const selectedProjects: SelectedProject[] = [
     title: 'Hub',
     description:
       'An educational course creation platform emphasizing mastery learning and student agency. Empowers instructors to design modular courses that make mastering 90% engaging.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+    ],
     field: 'Full Stack Development',
     actions: [
       {
@@ -464,7 +511,20 @@ export const selectedProjects: SelectedProject[] = [
     title: 'Capstone',
     description:
       'A gamified coding practice platform designed to enhance student learning through AI-generated coding problems and personalized feedback. It utilizes Large Language Models and focuses on fostering motivation through fun and interactive learning.',
-    images: ['/images/capstone/dashboard-mockup.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/capstone/dashboard-mockup.png',
+      },
+      {
+        type: 'image',
+        src: '/images/capstone/ide-mockup.png',
+      },
+      {
+        type: 'image',
+        src: '/images/capstone/modules.png',
+      },
+    ],
     field: 'Full Stack & AI Development',
     actions: [
       {
@@ -674,7 +734,12 @@ export const miscProjects: Project[] = [
     title: 'Portfolio',
     description:
       'This portfolio embraces a clean and sophisticated monochrome aesthetic. Smooth animations create a visually engaging and intuitive exploration of my work.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/portfolio/draft-1.png',
+      },
+    ],
     field: 'Web Development & Design',
     sections: [
       {
@@ -737,7 +802,12 @@ export const miscProjects: Project[] = [
     title: 'Deep Rock',
     description:
       'Inspired by Deep Rock Galactic, this project builds a massive, dynamic world with 10,000+ agents using real-time terrain generation, efficient pathfinding, and natural enemy AI.',
-    images: ['/images/deepRock/main.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/deepRock/main.png',
+      },
+    ],
     field: 'Software Development',
     sections: [
       {
@@ -866,11 +936,109 @@ export const miscProjects: Project[] = [
     logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
   },
   {
+    year: '2022',
+    title: 'Flow Fields',
+    description:
+      'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle simulations and noise functions.',
+    images: [
+      {
+        type: 'image',
+        src: '/images/flowfields/pattern-mockup-1.png',
+      },
+    ],
+    field: 'Software Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'Flow Fields',
+        media: [
+          { type: 'image', src: '/images/flowfields/pattern-3.png' },
+          { type: 'image', src: '/images/flowfields/pattern-2.png' },
+          { type: 'image', src: '/images/flowfields/pattern-mockup-1.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Introduction',
+            description:
+              'I kept getting excited over these mesmerizing wallpapers online and even more so when I found out they were procedurally generated! ',
+          },
+          {
+            title: 'Goals',
+            description:
+              'I wanted to create usable HD wallpapers for me and my friends',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'I learned how to convert a simple noise function into a grid of closely related direction vectors, each of which would guide a series of randomly placed particles across the canvas. I learned how to create trails for these particles that together would create a pseudo-random masterpiece.',
+          },
+        ],
+      },
+    ],
+    logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
+  },
+  {
+    year: '2022',
+    title: 'WFC',
+    description:
+      'Fascinated by the seemingly unstructured patterns of Wave Function Collapse, this explores generating them using only rules based on individual tile connections, mimicking the logic behind solving a jigsaw puzzle.',
+    images: [
+      {
+        type: 'image',
+        src: '/images/wfc/pattern-mockup-1.png',
+      },
+    ],
+    field: 'Software Development',
+    sections: [
+      {
+        type: 'image-grid',
+        title: 'WFC',
+        media: [
+          { type: 'image', src: '/images/wfc/pattern-3.png' },
+          { type: 'image', src: '/images/wfc/pattern-2.png' },
+          { type: 'image', src: '/images/wfc/pattern-mockup-1.png' },
+        ],
+      },
+      {
+        type: 'text',
+        title: 'Overview',
+        content: [
+          {
+            title: 'Introduction',
+            description:
+              'I found the resulting images of the [Wave Function Collapse algorithm](https://en.wikipedia.org/wiki/Wave_function_collapse) weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Developing a project utilizing the Wave Function Collapse algorithm solidified my understanding of sorting. Repeatedly sorting cells to identify the optimal candidate for "collapse" cemented this fundamental concept. Additionally, I gained valuable experience in composing well-structured classes, promoting code maintainability and modularity.',
+          },
+        ],
+      },
+    ],
+    logos: [
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+      logoMap.java,
+    ],
+  },
+  {
     year: '2023',
     title: 'The Pivot',
     description:
       'Frustrated by error-prone simplex calculators, this project built a user-friendly tool that tackles complex linear programming problems, featuring dynamic tables that handle various data formats for a robust solution.',
-    images: ['/images/thePivot/sc-mock-lg-1.png'],
+    images: [
+      {
+        type: 'image',
+        src: '/images/thePivot/sc-mock-lg-1.png',
+      },
+    ],
     field: 'Full Stack Development',
     sections: [
       {
@@ -916,90 +1084,12 @@ export const miscProjects: Project[] = [
     ],
   },
   {
-    year: '2022',
-    title: 'Flow Fields',
-    description:
-      'Mesmerized by procedural wallpapers, I created high-def versions for myself and friends, exploring particle simulations and noise functions.',
-    images: ['/images/flowfields/pattern-mockup-1.png'],
-    field: 'Software Development',
-    sections: [
+    images: [
       {
-        type: 'image-grid',
-        title: 'Flow Fields',
-        media: [
-          { type: 'image', src: '/images/flowfields/pattern-3.png' },
-          { type: 'image', src: '/images/flowfields/pattern-2.png' },
-          { type: 'image', src: '/images/flowfields/pattern-mockup-1.png' },
-        ],
-      },
-      {
-        type: 'text',
-        title: 'Overview',
-        content: [
-          {
-            title: 'Introduction',
-            description:
-              'I kept getting excited over these mesmerizing wallpapers online and even more so when I found out they were procedurally generated! ',
-          },
-          {
-            title: 'Goals',
-            description:
-              'I wanted to create usable HD wallpapers for me and my friends',
-          },
-          {
-            title: 'Learnings',
-            description:
-              'I learned how to convert a simple noise function into a grid of closely related direction vectors, each of which would guide a series of randomly placed particles across the canvas. I learned how to create trails for these particles that together would create a pseudo-random masterpiece.',
-          },
-        ],
+        type: 'image',
+        src: '/images/mech/preview.png',
       },
     ],
-    logos: [logoMap.js, logoMap.js, logoMap.js, logoMap.js, logoMap.js],
-  },
-  {
-    year: '2022',
-    title: 'WFC',
-    description:
-      'Fascinated by the seemingly unstructured patterns of Wave Function Collapse, this explores generating them using only rules based on individual tile connections, mimicking the logic behind solving a jigsaw puzzle.',
-    images: ['/images/wfc/pattern-mockup-1.png'],
-    field: 'Software Development',
-    sections: [
-      {
-        type: 'image-grid',
-        title: 'WFC',
-        media: [
-          { type: 'image', src: '/images/wfc/pattern-3.png' },
-          { type: 'image', src: '/images/wfc/pattern-2.png' },
-          { type: 'image', src: '/images/wfc/pattern-mockup-1.png' },
-        ],
-      },
-      {
-        type: 'text',
-        title: 'Overview',
-        content: [
-          {
-            title: 'Introduction',
-            description:
-              'I found the resulting images of the [Wave Function Collapse algorithm](https://en.wikipedia.org/wiki/Wave_function_collapse) weird, it had a pattern… with no structure? Randomly generated patterns always amused me so I wanted to know how these are generated based solely on a set of rules formed by the sides of each piece. ',
-          },
-          {
-            title: 'Learnings',
-            description:
-              'Developing a project utilizing the Wave Function Collapse algorithm solidified my understanding of sorting. Repeatedly sorting cells to identify the optimal candidate for "collapse" cemented this fundamental concept. Additionally, I gained valuable experience in composing well-structured classes, promoting code maintainability and modularity.',
-          },
-        ],
-      },
-    ],
-    logos: [
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-      logoMap.java,
-    ],
-  },
-  {
-    images: ['/images/mech/preview.png'],
     year: '2023',
     title: 'Mech',
     description:

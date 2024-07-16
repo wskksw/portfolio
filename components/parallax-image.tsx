@@ -92,7 +92,7 @@ export default function ParallaxImage({
             fill
             src={src}
             alt="Project Image"
-            className="object-cover object-center"
+            className={cn('object-cover object-center', className)}
           />
         </motion.div>
       </motion.div>

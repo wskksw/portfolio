@@ -214,7 +214,7 @@ export const selectedProjects: SelectedProject[] = [
           {
             title: 'Learnings & Research Paper',
             description:
-              "The breadth of cutting-edge technologies employed in this project was so significant that it warranted co-authoring a [research paper](https://arxiv.org/pdf/2401.00052).  The research explored the interplay between natural language processing, vector databases, and LLM chains, pushing the boundaries of what's possible in this exciting field.<br/><br/>We published before Big Tech started releasing context-aware LLMs!",
+              "The breadth of cutting-edge technologies employed in this project was so significant that it warranted co-authoring a [research paper](https://arxiv.org/pdf/2401.00052) with one of the top computer science professor at UBC, [Ramon Lawrence](https://ctl.ok.ubc.ca/about-the-ctl/team-contact/ramon-lawrence/).  The research explored the interplay between natural language processing, vector databases, and LLM chains, pushing the boundaries of what's possible in this exciting field.<br/><br/>We published before Big Tech started releasing context-aware LLMs!",
           },
         ],
       },
@@ -435,7 +435,7 @@ export const selectedProjects: SelectedProject[] = [
     title: 'Capstone',
     description:
       'A gamified coding practice platform designed to enhance student learning through AI-generated coding problems and personalized feedback. It utilizes Large Language Models and focuses on fostering motivation through fun and interactive learning.',
-    images: ['/images/portfolio/draft-1.png'],
+    images: ['/images/capstone/dashboard-mockup.png'],
     field: 'Full Stack & AI Development',
     actions: [
       {
@@ -452,9 +452,17 @@ export const selectedProjects: SelectedProject[] = [
         type: 'image-grid',
         title: 'Capstone',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          {
+            type: 'image',
+            src: '/images/capstone/ide.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/modules.png',
+            aspectRatio: '16/9',
+          },
+          { type: 'image', src: '/images/capstone/dashboard-mockup-lg.png' },
         ],
       },
       {
@@ -480,31 +488,33 @@ export const selectedProjects: SelectedProject[] = [
       },
       {
         type: 'image-grid',
-        title: 'Project Role & Soft-Skills',
+        title: 'Selenium Testing & CI/CD',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          {
+            type: 'image',
+            src: '/images/capstone/tests.png',
+            aspectRatio: '512/410',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/checks.png',
+            aspectRatio: '512/410',
+          },
         ],
       },
       {
         type: 'text',
-        title: 'Project Role & Soft-Skills',
+        title: 'Selenium Testing & CI/CD',
         content: [
           {
-            title: 'My Role',
+            title: 'Problem',
             description:
-              'My role in the project was to lead the platform design, front-end development & testing, and integrating OpenAI question generation. A full list of my contributions can be found [here](https://github.com/UBCO-COSC-499-Summer-2023/project-6-gamified-coding-practice-platform-gamifygeeks/blob/master/docs/weekly%20logs/Ramos/Personal.md).',
+              'Front-end testing presents a distinct challenge compared to back-end testing. The goal is to simulate real-world user interactions while mimicking their limited access (no custom functions). This posed a significant hurdle as it required manual DOM manipulation.',
           },
           {
-            title: 'Difficulties',
+            title: 'Solution',
             description:
-              'Working with a team of five with vastly different backgrounds and experiences was difficult. Potential misunderstandings from diverse perspectives, conflicting individual goals, and mismatched skill sets lead to roadblocks and hindered team morale',
-          },
-          {
-            title: 'Learnings',
-            description:
-              'Leading the design, I fostered a collaborative environment by integrating everyone’s ideas or addressing why I think we should approach it differently. This teamwork extended to the back-end team, where I honed my ability to communicate data requirements effectively and upfront. The project solidified the importance of strong team dynamics, a skillset as valuable as the code itself.',
+              'We implemented automated front-end testing using Selenium to simulate user interactions and validate platform functionality. Integration with GitHub Actions enabled parallel testing across multiple headless browsers, significantly accelerating the testing process.<br/><br/>Further streamlining the workflow, each test run automatically created a comprehensive report. Additionally, failing tests **automatically captured screenshots**, providing valuable visual context for developers to pinpoint errors efficiently.',
           },
         ],
       },
@@ -512,9 +522,21 @@ export const selectedProjects: SelectedProject[] = [
         type: 'image-grid',
         title: 'Code Compiler',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          {
+            type: 'image',
+            src: '/images/capstone/ide-3.png',
+            aspectRatio: '712/591',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/ide-2.png',
+            aspectRatio: '712/591',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/ide-1.png',
+            aspectRatio: '16/9',
+          },
         ],
       },
       {
@@ -537,9 +559,21 @@ export const selectedProjects: SelectedProject[] = [
         type: 'image-grid',
         title: 'Help System',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          {
+            type: 'image',
+            src: '/images/capstone/help-1.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/help-2.png',
+            aspectRatio: '16/9',
+          },
+          {
+            type: 'image',
+            src: '/images/capstone/help-3.png',
+            aspectRatio: '16/9',
+          },
         ],
       },
       {
@@ -560,26 +594,30 @@ export const selectedProjects: SelectedProject[] = [
       },
       {
         type: 'image-grid',
-        title: 'Selenium Testing & CI/CD',
+        title: 'Project Role & Soft-Skills',
         media: [
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
-          { type: 'image', src: '/images/portfolio/draft-1-lg.png' },
+          { type: 'image', src: '/images/capstone/board.png' },
+          { type: 'image', src: '/images/capstone/pr.png' },
         ],
       },
       {
         type: 'text',
-        title: 'Selenium Testing & CI/CD',
+        title: 'Project Role & Soft-Skills',
         content: [
           {
-            title: 'Problem',
+            title: 'My Role',
             description:
-              'Front-end testing presents a distinct challenge compared to back-end testing. The goal is to simulate real-world user interactions while mimicking their limited access (no custom functions). This posed a significant hurdle as it required manual DOM manipulation.',
+              'My role in the project was to lead the platform design, front-end development & testing, and integrating OpenAI question generation. A full list of my contributions can be found [here](https://github.com/UBCO-COSC-499-Summer-2023/project-6-gamified-coding-practice-platform-gamifygeeks/blob/master/docs/weekly%20logs/Ramos/Personal.md).',
           },
           {
-            title: 'Solution',
+            title: 'Difficulties',
             description:
-              'We implemented automated front-end testing using Selenium to simulate user interactions and validate platform functionality. Integration with GitHub Actions enabled parallel testing across multiple headless browsers, significantly accelerating the testing process.<br/><br/>Further streamlining the workflow, each test run automatically created a comprehensive report. Additionally, failing tests automatically captured screenshots, providing valuable visual context for developers to pinpoint errors efficiently.',
+              'Working with a team of five with vastly different backgrounds and experiences was difficult. Potential misunderstandings from diverse perspectives, conflicting individual goals, and mismatched skill sets lead to roadblocks and hindered team morale',
+          },
+          {
+            title: 'Learnings',
+            description:
+              'Leading the design, I fostered a collaborative environment by integrating everyone’s ideas or addressing why I think we should approach it differently. This teamwork extended to the back-end team, where I honed my ability to communicate data requirements effectively and upfront. The project solidified the importance of strong team dynamics, a skillset as valuable as the code itself.',
           },
         ],
       },

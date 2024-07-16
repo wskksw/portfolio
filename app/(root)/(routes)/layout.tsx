@@ -169,7 +169,7 @@ export default function MainLayout({
             >
               <Image
                 fill
-                src={'/logos/git-hub.png'}
+                src={'/images/logos/git-hub.png'}
                 alt="GitHub Icon"
                 className="object-cover object-center"
               />
@@ -181,7 +181,7 @@ export default function MainLayout({
             >
               <Image
                 fill
-                src={'/logos/linked-in.png'}
+                src={'/images/logos/linked-in.png'}
                 alt="LinkedIn Icon"
                 className="object-cover object-center"
               />

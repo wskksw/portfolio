@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="hide-scrollbar text-[16px] lg:text-[12px] 2xl:text-[16px]"
+      className="hide-scrollbar text-[10px] sm:text-[12px] md:text-[16px] lg:text-[12px] 2xl:text-[16px]"
     >
       <body className={HelveticaNowDisplay.className}>
         <SidebarProvider>

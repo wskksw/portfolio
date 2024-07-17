@@ -55,7 +55,7 @@ export const EmailForm = () => {
       setLoading(true)
 
       // TODO: Send email
-      throw new Error('Not implemented')
+      // throw new Error('Not implemented')
 
       toast({
         title: 'Email Sent!',

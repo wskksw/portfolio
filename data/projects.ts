@@ -726,7 +726,7 @@ export const selectedProjects: SelectedProject[] = [
       {
         type: 'image-grid',
         title: 'Hub',
-        media: [{ type: 'image', src: '/images/portfolio/draft-1-lg.png' }],
+        media: [{ type: 'image', src: '/images/hub/quiz-mockup-1.png' }],
       },
       {
         type: 'text',

@@ -27,7 +27,7 @@ const formSchema = z.object({
   name: z.string().min(1),
   subject: z.string().min(1),
   email: z.string().email(),
-  phoneNumber: z.string().min(1).optional(),
+  phoneNumber: z.string().optional(),
   message: z.string().min(1),
 })
 

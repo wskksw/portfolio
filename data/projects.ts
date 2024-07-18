@@ -496,10 +496,6 @@ export const selectedProjects: SelectedProject[] = [
     field: 'Full Stack & AI Development',
     actions: [
       {
-        title: 'GitHub',
-        link: 'https://github.com/UBCO-COSC-499-Summer-2023/project-6-gamified-coding-practice-platform-gamifygeeks',
-      },
-      {
         title: 'Project Details',
         link: '/projects/2',
       },

@@ -6,12 +6,10 @@ import { motion } from 'framer-motion'
 import { smoothEase } from '@/lib/utils'
 
 interface TransitionContextType {
-  betweenPages: boolean
   transitionPage: (src: string) => void
 }
 
 const TransitionContext = createContext<TransitionContextType>({
-  betweenPages: false,
   transitionPage: (src: string) => {},
 })
 
@@ -46,7 +44,7 @@ export const TransitionProvider = ({
   }, [pathname])
 
   return (
-    <TransitionContext.Provider value={{ betweenPages, transitionPage }}>
+    <TransitionContext.Provider value={{ transitionPage }}>
       <motion.div
         key={pathname}
         initial={{ scaleY: 1, y: '0%' }}
@@ -68,6 +66,26 @@ export const TransitionProvider = ({
         }}
         className="fixed left-0 top-0 z-[100] h-full w-full bg-primary"
       />
+      <div className="pointer-events-none fixed left-0 top-0 z-[150] h-full w-full">
+        <div className="relative h-full w-full">
+          <motion.div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-extrabold leading-8 text-primary"
+            animate={{
+              opacity: betweenPages ? 1 : 0,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+          >
+            <span className="absolute left-1/2 top-1/2 z-[-10] h-32 w-32 -translate-x-1/2 -translate-y-1/2">
+              <div className="h-full w-full animate-ping rounded-full bg-muted-foreground" />
+            </span>
+            <h4 className="z-10 text-7xl font-extrabold leading-8 text-background">
+              JR
+            </h4>
+          </motion.div>
+        </div>
+      </div>
       {children}
     </TransitionContext.Provider>
   )

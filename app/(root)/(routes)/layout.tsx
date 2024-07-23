@@ -57,26 +57,6 @@ export default function MainLayout({
 
   return (
     <div className="hide-scrollbar relative h-full w-full">
-      <div className="pointer-events-none fixed left-0 top-0 z-[150] h-full w-full bg-transparent">
-        <div className="relative h-full w-full items-center justify-center">
-          <motion.div
-            className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl font-extrabold leading-8 text-primary"
-            animate={{
-              opacity: betweenPages ? 1 : 0,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
-          >
-            <span className="absolute left-1/2 top-1/2 z-[-10] h-32 w-32 -translate-x-1/2 -translate-y-1/2 ">
-              <div className="h-full w-full animate-ping rounded-full bg-muted-foreground"></div>
-            </span>
-            <h4 className="z-10 text-7xl font-extrabold leading-8 text-background">
-              JR
-            </h4>
-          </motion.div>
-        </div>
-      </div>
       <div className="pointer-events-none fixed left-0 top-0 z-40 h-full w-full">
         <div className="h-full w-full px-8">
           <div className="relative mx-auto flex h-full max-w-[1920px] gap-5 px-8 md:px-12 lg:px-24 2xl:px-32">

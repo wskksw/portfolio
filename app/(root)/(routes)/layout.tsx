@@ -7,20 +7,17 @@ import Navigation from '@/components/navigation'
 import SidebarsOverlay from '@/components/sidebars-overlay'
 import Image from 'next/image'
 import { Grid3x3 } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
-import { useTransition } from '@/providers/use-transition'
 import { githubLink, linkedinLink } from '@/data/links'
 import Link from 'next/link'
+import { useGrid } from '@/providers/use-grid'
 
 export default function MainLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { betweenPages } = useTransition()
-
   const [navOpen, setNavOpen] = useState(false)
-  const [gridOpen, setGridOpen] = useState(false)
+  const { setGridOpen } = useGrid()
 
   const transition = {
     type: 'spring',
@@ -28,105 +25,8 @@ export default function MainLayout({
     bounce: 0.2,
   }
 
-  const interval = 0.5
-  const duration = 0.6
-  const ease = smoothEase
-
-  const downVariants = {
-    visible: (i: number) => ({
-      height: '100%',
-      transition: {
-        duration,
-        delay: i * interval,
-        ease,
-      },
-    }),
-    hidden: { height: 0 },
-  }
-  const upVariants = {
-    visible: (i: number) => ({
-      y: 0,
-      transition: {
-        duration,
-        delay: i * interval,
-        ease,
-      },
-    }),
-    hidden: { y: '100%' },
-  }
-
   return (
     <div className="hide-scrollbar relative h-full w-full">
-      <div className="pointer-events-none fixed left-0 top-0 z-40 h-full w-full">
-        <div className="h-full w-full px-8">
-          <div className="relative mx-auto flex h-full max-w-[1920px] gap-5 px-8 md:px-12 lg:px-24 2xl:px-32">
-            <motion.div
-              custom={2}
-              animate={gridOpen ? 'visible' : 'hidden'}
-              variants={upVariants}
-              className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-            />
-            <motion.div
-              custom={2}
-              animate={gridOpen ? 'visible' : 'hidden'}
-              variants={downVariants}
-              className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-            />
-            <div className="relative flex-1">
-              <motion.div
-                custom={0}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={downVariants}
-                className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={1}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={upVariants}
-                className="absolute left-1/3 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={1}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={upVariants}
-                className="absolute left-2/3 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={0}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={downVariants}
-                className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-            </div>
-            <div className="relative flex-1">
-              <motion.div
-                custom={0}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={upVariants}
-                className="absolute left-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={1}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={downVariants}
-                className="absolute left-1/3 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={1}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={downVariants}
-                className="absolute left-2/3 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-              <motion.div
-                custom={0}
-                animate={gridOpen ? 'visible' : 'hidden'}
-                variants={upVariants}
-                className="absolute right-0 top-0 h-full translate-x-[-50%] border-x border-outline"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="pointer-events-none fixed left-0 top-0 z-20 h-fit w-full bg-transparent">
         <div className="flex h-full w-full justify-between gap-5 px-[34px] pt-8">
           <h4 className="text-4xl font-extrabold leading-8">JR</h4>

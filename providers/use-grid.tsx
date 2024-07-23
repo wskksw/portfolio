@@ -5,9 +5,11 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from 'react'
 import { motion } from 'framer-motion'
+import '@/app/globals.css'
 
 import { smoothEase } from '@/lib/utils'
 
@@ -53,7 +55,7 @@ export const GridProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <GridContext.Provider value={{ gridOpen, setGridOpen }}>
-      <div className="pointer-events-none fixed left-0 top-0 z-40 h-full w-full">
+      <div className="pointer-events-none fixed left-0 top-0 z-10 h-full w-full">
         <div className="h-full w-full px-8">
           <div className="relative mx-auto flex h-full max-w-[1920px] gap-5 px-8 md:px-12 lg:px-24 2xl:px-32">
             <motion.div

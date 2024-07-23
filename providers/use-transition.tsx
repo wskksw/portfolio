@@ -20,8 +20,8 @@ export const TransitionProvider = ({
 }) => {
   const router = useRouter()
   const pathname = usePathname()
-  const [animating, setAnimating] = useState(false)
-  const [betweenPages, setBetweenPages] = useState(false)
+  const [animating, setAnimating] = useState(true)
+  const [betweenPages, setBetweenPages] = useState(true)
 
   const transitionPage = (src: string) => {
     if (animating || src === pathname) return
@@ -66,10 +66,10 @@ export const TransitionProvider = ({
         }}
         className="fixed left-0 top-0 z-[100] h-full w-full bg-primary"
       />
-      <div className="pointer-events-none fixed left-0 top-0 z-[150] h-full w-full">
+      <div className="pointer-events-none fixed left-0 top-0 z-[100] h-full w-full">
         <div className="relative h-full w-full">
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-extrabold leading-8 text-primary"
+            className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-4xl font-extrabold leading-8 text-primary"
             animate={{
               opacity: betweenPages ? 1 : 0,
             }}
@@ -77,7 +77,7 @@ export const TransitionProvider = ({
               duration: 0.3,
             }}
           >
-            <span className="absolute left-1/2 top-1/2 z-[-10] h-32 w-32 -translate-x-1/2 -translate-y-1/2">
+            <span className="absolute left-1/2 top-1/2 z-[-10] h-32 w-32 translate-x-[-50%] translate-y-[-50%]">
               <div className="h-full w-full animate-ping rounded-full bg-muted-foreground" />
             </span>
             <h4 className="z-10 text-7xl font-extrabold leading-8 text-background">

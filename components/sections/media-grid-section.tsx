@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import FadeInWrapper from '../fade-in-wrapper'
-import InnerParallaxImage from '../inner-parallax-image'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import InnerParallaxImage from '@/components/inner-parallax-image'
 import { Media } from '@/data/projects'
-import Video from '../video'
+import Video from '@/components/video'
+import Header from '@/components/header'
 
 export interface MediaGridSectionProps {
   header: string
@@ -21,14 +21,7 @@ export default function MediaGridSection({
 }: MediaGridSectionProps) {
   return (
     <section className={className}>
-      <FadeInWrapper>
-        <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-          {header.toUpperCase()}
-        </h4>
-      </FadeInWrapper>
-      <FadeInWrapper>
-        <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
-      </FadeInWrapper>
+      <Header header={header} title={title} />
       <div className="mt-16 flex flex-wrap-reverse gap-5">
         {media.map((data, index) => (
           <FadeInWrapper

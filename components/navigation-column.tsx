@@ -1,5 +1,5 @@
-import FadeInWrapper from './fade-in-wrapper'
-import UnderlinedText from './underlined-text'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import UnderlinedText from '@/components/underlined-text'
 
 export type Column = {
   title: string
@@ -18,13 +18,13 @@ export default function NavigationColumn({ column }: NavigationColumnProps) {
   return (
     <div className="w-full">
       <FadeInWrapper>
-        <p className="text-lg tracking-[0.3em] text-muted-foreground">
+        <p className="text-lg tracking-[0.3rem] text-muted-foreground">
           {column.title.toUpperCase()}
         </p>
       </FadeInWrapper>
       <ul className="mt-2 flex flex-col gap-2 text-[1.5rem] text-muted-foreground">
         {column.values.map((value, index) => (
-          <li key={index} onClick={() => value.onClick?.()}>
+          <li key={index} onClick={value.onClick}>
             <FadeInWrapper delay={index * 0.05}>
               {value.wrapper ? (
                 value.wrapper(

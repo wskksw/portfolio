@@ -1,8 +1,8 @@
 'use client'
 
-import { useTransition } from '@/providers/use-transition'
 import Image from 'next/image'
-import Link from 'next/link'
+
+import { useTransition } from '@/providers/use-transition'
 
 interface NavigationCardProps {
   title: string

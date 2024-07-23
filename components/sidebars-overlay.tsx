@@ -1,7 +1,7 @@
 'use client'
 
 import { useSidebars } from '@/providers/use-sidebars'
-import VerticalCarousel from './vertical-carousel'
+import Carousel from '@/components/carousel'
 
 export default function SidebarsOverlay() {
   const { sidebars, activeIndex } = useSidebars()
@@ -24,7 +24,7 @@ export default function SidebarsOverlay() {
         }}
       >
         <div className="absolute left-0 top-1/2 flex items-center justify-normal">
-          <VerticalCarousel
+          <Carousel
             alignment="horizontal"
             elements={titles}
             active={activeIndex}
@@ -32,7 +32,7 @@ export default function SidebarsOverlay() {
           />
         </div>
         <div className="absolute right-0 top-1/2 flex rotate-180 items-center justify-normal">
-          <VerticalCarousel
+          <Carousel
             alignment="horizontal"
             elements={actions}
             active={activeIndex}

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 import Footer from '@/components/footer'
-import MediaGridSection from '@/components/sections/image-grid-section'
+import MediaGridSection from '@/components/sections/media-grid-section'
 import TextSection from '@/components/sections/text-section'
 import { miscProjects, selectedProjects } from '@/data/projects'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'

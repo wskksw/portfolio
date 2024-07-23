@@ -1,10 +1,11 @@
 'use client'
 
-import { Button } from './ui/button'
-import { cn } from '@/lib/utils'
 import { motion, useAnimate } from 'framer-motion'
 import { useState } from 'react'
-import LongArrow from './icons/longArrow'
+
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import LongArrow from '@/components/icons/longArrow'
 
 interface ArrowButtonProps {
   title: string

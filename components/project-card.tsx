@@ -3,10 +3,11 @@
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { motion, motionValue } from 'framer-motion'
-import ArrowButton from './arrow-button'
+
+import ArrowButton from '@/components/arrow-button'
 import { cn, smoothEase } from '@/lib/utils'
 import { Logo } from '@/data/stack'
-import LogoIcon from './icons/logo'
+import LogoIcon from '@/components/icons/logo'
 
 interface ProjectCardProps {
   src: string
@@ -19,7 +20,7 @@ interface ProjectCardProps {
   variant?: 'default' | 'lg'
   xAnim?: {
     offset: any
-    distance: number
+    widthOverflowPercent: number
   }
 }
 
@@ -58,6 +59,14 @@ export default function ProjectCard({
   const x = motionValue(0)
   const y = motionValue(0)
 
+  /*
+    Container
+    - Background Image
+    - Background Overlay
+    - Mouseover Overlay
+    - Content
+  */
+
   return (
     <div
       ref={cardRef}
@@ -76,7 +85,7 @@ export default function ProjectCard({
       <div
         className="absolute left-0 top-0 z-[-10] h-full w-full overflow-hidden"
         style={{
-          width: `${100 + (xAnim ? xAnim.distance : 0)}%`,
+          width: `${100 + (xAnim ? xAnim.widthOverflowPercent : 0)}%`,
         }}
       >
         <motion.div
@@ -115,7 +124,7 @@ export default function ProjectCard({
       />
       <div className="z-20 flex h-full flex-col">
         <motion.p
-          className="p-10 pb-0 text-lg tracking-[0.3em]"
+          className="p-10 pb-0 text-lg tracking-[0.3rem]"
           animate={{
             color: hovered ? 'hsl(var(--secondary))' : 'hsl(var(--background))',
           }}
@@ -134,11 +143,7 @@ export default function ProjectCard({
           transition={transition}
         >
           <div
-            className={cn(
-              'space-y-2 pt-0',
-              variant === 'default' && 'p-10 pt-4',
-              variant === 'lg' && 'p-10 pr-0 pt-4',
-            )}
+            className={cn('space-y-2 p-10 pt-4', variant === 'lg' && 'pr-0')}
           >
             <h1 className={cn('text-5xl font-extrabold text-background')}>
               {title.toUpperCase()}

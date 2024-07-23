@@ -1,18 +1,18 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import ProjectCard from '../project-card'
 import {
   useScroll,
-  useTransform,
   motion,
   useMotionValueEvent,
   useMotionValue,
 } from 'framer-motion'
-import VerticalCarousel from '../vertical-carousel'
+
+import ProjectCard from '@/components/project-card'
 import { miscProjects, selectedProjects } from '@/data/projects'
-import FadeInWrapper from '../fade-in-wrapper'
+import FadeInWrapper from '@/components/fade-in-wrapper'
 import { useTransition } from '@/providers/use-transition'
+import Carousel from '@/components/carousel'
 
 interface GallerySectionProps {}
 
@@ -36,13 +36,15 @@ export default function GallerySection({}: GallerySectionProps) {
     }
   }
 
-  const xDistance = 40
+  const widthPercentOverflow = 40
   const x = useMotionValue(0)
   const xOffset = useMotionValue('0%')
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     x.set(latest * (sectionWidth - carouselWidth))
 
-    xOffset.set(`-${latest * (xDistance / (1 + xDistance / 100))}%`)
+    xOffset.set(
+      `-${latest * (widthPercentOverflow / (1 + widthPercentOverflow / 100))}%`,
+    )
   })
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function GallerySection({}: GallerySectionProps) {
       changeSectionWidth()
 
       window.addEventListener('resize', changeSectionWidth)
-      return () => window?.removeEventListener('resize', changeSectionWidth)
+      return () => window.removeEventListener('resize', changeSectionWidth)
     }
   }, [targetRef, carouselRef])
 
@@ -73,7 +75,7 @@ export default function GallerySection({}: GallerySectionProps) {
       <div className="sticky top-0 flex h-screen items-center justify-start pb-10">
         <div className="flex flex-col">
           <FadeInWrapper>
-            <p className="tracking-[0.3em] text-muted-foreground">
+            <p className="tracking-[0.3rem] text-muted-foreground">
               LOOKING FOR?
             </p>
           </FadeInWrapper>
@@ -84,7 +86,7 @@ export default function GallerySection({}: GallerySectionProps) {
                 width: 'calc(100vw - 384px)',
               }}
             >
-              <VerticalCarousel
+              <Carousel
                 alignment="vertical"
                 elements={projects.map((project) => (
                   <h1
@@ -110,7 +112,7 @@ export default function GallerySection({}: GallerySectionProps) {
                   onHover={() => handleChangeTitle(index)}
                   xAnim={{
                     offset: xOffset,
-                    distance: xDistance,
+                    widthOverflowPercent: widthPercentOverflow,
                   }}
                 />
               </FadeInWrapper>

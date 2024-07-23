@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/navigation/navigation'
 import SidebarsOverlay from '@/components/sidebars-overlay'
 import { useGrid } from '@/providers/use-grid'
 import TopOverlay from '@/components/navigation/top-overlay'

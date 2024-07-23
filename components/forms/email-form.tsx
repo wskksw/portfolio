@@ -22,6 +22,7 @@ import UnderlinedText from '../underlined-text'
 import ArrowButton from '../arrow-button'
 import { Textarea } from '../ui/textarea'
 import FadeInWrapper from '../fade-in-wrapper'
+import Link from 'next/link'
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -35,7 +36,6 @@ type EmailFormValues = z.infer<typeof formSchema>
 
 export const EmailForm = () => {
   const { toast } = useToast()
-  const router = useRouter()
 
   const [loading, setLoading] = useState(false)
 
@@ -66,9 +66,9 @@ export const EmailForm = () => {
         title: 'Oh no! Something went wrong.',
         description: "I wasn't able to send your email.",
         action: (
-          <a href="mailto:ramosjasonwork@gmail.com">
+          <Link href="mailto:ramosjasonwork@gmail.com">
             <ToastAction altText="email">Direct Email</ToastAction>,
-          </a>
+          </Link>
         ),
       })
     } finally {

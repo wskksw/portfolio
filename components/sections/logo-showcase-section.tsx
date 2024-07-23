@@ -1,10 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { Logo } from '@/data/stack'
-import StackIcon from 'tech-stack-icons'
-import LogoIcon from '../icons/logo'
-import FadeInWrapper from '../fade-in-wrapper'
+import LogoIcon from '@/components/icons/logo'
+import FadeInWrapper from '@/components/fade-in-wrapper'
 
 interface LogoShowcaseSectionProps {
   title: string

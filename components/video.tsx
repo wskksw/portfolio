@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import { useRef } from 'react'
 
 interface VideoProps {
   src: string

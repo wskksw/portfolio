@@ -1,10 +1,11 @@
 'use client'
 
-import { cn, smoothEase } from '@/lib/utils'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+
+import { cn, smoothEase } from '@/lib/utils'
 
 interface ParallaxImageProps {
   src: string
@@ -28,6 +29,14 @@ export default function ParallaxImage({
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     setHookedYProgress(latest)
   })
+
+  /*
+    Containers:
+    - Popup 
+    - Parallax
+    - Window Reveal
+    - Inner Parallax
+  */
 
   return (
     <motion.div

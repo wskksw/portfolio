@@ -1,8 +1,9 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import FadeInWrapper from '../fade-in-wrapper'
-import Markdown from '../markdown'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import Markdown from '@/components/markdown'
+import Header from '../header'
 
 interface TextSectionProps {
   header: string
@@ -22,14 +23,7 @@ export default function TextSection({
 }: TextSectionProps) {
   return (
     <section className={className}>
-      <FadeInWrapper>
-        <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-          {header.toUpperCase()}
-        </h4>
-      </FadeInWrapper>
-      <FadeInWrapper>
-        <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
-      </FadeInWrapper>
+      <Header header={header} title={title} />
       <div className="mt-16 border-border">
         {content.map((item, index) => (
           <FadeInWrapper

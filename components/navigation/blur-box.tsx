@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils'
 import { Dispatch, SetStateAction } from 'react'
+
+import { cn } from '@/lib/utils'
 
 interface BlurBoxProps {
   navOpen: boolean
@@ -14,6 +15,7 @@ export default function BlurBox({ navOpen, setNavOpen }: BlurBoxProps) {
         navOpen && 'backdrop-blur-sm',
         !navOpen && 'pointer-events-none',
       )}
+      // Manual styles to work with backdrop-filter
       style={{
         backgroundColor: `rgba(0, 0, 0, ${navOpen ? 0.5 : 0})`,
       }}

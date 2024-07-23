@@ -1,9 +1,10 @@
-import { githubLink, linkedinLink } from '@/data/links'
-import { cn } from '@/lib/utils'
-import { useGrid } from '@/providers/use-grid'
 import { Grid3x3 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { githubLink, linkedinLink } from '@/data/links'
+import { cn } from '@/lib/utils'
+import { useGrid } from '@/providers/use-grid'
 
 interface TopOverlayProps {
   navOpen: boolean

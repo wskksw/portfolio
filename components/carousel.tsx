@@ -1,4 +1,4 @@
-import { act, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn, smoothEase } from '@/lib/utils'
 
@@ -9,7 +9,7 @@ const sliderTransition = {
   ease: smoothEase,
 }
 
-interface VerticalCarouselProps {
+interface CarouselProps {
   elements: React.ReactNode[]
   alignment?: Alignment
   active?: number
@@ -20,13 +20,13 @@ interface VerticalCarouselProps {
   }
 }
 
-export default function VerticalCarousel({
+export default function Carousel({
   elements,
   alignment = 'horizontal',
   active,
   className,
   offset,
-}: VerticalCarouselProps) {
+}: CarouselProps) {
   const [[elementCount, direction], setElementCount] = useState([
     elements.length,
     0,

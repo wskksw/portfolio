@@ -1,11 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import ArrowButton from '../arrow-button'
-import { motion } from 'framer-motion'
-import FadeInWrapper from '../fade-in-wrapper'
-import InnerParallaxImage from '../inner-parallax-image'
+import ArrowButton from '@/components/arrow-button'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import InnerParallaxImage from '@/components/inner-parallax-image'
 import { useTransition } from '@/providers/use-transition'
+import ContentPanel from '@/components/content-panel'
 
 interface HeroSectionProps {
   header: string
@@ -26,19 +25,7 @@ export default function HeroSection({
     <section className="flex flex-col gap-5 lg:flex-row">
       <div className="flex w-full flex-1 items-end">
         <div>
-          <FadeInWrapper>
-            <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-              {header.toUpperCase()}
-            </h4>
-          </FadeInWrapper>
-          <FadeInWrapper>
-            <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
-          </FadeInWrapper>
-          <FadeInWrapper>
-            <p className="mt-8 text-[1.5rem] text-muted-foreground">
-              {content}
-            </p>
-          </FadeInWrapper>
+          <ContentPanel header={header} title={title} content={content} />
           <div className="mt-6 flex w-2/3 items-center justify-between gap-5">
             <FadeInWrapper className="flex-1">
               <ArrowButton

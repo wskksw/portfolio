@@ -47,7 +47,7 @@ export default function ProjectsPage() {
     <main className="py-32">
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <FadeInWrapper>
-          <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+          <h4 className="text-lg tracking-[0.3rem] text-muted-foreground">
             PORTFOLIO
           </h4>
         </FadeInWrapper>
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
       </div>
       <div className="pb-40" ref={(ref: any) => (refs.current[1] = ref)}>
         <FadeInWrapper>
-          <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
+          <h4 className="text-lg tracking-[0.3rem] text-muted-foreground">
             PORTFOLIO
           </h4>
         </FadeInWrapper>

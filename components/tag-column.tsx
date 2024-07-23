@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import FadeInWrapper from './fade-in-wrapper'
+import FadeInWrapper from '@/components/fade-in-wrapper'
 
 export type Column = {
   title?: string
@@ -23,11 +22,6 @@ export default function TagColumn({ column }: TagColumnProps) {
           <FadeInWrapper key={index} className="flex items-center gap-4">
             <div className="h-1 w-1 bg-muted-foreground"></div>
             {value}
-            <motion.div
-              whileInView={{
-                offset: ['end start', 'start end'],
-              }}
-            ></motion.div>
           </FadeInWrapper>
         ))}
       </ul>

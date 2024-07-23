@@ -7,10 +7,11 @@ import {
   useEffect,
   useState,
 } from 'react'
-import NavigationCard from './navigation-card'
-import LongArrow from './icons/longArrow'
-import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+
+import NavigationCard from '@/components/navigation-card'
+import LongArrow from '@/components/icons/longArrow'
+import { cn } from '@/lib/utils'
 
 const animateLoadingBar = (progress: number) => {
   const trackBar = document.querySelector('.track-bar') as HTMLElement

@@ -1,13 +1,15 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import ArrowButton from '../arrow-button'
-import FadeInWrapper from '../fade-in-wrapper'
-import ParallaxImage from '../parallax-image'
-import { SelectedProject } from '@/data/projects'
-import LogoIcon from '../icons/logo'
-import { useTransition } from '@/providers/use-transition'
 import Link from 'next/link'
+
+import { cn } from '@/lib/utils'
+import ArrowButton from '@/components/arrow-button'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import ParallaxImage from '@/components/parallax-image'
+import { SelectedProject } from '@/data/projects'
+import LogoIcon from '@/components/icons/logo'
+import { useTransition } from '@/providers/use-transition'
+import ContentPanel from '@/components/content-panel'
 
 function isRelativeLink(link: string) {
   var regex = new RegExp('^(?:[a-z+]+:)?//', 'i')
@@ -33,21 +35,11 @@ export default function ProjectSection({
     <section className="flex flex-col gap-5 lg:flex-row">
       <div className="flex flex-1 items-center">
         <div className="h-fit w-full lg:w-2/3">
-          <div>
-            <FadeInWrapper>
-              <h4 className="text-lg tracking-[0.3em] text-muted-foreground">
-                {`${prefix} - ${year}`.toUpperCase()}
-              </h4>
-            </FadeInWrapper>
-            <FadeInWrapper>
-              <h1 className="mt-2 text-7xl font-extrabold">{title}</h1>
-            </FadeInWrapper>
-            <FadeInWrapper>
-              <p className="mt-6 text-justify text-[1.5rem] text-muted-foreground">
-                {description}
-              </p>
-            </FadeInWrapper>
-          </div>
+          <ContentPanel
+            header={`${prefix} - ${year}`}
+            title={title}
+            content={description}
+          />
           <div className="mt-20 flex w-full flex-wrap gap-8">
             {logos.map((logo, index) => (
               <FadeInWrapper

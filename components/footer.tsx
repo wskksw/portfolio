@@ -1,10 +1,10 @@
-import { useTransition } from '@/providers/use-transition'
-import FadeInWrapper from './fade-in-wrapper'
-import NavigationColumn from './navigation-column'
-import UnderlinedText from './underlined-text'
-import { useRouter } from 'next/navigation'
-import { behanceLink, githubLink, linkedinLink } from '@/data/links'
 import Link from 'next/link'
+
+import { useTransition } from '@/providers/use-transition'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import NavigationColumn from '@/components/navigation-column'
+import UnderlinedText from '@/components/underlined-text'
+import { behanceLink, githubLink, linkedinLink } from '@/data/links'
 
 interface FooterProps {
   subTitle: string
@@ -21,7 +21,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
     <section className="w-full pb-[8vh]">
       <div className="flex w-full flex-col items-center justify-center">
         <FadeInWrapper>
-          <h4 className="text-center tracking-[0.3em] text-muted-foreground">
+          <h4 className="text-center tracking-[0.3rem] text-muted-foreground">
             {subTitle.toUpperCase()}
           </h4>
         </FadeInWrapper>

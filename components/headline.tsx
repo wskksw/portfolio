@@ -7,7 +7,7 @@ interface HeadlineProps {
 export default function Headline({ header, title, tags }: HeadlineProps) {
   return (
     <div>
-      <h4 className="text-lg font-normal tracking-[0.3em] text-muted-foreground">
+      <h4 className="text-lg font-normal tracking-[0.3rem] text-muted-foreground">
         {header.toUpperCase()}
       </h4>
       <h2 className="mb-1 mt-2 text-[1.5rem] font-extrabold leading-8">

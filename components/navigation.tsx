@@ -183,7 +183,7 @@ export default function Navigation({ open, setOpen }: NavigationProps) {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <div className="h-[14px] w-32 rounded-full border-2 border-background bg-primary p-1">
+        <div className="h-[14px] w-32 rounded-full border-2 border-background bg-primary px-[5px] py-1">
           <div className="relative h-full w-full overflow-hidden rounded-full">
             <div
               className={`track-bar absolute left-1/2 top-1/2 h-[2px] rounded-full bg-background`}

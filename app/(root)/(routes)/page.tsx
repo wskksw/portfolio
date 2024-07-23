@@ -1,29 +1,23 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+
 import Footer from '@/components/footer'
 import GallerySection from '@/components/sections/gallery-section'
 import HeroSection from '@/components/sections/hero-section'
 import ProjectSection from '@/components/sections/project-section'
 import { selectedProjects } from '@/data/projects'
-import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
-import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { useEffect, useRef } from 'react'
 import { useTransition } from '@/providers/use-transition'
 
 export default function HomePage() {
   const { transitionPage } = useTransition()
-  const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
+  const { setSidebars, setSidebarRefs } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
-  const { scrollY } = useScroll()
 
-  useMotionValueEvent(scrollY, 'change', (y) => {
-    const bestIndex = calculateBestSidebar(y, refs, window)
-
-    if (bestIndex !== activeIndex) {
-      setActiveIndex(bestIndex)
-    }
-  })
+  useEffect(() => {
+    setSidebarRefs(refs.current)
+  }, [setSidebarRefs])
 
   useEffect(() => {
     const data: Sidebar[] = []

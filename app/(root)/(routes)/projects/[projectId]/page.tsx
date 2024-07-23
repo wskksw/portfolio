@@ -1,30 +1,24 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+
 import Footer from '@/components/footer'
 import MediaGridSection from '@/components/sections/image-grid-section'
 import TextSection from '@/components/sections/text-section'
 import { miscProjects, selectedProjects } from '@/data/projects'
-import { calculateBestSidebar } from '@/lib/utils'
 import { Sidebar, useSidebars } from '@/providers/use-sidebars'
 import { useTransition } from '@/providers/use-transition'
-import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { useParams } from 'next/navigation'
-import { useEffect, useRef } from 'react'
 
 export default function ProjectPage() {
   const params = useParams()
   const { transitionPage } = useTransition()
-  const { setSidebars, setActiveIndex, activeIndex } = useSidebars()
+  const { setSidebars, setSidebarRefs } = useSidebars()
   const refs = useRef<HTMLDivElement[]>([])
-  const { scrollY } = useScroll()
 
-  useMotionValueEvent(scrollY, 'change', (y) => {
-    const bestIndex = calculateBestSidebar(y, refs, window)
-
-    if (bestIndex !== activeIndex) {
-      setActiveIndex(bestIndex)
-    }
-  })
+  useEffect(() => {
+    setSidebarRefs(refs.current)
+  }, [setSidebarRefs])
 
   useEffect(() => {
     const data: Sidebar[] = []
@@ -45,8 +39,9 @@ export default function ProjectPage() {
   }, [setSidebars])
 
   const getProject = () => {
-    if (params.projectId === undefined)
+    if (params.projectId === undefined) {
       return { project: selectedProjects[0], index: 0 }
+    }
 
     const numSelectedProjects = selectedProjects.length
     const numProjects = numSelectedProjects + miscProjects.length

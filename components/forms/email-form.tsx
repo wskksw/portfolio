@@ -4,9 +4,9 @@ import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { MailtrapClient } from 'mailtrap'
 
-import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -17,12 +17,12 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/components/ui/use-toast'
-import { ToastAction } from '../ui/toast'
-import UnderlinedText from '../underlined-text'
-import ArrowButton from '../arrow-button'
-import { Textarea } from '../ui/textarea'
-import FadeInWrapper from '../fade-in-wrapper'
-import Link from 'next/link'
+import { ToastAction } from '@/components/ui/toast'
+import UnderlinedText from '@/components/underlined-text'
+import ArrowButton from '@/components/arrow-button'
+import { Textarea } from '@/components/ui/textarea'
+import FadeInWrapper from '@/components/fade-in-wrapper'
+import axios from 'axios'
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -54,8 +54,7 @@ export const EmailForm = () => {
     try {
       setLoading(true)
 
-      // TODO: Send email
-      // throw new Error('Not implemented')
+      await axios.post('/api/email', data)
 
       toast({
         title: 'Email Sent!',

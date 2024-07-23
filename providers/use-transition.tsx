@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+
 import { smoothEase } from '@/lib/utils'
 
 interface TransitionContextType {

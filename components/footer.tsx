@@ -66,7 +66,7 @@ export default function Footer({ subTitle, action }: FooterProps) {
                 {
                   title: 'Curriculum Vitae',
                   wrapper: (children) => (
-                    <a href="/resumes/resume-2024.pdf">{children}</a>
+                    <a href="/resumes/Jason-Ramos-Resume.pdf">{children}</a>
                   ),
                 },
               ],

@@ -2,7 +2,6 @@ import { Logo, logoMap } from './stack'
 
 export type BaseMedia = {
   src: string
-  aspectRatio?: string
   className?: string
 }
 
@@ -81,17 +80,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/products-dark.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/cart-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/view-product-3.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -118,17 +117,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/inventory-light.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/products-light.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/outgoing-dark.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -152,7 +151,11 @@ export const selectedProjects: SelectedProject[] = [
         type: 'image-grid',
         title: 'Testing',
         media: [
-          { type: 'image', src: '/images/omica/test.png', aspectRatio: '16/9' },
+          {
+            type: 'image',
+            src: '/images/omica/test.png',
+            className: 'aspect-[16/9]',
+          },
         ],
       },
       {
@@ -178,12 +181,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/view-products-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/view-products-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -210,17 +213,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/modal-dark-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/fulfill-light.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/modal-dark-3.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -231,12 +234,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/roles.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/no-access.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -247,12 +250,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/omica/store-analytics-light.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/omica/company-analytics-dark.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -359,12 +362,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/chatEd/code-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/chatEd/code-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -391,12 +394,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/chatEd/middleware.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/chatEd/documents.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -508,12 +511,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/capstone/ide.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/capstone/modules.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           { type: 'image', src: '/images/capstone/dashboard-mockup-lg.png' },
         ],
@@ -546,18 +549,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/capstone/result.png',
-            aspectRatio: '512/410',
-            className: 'object-contain bg-primary',
+            className: 'object-contain bg-primary aspect-[512/410]',
           },
           {
             type: 'image',
             src: '/images/capstone/checks.png',
-            aspectRatio: '512/410',
+            className: 'aspect-[512/410]',
           },
           {
             type: 'image',
             src: '/images/capstone/tests.png',
-            aspectRatio: '512/410',
+            className: 'aspect-[512/410]',
           },
         ],
       },
@@ -584,17 +586,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/capstone/ide-3.png',
-            aspectRatio: '712/591',
+            className: 'aspect-[712/591]',
           },
           {
             type: 'image',
             src: '/images/capstone/ide-2.png',
-            aspectRatio: '712/591',
+            className: 'aspect-[712/591]',
           },
           {
             type: 'image',
             src: '/images/capstone/ide-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -621,17 +623,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/capstone/help-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/capstone/help-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/capstone/help-3.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -751,7 +753,7 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/progress-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -778,17 +780,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/quiz-3.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/quiz-4.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/quiz-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -815,7 +817,7 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/multi-language.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -826,12 +828,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/chapters-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/chapters-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -842,12 +844,12 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/details-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/markdown-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -858,17 +860,17 @@ export const selectedProjects: SelectedProject[] = [
           {
             type: 'image',
             src: '/images/hub/auth-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/attempt-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/hub/preview-1.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
         ],
       },
@@ -1014,17 +1016,17 @@ export const miscProjects: Project[] = [
           {
             type: 'image',
             src: '/images/deepRock/map-2.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
           {
             type: 'image',
             src: '/images/deepRock/map-1.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
           {
             type: 'image',
             src: '/images/deepRock/map-3.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
         ],
       },
@@ -1051,17 +1053,17 @@ export const miscProjects: Project[] = [
           {
             type: 'image',
             src: '/images/deepRock/field-2.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
           {
             type: 'image',
             src: '/images/deepRock/field-3.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
           {
             type: 'image',
             src: '/images/deepRock/field-1.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
         ],
       },
@@ -1088,7 +1090,7 @@ export const miscProjects: Project[] = [
           {
             type: 'image',
             src: '/images/deepRock/qTree.png',
-            aspectRatio: '1/1',
+            className: 'aspect-square',
           },
         ],
       },
@@ -1224,12 +1226,12 @@ export const miscProjects: Project[] = [
           {
             type: 'image',
             src: '/images/thePivot/sc-3.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           {
             type: 'image',
             src: '/images/thePivot/sc-2.png',
-            aspectRatio: '16/9',
+            className: 'aspect-[16/9]',
           },
           { type: 'image', src: '/images/thePivot/sc-mock-1.png' },
         ],

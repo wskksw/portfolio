@@ -1,8 +1,10 @@
 'use client'
 
-import { calculateBestSidebar } from '@/lib/utils'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
+
+import { calculateBestSidebar } from '@/lib/utils'
+import { usePathname } from 'next/navigation'
 
 export interface Sidebar {
   title: string
@@ -30,19 +32,26 @@ export const SidebarProvider = ({
 }: {
   children: React.ReactNode
 }) => {
+  const pathname = usePathname()
   const [sidebars, setSidebars] = useState<Sidebar[] | null>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [sidebarRefs, setSidebarRefs] = useState<HTMLDivElement[]>([])
+  const [sidebarRefs, setSidebarRefs] = useState<HTMLDivElement[] | null>(null)
 
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (y) => {
+    if (!sidebarRefs || sidebarRefs.length === 0) return
+
     const bestIndex = calculateBestSidebar(y, sidebarRefs, window)
 
     if (bestIndex !== activeIndex) {
       setActiveIndex(bestIndex)
     }
   })
+
+  useEffect(() => {
+    setSidebarRefs(null)
+  }, [pathname])
 
   return (
     <SidebarsContext.Provider

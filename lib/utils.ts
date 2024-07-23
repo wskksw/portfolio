@@ -17,6 +17,8 @@ export const calculateBestSidebar = (
   var largestDistance = -Infinity
 
   refs.forEach((ref: any, index: number) => {
+    if (!ref) return
+
     const boundTop = ref.offsetTop
     const boundBottom = boundTop + ref.clientHeight
 

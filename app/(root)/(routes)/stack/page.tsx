@@ -13,7 +13,7 @@ export default function StackPage() {
 
   useEffect(() => {
     setSidebarRefs(refs.current)
-  }, [setSidebarRefs])
+  }, [setSidebarRefs, refs])
 
   useEffect(() => {
     const data: Sidebar[] = []

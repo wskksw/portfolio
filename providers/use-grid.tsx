@@ -5,12 +5,11 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
-  useEffect,
   useState,
 } from 'react'
 import { motion } from 'framer-motion'
-import '@/app/globals.css'
 
+import '@/app/globals.css'
 import { smoothEase } from '@/lib/utils'
 
 interface GridContextType {

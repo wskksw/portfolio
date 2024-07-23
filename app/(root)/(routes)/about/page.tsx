@@ -17,7 +17,7 @@ export default function AboutPage() {
 
   useEffect(() => {
     setSidebarRefs(refs.current)
-  }, [setSidebarRefs])
+  }, [setSidebarRefs, refs])
 
   useEffect(() => {
     const data: Sidebar[] = []

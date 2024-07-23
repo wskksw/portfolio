@@ -5,6 +5,7 @@ import InnerParallaxImage from '@/components/inner-parallax-image'
 import { Media } from '@/data/projects'
 import Video from '@/components/video'
 import Header from '@/components/header'
+import { cn } from '@/lib/utils'
 
 export interface MediaGridSectionProps {
   header: string
@@ -26,11 +27,11 @@ export default function MediaGridSection({
         {media.map((data, index) => (
           <FadeInWrapper
             key={index}
-            className="relative min-w-[600px] flex-1 bg-primary shadow-md"
+            className={cn(
+              'relative aspect-[4/3] min-w-[600px] flex-1 bg-primary shadow-md',
+              data.className,
+            )}
             delay={index * 0.05}
-            style={{
-              aspectRatio: data.aspectRatio || '4/3',
-            }}
           >
             {data.type === 'image' && (
               <InnerParallaxImage

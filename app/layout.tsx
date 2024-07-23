@@ -9,6 +9,9 @@ import { GridProvider } from '@/providers/use-grid'
 export const metadata: Metadata = {
   title: 'Jason Ramos',
   description: 'Jason Ramos',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

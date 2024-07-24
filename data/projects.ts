@@ -962,9 +962,15 @@ export const miscProjects: Project[] = [
         ],
       },
       {
-        type: 'image-grid',
-        title: 'Moodboard',
-        media: [{ type: 'image', src: '/images/portfolio/moodboard.png' }],
+        type: 'text',
+        title: 'Resources',
+        content: [
+          {
+            title: 'GitHub',
+            description:
+              'The source code for this portfolio is available on [GitHub](https://github.com/JasonR24/portfolio)',
+          },
+        ],
       },
     ],
     logos: [

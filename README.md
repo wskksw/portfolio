@@ -8,6 +8,8 @@ This portfolio project boasts a range of features designed to enhance the user e
 - **Strong UI/UX Design Principles**: A focus on strong user interface and user experience design principles ensures that the portfolio is not only visually appealing but also intuitive and easy to navigate.
 - **Easily Configurable Projects**: The portfolio is built to be easily configurable, allowing for quick updates and additions of new projects as my work evolves.
 
+Through these features, my portfolio aims to provide a polished and professional presentation of my work, showcasing my expertise and dedication to the field.
+
 # Tech Stack
 - [NextJS](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -15,4 +17,6 @@ This portfolio project boasts a range of features designed to enhance the user e
 - [Framer Motion](https://www.framer.com/motion/)
 - [ShadCN UI](https://ui.shadcn.com/)
 
-Through these features, my portfolio aims to provide a polished and professional presentation of my work, showcasing my expertise and dedication to the field.
+# Resources
+- [Figma](https://www.figma.com/)
+- [Behance](https://www.behance.net/)

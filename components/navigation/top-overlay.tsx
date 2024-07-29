@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { githubLink, linkedinLink } from '@/data/links'
 import { cn } from '@/lib/utils'
 import { useGrid } from '@/providers/use-grid'
+import { useTransition } from '@/providers/use-transition'
 
 interface TopOverlayProps {
   navOpen: boolean
@@ -12,11 +13,17 @@ interface TopOverlayProps {
 
 export default function TopOverlay({ navOpen }: TopOverlayProps) {
   const { setGridOpen } = useGrid()
+  const { transitionPage } = useTransition()
 
   return (
     <div className="pointer-events-none fixed left-0 top-0 z-20 h-fit w-full bg-transparent">
       <div className="flex h-full w-full justify-between gap-5 px-[34px] pt-8">
-        <h4 className="text-4xl font-extrabold leading-8">JR</h4>
+        <h4
+          className="text-4xl font-extrabold leading-8"
+          onClick={() => transitionPage('/')}
+        >
+          JR
+        </h4>
         <div className="pointer-events-auto flex h-fit gap-8">
           <div
             className={cn(

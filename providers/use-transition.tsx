@@ -93,7 +93,6 @@ export const TransitionProvider = ({
           <motion.h4
             className="fixed left-1/2 top-1/2 z-[120] -translate-x-1/2 -translate-y-1/2 text-7xl font-extrabold leading-8 text-background"
             {...logoAnimation}
-            onClick={() => transitionPage('/')}
           >
             JR
           </motion.h4>

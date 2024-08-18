@@ -59,7 +59,7 @@ export default function HomePage() {
   }))
 
   return (
-    <main className="py-32">
+    <main className="mt-[80px] py-32">
       <div className="pb-40" ref={(ref: any) => (refs.current[0] = ref)}>
         <HeroSection
           header="Jason Ramos"
